@@ -1,5 +1,6 @@
 import React from 'react';
-import { Search, Eye, ShoppingCart, Download, Code, Rocket, ArrowRight } from 'lucide-react';
+import { Search, Eye, ShoppingCart, Download, MessageSquare, FileArchive, Code, Rocket, ArrowRight } from 'lucide-react';
+import { FAQSection } from './FAQSection';
 
 interface HowItWorksPageProps {
   onBrowseTemplates: () => void;
@@ -10,40 +11,61 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates }) =>
     {
       icon: Search,
       title: 'Browse Templates',
-      description: 'Explore our collection of premium templates. Filter by category, tech stack, or price to find exactly what you need.',
-      color: 'from-blue-500 to-cyan-500'
+      description:
+        'Explore our collection of premium website templates. Filter by category, tech stack, or price to quickly find the right fit for your project.',
+      color: 'from-blue-500 to-green-500'
     },
     {
       icon: Eye,
       title: 'Preview & Demo',
-      description: 'Watch detailed video demos and browse screenshots. See exactly what you\'re getting before you buy.',
+      description:
+        'Watch detailed video demos and browse real screenshots. See exactly how the template looks, feels, and performs before moving forward.',
+      color: 'from-yellow-500 to-pink-500'
+    },
+    // {
+    //   icon: ShoppingCart,
+    //   title: 'Purchase Securely',
+    //   description:
+    //     'Complete your purchase securely via Gumroad. Payments are protected and access is granted instantly.',
+    //   color: 'from-orange-500 to-red-500'
+    // },
+    // {
+    //   icon: Download,
+    //   title: 'Download Instantly',
+    //   description:
+    //     'Get immediate access to the complete project files, including source code, assets, and documentation.',
+    //   color: 'from-green-500 to-emerald-500'
+    // },
+    {
+      icon: MessageSquare,
+      title: 'Request Access',
+      description:
+        'Found a template you love? Reach out to purchase or discuss your needs. Every template includes free setup guidance and minor fixes. Larger customizations are quoted separately.',
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      icon: FileArchive,
+      title: 'Secure Delivery',
+      description:
+        'Once payment is confirmed, you receive a secure download link containing the full project files and a clear setup guide on your local machine.',
       color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: ShoppingCart,
-      title: 'Purchase Securely',
-      description: 'Buy with confidence through Gumroad. Secure payment processing with instant access to your purchase.',
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      icon: Download,
-      title: 'Download Instantly',
-      description: 'Get immediate access to the complete source code. Download includes all components, assets, and documentation.',
-      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Code,
       title: 'Customize & Build',
-      description: 'Modify the template to match your brand. Clean, well-documented code makes customization easy.',
+      description:
+        'Need branding, content updates, or feature changes? We offer fast, professional customization as an optional service. Full custom work is clearly quoted.',
       color: 'from-indigo-500 to-violet-500'
     },
     {
       icon: Rocket,
       title: 'Launch Your Project',
-      description: 'Deploy your new website and go live. Our templates are optimized for performance and SEO from day one.',
+      description:
+        'Deploy your website and go live with confidence. Our templates are built for performance and scalability from day one.',
       color: 'from-pink-500 to-rose-500'
     }
   ];
+
 
   const benefits = [
     {
@@ -56,19 +78,23 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates }) =>
     },
     {
       title: 'Clean, Maintainable Code',
-      description: 'Well-structured codebase with TypeScript, proper patterns, and comprehensive documentation.'
+      description: 'Well-structured codebase with TypeScript & React.js, proper patterns, and comprehensive documentation.'
     },
     {
-      title: 'Lifetime Updates',
-      description: 'Get free updates forever. We continuously improve our templates based on feedback.'
+      title: 'Free Support',
+      description: 'Get free setup guidance and minor bug fixes you face after running locally for the first time.'
     },
     {
       title: 'Responsive & Accessible',
       description: 'Mobile-first design with proper accessibility features built in from the start.'
     },
+    // {
+    //   title: 'SEO Optimized',
+    //   description: 'Semantic HTML, meta tags, and performance optimizations for better search rankings.'
+    // }
     {
-      title: 'SEO Optimized',
-      description: 'Semantic HTML, meta tags, and performance optimizations for better search rankings.'
+      title: 'Customization Available',
+      description: 'Need Customization based on your Brand, content updates, feature changes or SEO optimization? We offer fast, professional customization as an optional service. Full custom work is clearly quoted.'
     }
   ];
 
@@ -132,13 +158,16 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates }) =>
           </div>
         </div>
 
+        {/* FAQ Section */}
+        <FAQSection />
+
         {/* CTA */}
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground mb-4">
             Ready to Get Started?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Browse our collection and find the perfect template for your next project.
+            Browse our collection and find the perfect website template for your Brand and Business.
           </p>
           <button
             onClick={onBrowseTemplates}

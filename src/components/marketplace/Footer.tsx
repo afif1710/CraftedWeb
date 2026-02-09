@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     templates: [
       { label: 'SaaS Templates', id: 'templates' },
       { label: 'Portfolio Templates', id: 'templates' },
-      { label: 'E-commerce Templates', id: 'templates' },
+      { label: 'E-com. Templates', id: 'templates' },
       { label: 'Landing Pages', id: 'templates' },
       { label: 'All Templates', id: 'templates' },
     ],
@@ -30,83 +30,32 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       { label: 'About Us', id: 'about' },
       { label: 'How It Works', id: 'how-it-works' },
       { label: 'Contact', id: 'contact' },
-      { label: 'Blog', id: 'home' },
-      { label: 'Careers', id: 'home' },
     ],
     support: [
-      { label: 'Documentation', id: 'home' },
-      { label: 'FAQ', id: 'home' },
-      { label: 'License', id: 'home' },
-      { label: 'Refund Policy', id: 'home' },
+      { label: 'Documentation', id: 'how-it-works' },
+      { label: 'FAQ', id: 'how-it-works' },
       { label: 'Help Center', id: 'contact' },
-    ],
-    legal: [
-      { label: 'Privacy Policy', id: 'home' },
-      { label: 'Terms of Service', id: 'home' },
-      { label: 'Cookie Policy', id: 'home' },
-    ],
+    ]
+    // legal: [
+    //   // { label: 'Privacy Policy', id: 'home' },
+    //   // { label: 'Terms of Service', id: 'home' },
+    //   // { label: 'Cookie Policy', id: 'home' },
+    // ],
   };
 
   const socialLinks = [
-    { icon: Twitter, label: 'Twitter', href: 'https://twitter.com' },
-    { icon: Github, label: 'GitHub', href: 'https://github.com' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/afif1710' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-a-710318373/' },
   ];
 
   return (
     <footer className="bg-card border-t border-border">
-      {/* Newsletter Section */}
-      <div className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Get notified about new templates
-              </h3>
-              <p className="text-muted-foreground">
-                Subscribe to our newsletter and never miss a launch.
-              </p>
-            </div>
-            <form onSubmit={handleSubscribe} className="flex gap-3 w-full max-w-md">
-              <div className="relative flex-1">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
-                  required
-                  aria-label="Email for newsletter"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubscribed}
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium flex items-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              >
-                {isSubscribed ? (
-                  <>
-                    <Check className="w-5 h-5" />
-                    Subscribed!
-                  </>
-                ) : (
-                  <>
-                    Subscribe
-                    <ArrowRight className="w-4 h-4" />
-                  </>
-                )}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
-          <div className="col-span-2 lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2 flex flex-col items-center text-center">
             <button
               onClick={() => onNavigate('home')}
               className="flex items-center gap-2 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
@@ -115,13 +64,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-foreground">
-                Template<span className="text-primary">Store</span>
+                CraftedWeb<span className="text-primary"> Studio</span>
               </span>
             </button>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Premium website templates for developers and designers. Build faster, launch sooner.
+              Premium website templates for Brands and Businesses. Just customize with your brand info, build faster, launch sooner.
             </p>
-            <div className="flex gap-3">
+            <div className="flex justify-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -137,6 +86,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div>
           </div>
 
+          {/* Spacer to push links to the right on large screens */}
+          <div className="hidden lg:block lg:col-span-1"></div>
+
           {/* Templates */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Templates</h4>
@@ -145,7 +97,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={index}>
                   <button
                     onClick={() => onNavigate(link.id)}
-                    className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
+                    className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
                   >
                     {link.label}
                   </button>
@@ -162,7 +114,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={index}>
                   <button
                     onClick={() => onNavigate(link.id)}
-                    className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
+                    className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
                   >
                     {link.label}
                   </button>
@@ -179,7 +131,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={index}>
                   <button
                     onClick={() => onNavigate(link.id)}
-                    className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
+                    className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
                   >
                     {link.label}
                   </button>
@@ -188,7 +140,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Legal
           <div>
             <h4 className="font-semibold text-foreground mb-4">Legal</h4>
             <ul className="space-y-3">
@@ -203,7 +155,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -216,7 +168,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </p>
             <div className="flex items-center gap-6">
               <span className="text-sm text-muted-foreground">
-                Made with care for developers
+                Made with passion for all Businesses and Brands
               </span>
             </div>
           </div>

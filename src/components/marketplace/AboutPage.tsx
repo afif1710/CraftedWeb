@@ -53,16 +53,18 @@ const AboutPage: React.FC = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div className="flex flex-wrap justify-center gap-6 mb-20">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl border border-border p-6 text-center hover-lift"
+              className="flex-1 min-w-[280px] max-w-[360px] bg-card rounded-2xl border border-border p-8 text-center hover-lift shadow-sm"
             >
-              <div className="text-3xl font-bold text-primary mb-1">
+              <div className="text-4xl font-bold text-primary mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

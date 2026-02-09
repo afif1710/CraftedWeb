@@ -66,7 +66,7 @@ const ContactPage: React.FC = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      value: 'hello@templatestore.com',
+      value: 'masteraf646@gmail.com',
       description: 'For general inquiries and support'
     },
     {
@@ -84,7 +84,18 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 min-h-screen">
+    <>
+      <div className="w-full bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-pink-500/10 border-b border-primary/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center">
+          <p className="text-sm lg:text-base font-medium text-muted-foreground">
+            <span className="mr-2">✨</span>
+            <span className="font-bold text-primary">Kindly Note:</span> Due to the digital nature of our products, we cannot offer refunds once files are downloaded. 
+            <br className="sm:hidden" />  
+            Please review our <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Check the FAQ section in 'How it Works' page">FAQ</span> and <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Watch demo videos on template pages">Demo Videos</span> thoroughly before purchasing or Email us if you have any queries. Thank you for understanding! 🙏
+          </p>
+        </div>
+      </div>
+      <section className="py-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -204,7 +215,6 @@ const ContactPage: React.FC = () => {
                       <option value="general">General Inquiry</option>
                       <option value="support">Technical Support</option>
                       <option value="purchase">Purchase Question</option>
-                      <option value="refund">Refund Request</option>
                       <option value="custom">Custom Project</option>
                       <option value="other">Other</option>
                     </select>
@@ -258,7 +268,8 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

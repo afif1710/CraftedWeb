@@ -80,9 +80,9 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onSelectCategory }) =
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                       {category.name}
                     </h3>
-                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                    {/* <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
                       {category.count}
-                    </span>
+                    </span> */}
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {category.description}
