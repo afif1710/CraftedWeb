@@ -1,0 +1,10 @@
+# robots.txt for TemplateStore
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://templatestore.com/sitemap.xml
+
+# Disallow admin and private paths
+Disallow: /api/
+Disallow: /admin/
