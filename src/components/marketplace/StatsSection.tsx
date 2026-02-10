@@ -23,7 +23,7 @@ const StatsSection: React.FC = () => {
     },
     {
       icon: TrendingUp,
-      value: '12+',
+      value: '20+',
       label: 'Premium Templates',
       description: 'And growing every month'
     }

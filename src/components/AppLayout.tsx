@@ -33,12 +33,41 @@ const AppLayout: React.FC = () => {
     null,
   );
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
+  const [scrollToId, setScrollToId] = useState<string | null>(null);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (!scrollToId) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, [currentPage, selectedTemplate]);
 
+  useEffect(() => {
+    if (scrollToId) {
+      const element = document.getElementById(scrollToId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setScrollToId(null);
+      } else {
+        // Wait for render if element is not immediately available
+        const timer = setTimeout(() => {
+          const el = document.getElementById(scrollToId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+          setScrollToId(null);
+        }, 100);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [scrollToId, currentPage]);
+
   const handleNavigate = (page: string) => {
+    if (page === 'faq') {
+      setCurrentPage('how-it-works');
+      setScrollToId('faq');
+      return;
+    }
+
     if (page === "template-detail" && selectedTemplate) {
       setCurrentPage("template-detail");
     } else {
@@ -100,7 +129,10 @@ const AppLayout: React.FC = () => {
               onBuy={handleBuy}
             />
             <TestimonialsSection />
-            <CTASection onBrowseTemplates={() => handleNavigate("templates")} />
+            <CTASection 
+              onBrowseTemplates={() => handleNavigate("templates")} 
+              onContactUs={() => handleNavigate("contact")}
+            />
           </>
         );
 
@@ -149,7 +181,7 @@ const AppLayout: React.FC = () => {
       case "contact":
         return (
           <div className="pt-20">
-            <ContactPage />
+            <ContactPage onNavigate={handleNavigate} />
           </div>
         );
 

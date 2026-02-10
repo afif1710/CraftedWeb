@@ -33,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     ],
     support: [
       { label: 'Documentation', id: 'how-it-works' },
-      { label: 'FAQ', id: 'how-it-works' },
+      { label: 'FAQ', id: 'faq' },
       { label: 'Help Center', id: 'contact' },
     ]
     // legal: [
@@ -68,8 +68,10 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </span>
             </button>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Premium website templates for Brands and Businesses. Just customize with your brand info, build faster, launch sooner.
+              Premium website templates for Brands and Businesses. Just customize with your brand info, build faster, launch sooner. 
             </p>
+            <br></br>
+            <p className="text-muted-foreground mb-6 max-w-xs">Follow us on...</p>
             <div className="flex justify-center gap-3">
               {socialLinks.map((social) => (
                 <a

@@ -84,6 +84,57 @@
     --sidebar-border: 215 25% 20%;
     --sidebar-ring: 239 84% 67%;
   }
+
+  /* ═══════════════════════════════════════════════
+     XTRACT PURPLE THEME
+     Deep purple vignette with neon purple/magenta
+     ═══════════════════════════════════════════════ */
+  .theme-xtract {
+    /* Near-black purple background */
+    --background: 264 50% 4%;
+    /* Light lavender text */
+    --foreground: 246 53% 95%;
+
+    /* Very dark purple-black cards */
+    --card: 260 33% 3%;
+    --card-foreground: 246 53% 95%;
+
+    --popover: 260 33% 5%;
+    --popover-foreground: 246 53% 95%;
+
+    /* Vivid purple primary */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Dark purple secondary */
+    --secondary: 264 30% 12%;
+    --secondary-foreground: 246 53% 95%;
+
+    /* Muted purple tones */
+    --muted: 264 25% 11%;
+    --muted-foreground: 226 14% 66%;
+
+    /* Hot pink/magenta accent */
+    --accent: 332 100% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Very subtle purple borders */
+    --border: 264 20% 14%;
+    --input: 264 20% 16%;
+    --ring: 262 83% 58%;
+
+    --sidebar-background: 264 30% 6%;
+    --sidebar-foreground: 246 53% 95%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 264 25% 15%;
+    --sidebar-accent-foreground: 246 53% 95%;
+    --sidebar-border: 264 20% 14%;
+    --sidebar-ring: 262 83% 58%;
+  }
 }
 
 @layer base {
@@ -99,9 +150,62 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Sora', sans-serif;
   }
+}
+
+/* ═══════════════════════════════════════════════
+   XTRACT PURPLE: Body vignette overlay
+   ═══════════════════════════════════════════════ */
+.theme-xtract body {
+  background: linear-gradient(180deg, #07020a 0%, #1b0f2a 50%, #0d0618 100%);
+}
+
+.theme-xtract body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(124, 58, 237, 0.12), transparent 50%),
+    radial-gradient(ellipse at center, rgba(48, 8, 50, 0.3), transparent 45%),
+    radial-gradient(ellipse at center, rgba(16, 6, 22, 0.5), transparent 70%);
+}
+
+.theme-xtract body>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* Xtract: glass header gets a darker, purple-tinted treatment */
+.theme-xtract .glass {
+  background: rgba(7, 2, 10, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  border-color: rgba(124, 58, 237, 0.15) !important;
+}
+
+.theme-xtract .glass-card {
+  background: rgba(5, 5, 10, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  border-color: rgba(124, 58, 237, 0.1) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(124, 58, 237, 0.05) !important;
+}
+
+/* Xtract: gradient text uses purple → pink instead of indigo → cyan */
+.theme-xtract .gradient-text {
+  background-image: linear-gradient(to right, #7c3aed, #ff5ca8, #7c3aed) !important;
+}
+
+/* Xtract: hover-lift cards get purple shadow */
+.theme-xtract .hover-lift:hover {
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15), 0 8px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
 @layer utilities {
@@ -133,12 +237,29 @@
     animation: fadeIn 0.5s ease-out forwards;
   }
 
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-  .stagger-6 { animation-delay: 0.6s; }
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
 }
 
 @keyframes fadeUp {
@@ -146,6 +267,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -153,13 +275,25 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes gradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .animate-gradient {
@@ -167,7 +301,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

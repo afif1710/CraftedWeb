@@ -3,9 +3,10 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface CTASectionProps {
   onBrowseTemplates: () => void;
+  onContactUs: () => void;
 }
 
-const CTASection: React.FC<CTASectionProps> = ({ onBrowseTemplates }) => {
+const CTASection: React.FC<CTASectionProps> = ({ onBrowseTemplates, onContactUs }) => {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +31,7 @@ const CTASection: React.FC<CTASectionProps> = ({ onBrowseTemplates }) => {
 
             {/* Subheadline */}
             <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-              Join hundreds of developers who have accelerated their projects with our premium templates. 
+              Join hundreds of Brands and Businesses who have accelerated their growth with our premium templates. 
               Save weeks of development time and launch faster.
             </p>
 
@@ -43,17 +44,17 @@ const CTASection: React.FC<CTASectionProps> = ({ onBrowseTemplates }) => {
                 Browse Templates
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <a
-                href="mailto:hello@templatestore.com"
+              <button
+                onClick={onContactUs}
                 className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Contact Us
-              </a>
+              </button>
             </div>
 
             {/* Trust Text */}
             <p className="mt-8 text-sm text-white/70">
-              No subscription required • One-time purchase • Lifetime updates
+              No subscription required • One-time purchase • Elevate Your Brand
             </p>
           </div>
         </div>

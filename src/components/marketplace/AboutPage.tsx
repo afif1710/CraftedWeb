@@ -3,7 +3,7 @@ import { Sparkles, Users, Award, Heart, Code, Zap } from "lucide-react";
 
 const AboutPage: React.FC = () => {
   const stats = [
-    { value: "12+", label: "Premium Templates" },
+    { value: "20+", label: "Premium Templates" },
     { value: "24/7", label: "Support Available" },
   ];
 
@@ -102,9 +102,9 @@ const AboutPage: React.FC = () => {
               <div className="text-center">
                 <Users className="w-20 h-20 text-primary mx-auto mb-4" />
                 <p className="text-lg font-semibold text-foreground">
-                  Built by Brands
+                  Built by Developers
                 </p>
-                <p className="text-muted-foreground">For Developers</p>
+                <p className="text-muted-foreground">For Brands</p>
               </div>
             </div>
             {/* Decorative Elements */}

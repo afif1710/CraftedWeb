@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "Do you offer support if I get stuck?",
-    answer: "Absolutely. We offer free support for initial setup issues and minor bug fixes(i.e website is not responsive) for the first 3 days after purchase. If you need more extensive customization or feature additions(i.e new pages, new features, theme change, SEO Optimization etc), we also offer paid customization services and the cost varies based on your requirements."
+    answer: "Absolutely. We offer free support for initial setup issues and minor bug fixes which were told to be in the template initially (i.e website is not responsive) for the first 3 days after purchase. If you need more extensive customization or feature additions(i.e new pages, new features, theme change, SEO Optimization etc), we also offer paid customization services and the cost varies based on your requirements."
   },
   {
     question: "Are the templates optimized for SEO?",
@@ -46,7 +46,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <div className="max-w-3xl mx-auto mb-20">
+    <div id="faq" className="max-w-3xl mx-auto mb-20">
       <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (

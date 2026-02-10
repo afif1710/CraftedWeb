@@ -94,7 +94,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onBrowseTemplates }) => {
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-accent" />
               <span className="text-sm text-muted-foreground">
-                <strong className="text-foreground">12+</strong> premium templates
+                <strong className="text-foreground">20+</strong> premium templates
               </span>
             </div>
           </div>

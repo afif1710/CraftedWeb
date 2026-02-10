@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, MessageSquare, Clock, Send, Check, MapPin, Phone } from 'lucide-react';
 
-const ContactPage: React.FC = () => {
+interface ContactPageProps {
+  onNavigate?: (page: string) => void;
+}
+
+const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -126,14 +130,28 @@ const ContactPage: React.FC = () => {
             ))}
 
             {/* FAQ Link */}
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
+            <button 
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('how-it-works');
+                  // Scroll to FAQ section after navigation
+                  setTimeout(() => {
+                    const faqSection = document.getElementById('faq');
+                    if (faqSection) {
+                      faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }, 100);
+                }
+              }}
+              className="w-full text-left bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20 transition-all duration-300 hover:scale-[1.02] hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 cursor-pointer"
+            >
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 Check our FAQ first
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Many common questions are answered in our FAQ section on each template page.
               </p>
-            </div>
+            </button>
           </div>
 
           {/* Contact Form */}

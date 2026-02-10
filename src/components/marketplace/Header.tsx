@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
-import { useTheme } from '@/components/theme-provider';
+import { Menu, X, Sparkles } from 'lucide-react';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 interface HeaderProps {
   currentPage: string;
@@ -10,13 +10,12 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -27,10 +26,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ];
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   return (
     <header
@@ -75,19 +70,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2.5 rounded-xl bg-card border border-border hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-foreground" />
-              ) : (
-                <Moon className="w-5 h-5 text-foreground" />
-              )}
-            </button>
+          <div className="flex items-center gap-2">
+            {/* Unified Theme Toggle */}
+            <ThemeToggle />
 
             {/* CTA Button */}
             <button
