@@ -78,10 +78,14 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
 
           {/* Details Section */}
           <div className="p-6 flex flex-col">
-            {/* Category */}
-            <p className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
-              {template.category}
-            </p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-xs font-medium text-primary uppercase tracking-wider">
+                {template.category}
+              </p>
+              <span className="text-[10px] font-black text-white tracking-widest bg-gradient-to-r from-primary to-accent px-2.5 py-1 rounded shadow-md shadow-primary/30 border border-white/10">
+                #ID: {template.id.padStart(2, '0')}
+              </span>
+            </div>
 
             {/* Title */}
             <h2 id="quick-view-title" className="text-2xl font-bold text-foreground mb-2">

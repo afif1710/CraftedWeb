@@ -16,7 +16,11 @@ const faqs = [
   },
   {
     question: "Can I use the templates for client projects?",
-    answer: "Yes! You establish full ownership of the template for the specific project you purchased it for. You can use it for your own business or a client's website with the necessary customization required (as no one wants to have the exact same website as others)."
+    answer: "You receive a non-exclusive license to use the template for one project (your business or a client project). You may fully customize it to match your brand. However, redistribution or resale of the template itself is not permitted."
+  },
+  {
+    question: "Are the price of the templates negotiable?",
+    answer: "Yes, the price of the templates is negotiable."
   },
   {
     question: "Do you offer support if I get stuck?",
@@ -40,7 +44,11 @@ const faqs = [
   },
   {
     question: "What to do if I like a template?",
-    answer: "If you like a template, all you need to do is take Screenshot of the template and contact with us via email, and we'll reply to you as soon as possible whether it's a normal query about the template, demo video or you wanna purchase the template."
+    answer: "If you like a template, all you need to do is Email us the template id and we'll reply to you as soon as possible to proceed the purchase."
+  },
+  {
+    question: "What type of additional feature you can add to the template?",
+    answer: "We can add almost any feature you want to the template. However, the cost and time required will vary depending on the complexity of the feature. Some examples of features we can add include: New Pages, New Sections, New Animations, New Features, Theme Change, SEO Optimization etc."
   }
 ];
 

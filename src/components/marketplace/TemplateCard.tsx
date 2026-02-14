@@ -53,7 +53,7 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
         {/* Price Badge */}
         <div className="absolute top-3 right-3">
           <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
-            <span className="font-semibold text-foreground">${template.price}</span>
+            <span className="font-semibold text-foreground text-xs sm:text-sm">${template.price} — Standard License</span>
           </div>
         </div>
         
@@ -65,10 +65,14 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
       
       {/* Content */}
       <div className="p-5">
-        {/* Category */}
-        <p className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
-          {template.category}
-        </p>
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-xs font-medium text-primary uppercase tracking-wider">
+            {template.category}
+          </p>
+          <span className="text-[10px] font-black text-white tracking-widest bg-gradient-to-r from-primary to-accent px-1.5 py-0.5 rounded shadow-sm shadow-primary/30 border border-white/10 uppercase">
+            ID: #{template.id.padStart(2, '0')}
+          </span>
+        </div>
         
         {/* Title */}
         <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-1">
@@ -110,6 +114,19 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
           <ShoppingCart className="w-4 h-4" />
           Want to buy?
         </button>
+        
+        {/* Exclusive Rights Helper */}
+        <div className="mt-3 text-center">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onBuy(template);
+            }}
+            className="text-muted-foreground hover:text-foreground transition-colors text-xs"
+          >
+            Need exclusive rights? <span className="underline decoration-muted-foreground/50 hover:decoration-foreground">Contact us</span>.
+          </button>
+        </div>
       </div>
     </article>
   );

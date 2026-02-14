@@ -73,7 +73,7 @@ const VideoEmbedLite: React.FC<VideoEmbedLiteProps> = ({ videoUrl, poster, title
           
           {/* Watermark */}
           <div className="absolute top-4 right-4 px-2 py-1 bg-black/50 backdrop-blur-sm rounded text-xs text-white/70">
-            Template by TemplateStore
+            Template by CraftedWeb Studio
           </div>
         </>
       ) : (

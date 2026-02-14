@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Clock, Send, Check, MapPin, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Mail, MessageSquare, Clock, Send, Check, MapPin, Phone, Copy } from 'lucide-react';
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
 }
 
 const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,6 +17,13 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (email: string) => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -95,7 +104,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             <span className="mr-2">✨</span>
             <span className="font-bold text-primary">Kindly Note:</span> Due to the digital nature of our products, we cannot offer refunds once files are downloaded. 
             <br className="sm:hidden" />  
-            Please review our <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Check the FAQ section in 'How it Works' page">FAQ</span> and <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Watch demo videos on template pages">Demo Videos</span> thoroughly before purchasing or Email us if you have any queries. Thank you for understanding! 🙏
+            Please review our <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Check the FAQ section in 'How it Works' page">FAQ</span>, <button onClick={() => navigate('/license')} className="text-foreground underline decoration-dotted underline-offset-4 cursor-pointer hover:text-primary transition-colors" title="View Terms & License">Terms & License</button> and <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Watch demo videos on template pages">Demo Videos</span> thoroughly before purchasing or Email us if you have any queries. Thank you for understanding! 🙏
           </p>
         </div>
       </div>
@@ -124,7 +133,22 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <info.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-1">{info.title}</h3>
-                <p className="text-primary font-medium mb-1">{info.value}</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-primary font-medium">{info.value}</p>
+                  {info.title === 'Email Us' && (
+                    <button
+                      onClick={() => handleCopyEmail(info.value)}
+                      className="p-1.5 text-muted-foreground hover:text-primary hover:bg-cyan-200 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      title="Copy email address"
+                    >
+                      {copied ? (
+                        <Check className="w-4 h-4 text-green-500" />
+                      ) : (
+                        <Copy className="w-4 h-4" />
+                      )}
+                    </button>
+                  )}
+                </div>
                 <p className="text-sm text-muted-foreground">{info.description}</p>
               </div>
             ))}

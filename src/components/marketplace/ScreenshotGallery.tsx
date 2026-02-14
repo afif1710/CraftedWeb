@@ -55,7 +55,7 @@ const ScreenshotGallery: React.FC<ScreenshotGalleryProps> = ({ screenshots, titl
           </div>
           {/* Watermark */}
           <div className="absolute bottom-3 right-3 px-2 py-1 bg-black/40 backdrop-blur-sm rounded text-xs text-white/70">
-            Template by TemplateStore
+            Template by CraftedWeb Studio
           </div>
         </button>
 

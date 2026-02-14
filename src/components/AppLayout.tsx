@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Template } from "@/data/templates";
 import Header from "./marketplace/Header";
 import Footer from "./marketplace/Footer";
@@ -25,6 +26,8 @@ type Page =
   | "contact";
 
 const AppLayout: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [currentPage, setCurrentPage] = useState<Page>("home");
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
     null,
@@ -34,6 +37,22 @@ const AppLayout: React.FC = () => {
   );
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   const [scrollToId, setScrollToId] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    () => localStorage.getItem('craftedweb_selected_category') || 'All'
+  );
+  const [selectedPage, setSelectedPage] = useState<number>(
+    () => Number(localStorage.getItem('craftedweb_selected_page')) || 1
+  );
+
+  useEffect(() => {
+    if (location.state && (location.state as any).target) {
+      setCurrentPage((location.state as any).target);
+      // clear state to prevent re-navigation on refresh? 
+      // Actually navigate replace might be better, but this simple check works for now.
+      // Better to clear it so it doesn't stick
+      navigate(location.pathname, { replace: true, state: {} });
+    }
+  }, [location, navigate]);
 
   useEffect(() => {
     if (!scrollToId) {
@@ -65,6 +84,11 @@ const AppLayout: React.FC = () => {
     if (page === 'faq') {
       setCurrentPage('how-it-works');
       setScrollToId('faq');
+      return;
+    }
+
+    if (page === 'license') {
+      navigate('/license');
       return;
     }
 
@@ -101,8 +125,13 @@ const AppLayout: React.FC = () => {
     setCurrentPage("templates");
   };
 
-  const handleSelectCategory = () => {
+  const handleSelectCategory = (category: string) => {
+    setSelectedCategory(category);
+    localStorage.setItem('craftedweb_selected_category', category);
+    setSelectedPage(1);
+    localStorage.setItem('craftedweb_selected_page', '1');
     setCurrentPage("templates");
+    setSelectedTemplate(null);
   };
 
   const handleBuy = (template: Template) => {
@@ -143,6 +172,16 @@ const AppLayout: React.FC = () => {
               onQuickView={handleQuickView}
               onSelectTemplate={handleSelectTemplate}
               onBuy={handleBuy}
+              initialCategory={selectedCategory}
+              initialPage={selectedPage}
+              onCategoryChange={(cat) => {
+                setSelectedCategory(cat);
+                localStorage.setItem('craftedweb_selected_category', cat);
+              }}
+              onPageChange={(p) => {
+                setSelectedPage(p);
+                localStorage.setItem('craftedweb_selected_page', p.toString());
+              }}
             />
           </div>
         );
@@ -159,6 +198,7 @@ const AppLayout: React.FC = () => {
             onQuickView={handleQuickView}
             onSelectTemplate={handleSelectTemplate}
             onBuy={handleBuy}
+            onNavigate={handleNavigate}
           />
         );
 
@@ -196,7 +236,7 @@ const AppLayout: React.FC = () => {
 
       <main>{renderPage()}</main>
 
-      <Footer onNavigate={handleNavigate} />
+      <Footer onNavigate={handleNavigate} onSelectCategory={handleSelectCategory} />
 
       <QuickViewModal
         template={quickViewTemplate}

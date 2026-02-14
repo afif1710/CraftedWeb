@@ -3,9 +3,10 @@ import { Sparkles, Mail, Twitter, Github, Linkedin, ArrowRight, Check } from 'lu
 
 interface FooterProps {
   onNavigate: (page: string) => void;
+  onSelectCategory: (category: string) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -20,16 +21,19 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   const footerLinks = {
     templates: [
-      { label: 'SaaS Templates', id: 'templates' },
-      { label: 'Portfolio Templates', id: 'templates' },
-      { label: 'E-com. Templates', id: 'templates' },
-      { label: 'Landing Pages', id: 'templates' },
-      { label: 'All Templates', id: 'templates' },
+      { label: 'SaaS Templates', id: 'templates', category: 'SaaS' },
+      { label: 'Portfolio Templates', id: 'templates', category: 'Portfolio' },
+      { label: 'E-com. Templates', id: 'templates', category: 'E-commerce' },
+      { label: 'Landing Pages', id: 'templates', category: 'Landing Page' },
+      { label: 'Business Templates', id: 'templates', category: 'Business' },
+      { label: 'Personal Templates', id: 'templates', category: 'Personal' },
+      { label: 'All Templates', id: 'templates', category: 'All' },
     ],
     company: [
       { label: 'About Us', id: 'about' },
       { label: 'How It Works', id: 'how-it-works' },
       { label: 'Contact', id: 'contact' },
+      { label: 'Terms & License', id: 'license' },
     ],
     support: [
       { label: 'Documentation', id: 'how-it-works' },
@@ -98,7 +102,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {footerLinks.templates.map((link, index) => (
                 <li key={index}>
                   <button
-                    onClick={() => onNavigate(link.id)}
+                    onClick={() => {
+                      if ((link as any).category) {
+                        onSelectCategory((link as any).category);
+                      } else {
+                        onNavigate(link.id);
+                      }
+                    }}
                     className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
                   >
                     {link.label}
@@ -166,7 +176,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} TemplateStore. All rights reserved.
+              © {new Date().getFullYear()} CraftedWeb Studio. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <span className="text-sm text-muted-foreground">

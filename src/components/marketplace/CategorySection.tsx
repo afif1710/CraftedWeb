@@ -29,6 +29,13 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onSelectCategory }) =
       color: 'from-emerald-500 to-teal-600'
     },
     {
+      name: 'Landing Page',
+      icon: Rocket,
+      count: 4,
+      description: 'High-converting pages',
+      color: 'from-orange-500 to-red-600'
+    },
+    {
       name: 'Business',
       icon: Building2,
       count: 2,

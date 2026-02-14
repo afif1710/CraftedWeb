@@ -21,10 +21,10 @@ export const templates: Template[] = [
     title: 'TypoFlux',
     slug: 'typoflux',
     price: 79,
-    description: 'A cutting-edge SaaS dashboard template featuring advanced typography and fluid data visualizations.',
-    longDescription: 'TypoFlux is a premium SaaS dashboard explicitly designed for data-heavy applications. It combines advanced typographic hierarchies with fluid animations to create a seamless user experience. Perfect for analytics platforms, CRM systems, and administrative interfaces.',
-    category: 'SaaS',
-    tags: ['React', 'Tailwind', 'Dashboard', 'Typography'],
+    description: 'A kinetic typography studio website with bold motion design and creative agency aesthetics.',
+    longDescription: 'TypoFlux showcases exceptional kinetic typography and motion design. Built for creative studios and motion designers, it features bold headline animations, project showcases, and a dark modern aesthetic that puts your creative work front and center. Perfect for design agencies, motion graphics studios, and creative professionals.',
+    category: 'Portfolio',
+    tags: ['React', 'Tailwind', 'Portfolio', 'Typography', 'Motion Design'],
     demoVideoUrl: 'https://www.youtube.com/embed/4Rpn-H9VO_4?rel=0&modestbranding=1',
     poster: 'src/images/Typoflux1.png',
     screenshots: [
@@ -34,18 +34,18 @@ export const templates: Template[] = [
       'src/images/Typoflux4.png'
     ],
     gumroadUrl: null,
-    features: ['Advanced Typography', 'Data Visualization', 'Fluid Animations', 'Dark Theme Support', 'Responsive Layouts', 'Recharts Integration'],
-    isFeatured: true
+    features: ['Kinetic Typography', 'Project Showcase Grid', 'Smooth Animations', 'Dark Theme', 'Portfolio Sections', 'Sound Toggle'],
+    isFeatured: false
   },
   {
     id: '2',
     title: 'Ocean Themed Portfolio',
     slug: 'ocean-themed-portfolio',
     price: 49,
-    description: 'Serene and deep blue portfolio template perfect for digital artists and marine enthusiasts.',
-    longDescription: 'Dive into creativity with the Ocean Themed Portfolio. Its calming blue palette and wave-like transitions provide a unique backdrop for your work. Ideal for photographers, illustrators, and anyone wanting to showcase their depths.',
+    description: 'Interactive underwater exploration portfolio with immersive 3D navigation and ocean-themed aesthetics.',
+    longDescription: 'Dive into a unique portfolio experience with Ocean Themed Portfolio. Featuring interactive underwater navigation, depth meters, coordinate tracking, and immersive jellyfish animations. Perfect for game developers, 3D artists, interactive designers, and creative professionals seeking a memorable showcase.',
     category: 'Portfolio',
-    tags: ['React', 'Portfolio', 'Blue', 'Creative'],
+    tags: ['React', 'Portfolio', '3D', 'Interactive', 'Gaming'],
     demoVideoUrl: 'https://www.youtube.com/embed/9fh2vovJH5U?rel=0&modestbranding=1',
     poster: 'src/images/OceanPortfolio1.png',
     screenshots: [
@@ -55,18 +55,18 @@ export const templates: Template[] = [
       'src/images/OceanPortfolio4.png'
     ],
     gumroadUrl: null,
-    features: ['Ocean Color Palette', 'Wave Animations', 'Gallery Grid', 'About Me Section', 'Contact Form', 'Mobile Responsive'],
-    isFeatured: true
+    features: ['Interactive 3D Navigation', 'Depth Tracking', 'Coordinate System', 'Underwater Aesthetics', 'Ambient Animations', 'Project Exploration'],
+    isFeatured: false
   },
   {
     id: '3',
     title: 'Nexus Website',
     slug: 'nexus-website',
     price: 99,
-    description: 'A central hub for e-commerce, designed to connect high-tech products with modern consumers.',
-    longDescription: 'Nexus Website is the ultimate connection point for your digital store. Featuring a futuristic design and robust shopping features, it acts as a central hub for all your e-commerce needs. Great for tech stores, gadget shops, and digital downloads.',
-    category: 'E-commerce',
-    tags: ['React', 'E-commerce', 'Tech', 'Futuristic'],
+    description: 'Modern SaaS landing page template with clean design, featuring product showcases and pricing sections.',
+    longDescription: 'Nexus Website delivers a professional SaaS platform presentation. With its futuristic cyan accents, clean layout, and compelling "Build the Future Today" messaging, it\'s perfect for next-generation platforms, collaboration tools, and innovative tech products. Features comprehensive navigation and conversion-focused design.',
+    category: 'Landing Page',
+    tags: ['React', 'SaaS', 'Landing Page', 'Tech', 'Modern'],
     demoVideoUrl: 'https://www.youtube.com/embed/-_WNYEnyyJw?rel=0&modestbranding=1',
     poster: 'src/images/Nexus1.png',
     screenshots: [
@@ -76,18 +76,18 @@ export const templates: Template[] = [
       'src/images/Nexus4.png'
     ],
     gumroadUrl: null,
-    features: ['Central Hub Layout', 'Product Grid', 'Cart System', 'Tech Aesthetic', 'User Accounts', 'Fast Loading'],
-    isFeatured: true
+    features: ['Hero Section', 'Feature Showcase', 'Pricing Section', 'Clean Navigation', 'CTA Buttons', 'Responsive Design'],
+    isFeatured: false
   },
   {
     id: '4',
     title: 'Neon Themed Website',
     slug: 'neon-themed-website',
     price: 39,
-    description: 'Electrifying landing page template with glowing accents and night-mode aesthetics.',
-    longDescription: 'Stand out in the dark with the Neon Themed Website. This template uses vibrant neon colors against a deep black background to create an electrifying effect. Perfect for nightlife events, music promotions, or bold startup launches.',
+    description: 'Stunning neon-chrome landing page with gradient text effects and modern dark aesthetics.',
+    longDescription: 'NeonChrome makes a bold statement with vibrant rainbow gradient text effects against a deep navy background. Featuring animated particles, custom mouse cursor, and glowing neon typography. Ideal for creative agencies, tech startups, music promotions, gaming platforms, and any brand wanting an electrifying first impression.',
     category: 'Landing Page',
-    tags: ['React', 'Landing Page', 'Neon', 'Dark Mode'],
+    tags: ['React', 'Landing Page', 'Neon', 'Gradient', 'Dark Mode'],
     demoVideoUrl: 'https://www.youtube.com/embed/jbKMlXEMOVo?rel=0&modestbranding=1',
     poster: 'src/images/Neon1.png',
     screenshots: [
@@ -97,7 +97,7 @@ export const templates: Template[] = [
       'src/images/Neon4.png'
     ],
     gumroadUrl: null,
-    features: ['Glowing Effects', 'Dark Background', 'High Contrast', 'Animated Sections', 'Event Schedule', 'Ticket Booking'],
+    features: ['Rainbow Gradient Text', 'Particle Effects', 'Custom Cursor', 'Dark Theme', 'Smooth Scrolling', 'Modern Navigation'],
     isFeatured: false
   },
   {
@@ -105,10 +105,10 @@ export const templates: Template[] = [
     title: 'Kinetic Cards',
     slug: 'kinetic-cards',
     price: 69,
-    description: 'Dynamic business template emphasizing motion and interaction through card-based layouts.',
-    longDescription: 'Kinetic Cards brings your business content to life. Using a dynamic card sorting and shuffling system, it presents services and case studies in an interactive way. Ideal for creative agencies, marketing firms, and interactive presentations.',
-    category: 'Business',
-    tags: ['React', 'Business', 'Interactive', 'Motion'],
+    description: 'Motion-first card interface system with fluid animations and interactive UI elements.',
+    longDescription: 'Kinetic Cards revolutionizes UI interaction with cards that morph, reveal, and respond with stunning fluid animations. Built for accessibility and performance, this template showcases features and products with dynamic visual storytelling. Perfect for SaaS platforms, product showcases, interactive portfolios, and innovative web experiences.',
+    category: 'Landing Page',
+    tags: ['React', 'SaaS', 'Interactive', 'Motion', 'UI Kit'],
     demoVideoUrl: 'https://www.youtube.com/embed/yzBFytExlmA?rel=0&modestbranding=1',
     poster: 'src/images/KineticCards1.png',
     screenshots: [
@@ -118,7 +118,7 @@ export const templates: Template[] = [
       'src/images/KineticCards4.png'
     ],
     gumroadUrl: null,
-    features: ['Interactive Cards', 'Motion Effects', 'Service Showcase', 'Team Section', 'Testimonials', 'Contact Forms'],
+    features: ['Morphing Card Animations', 'Fluid Interactions', 'Modern Navigation', 'Feature Showcase', 'Product Grid', 'Case Studies'],
     isFeatured: false
   },
   {
@@ -126,10 +126,10 @@ export const templates: Template[] = [
     title: 'Jungle Themed Portfolio',
     slug: 'jungle-themed-portfolio',
     price: 29,
-    description: 'Lush and vibrant portfolio template inspired by nature and wild aesthetics.',
-    longDescription: 'Unleash your wild side with the Jungle Themed Portfolio. Featuring lush green tones, organic shapes, and a fresh layout, it\'s perfect for nature photographers, environmental activists, or anyone who wants a fresh, organic look.',
-    category: 'Personal',
-    tags: ['React', 'Portfolio', 'Nature', 'Green'],
+    description: 'Immersive 3D jungle exploration game-style portfolio with interactive navigation.',
+    longDescription: 'Experience a unique portfolio presentation with Jungle-themed interactive exploration. Navigate through a 3D forest environment with WASD controls, discover project areas, and explore content in an engaging game-like interface. Perfect for game developers, 3D artists, interactive designers, and creative professionals wanting to stand out.',
+    category: 'Portfolio',
+    tags: ['React', '3D', 'Gaming', 'Interactive', 'WebGL'],
     demoVideoUrl: 'https://www.youtube.com/embed/1MOoFgKQjww?rel=0&modestbranding=1',
     poster: 'src/images/JunglePortfolio1.png',
     screenshots: [
@@ -139,7 +139,7 @@ export const templates: Template[] = [
       'src/images/JunglePortfolio4.png'
     ],
     gumroadUrl: null,
-    features: ['Organic Design', 'Green Color Palette', 'Blog Section', 'Gallery Layout', 'About the Author', 'Social Media Integration'],
+    features: ['3D Environment', 'WASD Navigation', 'Interactive Exploration', 'Game-Style Interface', 'Location Tracking', 'Sound Controls'],
     isFeatured: false
   },
   {
@@ -147,10 +147,10 @@ export const templates: Template[] = [
     title: 'Holo Timeline',
     slug: 'holo-timeline',
     price: 89,
-    description: 'Futuristic SaaS dashboard focused on temporal data and holographic history visualization.',
-    longDescription: 'Holo Timeline reshapes how you view time-based data. With a holographic interface and specialized timeline components, it is ideal for project management tools, history archives, or future-tech dashboards.',
-    category: 'SaaS',
-    tags: ['React', 'Dashboard', 'Timeline', 'Holographic'],
+    description: 'Digital agency website focused on building transformative digital experiences with timeline showcase.',
+    longDescription: 'HoloTimeline showcases your agency\'s work through a compelling narrative. Featuring an award-winning digital agency presentation with emphasis on strategy to execution, stunning digital products, and business results. Includes timeline of success, case studies, and service offerings. Perfect for digital agencies, consultancies, and creative studios.',
+    category: 'Business',
+    tags: ['React', 'Agency', 'Portfolio', 'Business', 'Digital'],
     demoVideoUrl: 'https://www.youtube.com/embed/4n3g2sP-VdQ?rel=0&modestbranding=1',
     poster: 'src/images/Holotimeline1.png',
     screenshots: [
@@ -160,18 +160,18 @@ export const templates: Template[] = [
       'src/images/Holotimeline4.png'
     ],
     gumroadUrl: null,
-    features: ['Holographic UI', 'Timeline Components', 'Gantt Chart View', 'Data Filtering', 'Event Logging', 'Dark Mode'],
-    isFeatured: true
+    features: ['Agency Showcase', 'Case Studies', 'Service Timeline', 'Team Profiles', 'Video Showreel', 'Contact Integration'],
+    isFeatured: false
   },
   {
     id: '8',
     title: 'Gym Agency Website',
     slug: 'gym-agency-website',
     price: 59,
-    description: 'High-energy business template for fitness agencies, gyms, and personal trainers.',
-    longDescription: 'Pump up your online presence with the Gym Agency Website. Designed for fitness professionals, it features energetic layouts, class schedules, trainer profiles, and membership sign-up forms. Get your clients moving!',
+    description: 'Elite fitness training facility website with powerful branding and transformation-focused design.',
+    longDescription: 'FORGE presents a premium fitness facility with elite training positioning. Featuring bold "Forge Your Strongest Self" messaging, trainer profiles, program showcases, transformation stories, and state-of-the-art equipment highlights. Perfect for luxury gyms, personal training studios, CrossFit boxes, and elite fitness facilities.',
     category: 'Business',
-    tags: ['React', 'Business', 'Fitness', 'Gym'],
+    tags: ['React', 'Business', 'Fitness', 'Gym', 'Premium'],
     demoVideoUrl: 'https://www.youtube.com/embed/rRYCpvl7j3k?rel=0&modestbranding=1',
     poster: 'src/images/Gym1.png',
     screenshots: [
@@ -181,7 +181,7 @@ export const templates: Template[] = [
       'src/images/Gym4.png'
     ],
     gumroadUrl: null,
-    features: ['Class Schedules', 'Trainer Profiles', 'Membership Plans', 'BMI Calculator', 'Gallery', 'Contact/Location'],
+    features: ['Bold Hero Section', 'Trainer Showcase', 'Program Details', 'Transformation Gallery', 'Video Story', 'Membership CTA'],
     isFeatured: false
   },
   {
@@ -189,10 +189,10 @@ export const templates: Template[] = [
     title: 'Galaxy Themed Portfolio',
     slug: 'galaxy-themed-portfolio',
     price: 129,
-    description: 'Out-of-this-world portfolio template featuring space aesthetics and starry animations.',
-    longDescription: 'Take your work to the stars with the Galaxy Themed Portfolio. This immersive template uses parallax starry backgrounds, planet motifs, and deep space colors to showcase your projects. Perfect for game designers, sci-fi artists, and dreamers.',
+    description: 'Space-themed interactive portfolio with immersive starfield and launch-style presentation.',
+    longDescription: 'Galactic Atlas offers an extraordinary portfolio experience. Navigate through an interactive space environment with animated starfield, spacecraft silhouettes, and a dramatic "Launch Into Space" CTA. Features customizable portfolio sections titled "Your Name\'s Interactive Portfolio". Perfect for sci-fi artists, game developers, space enthusiasts, and creatives seeking cosmic impact.',
     category: 'Portfolio',
-    tags: ['React', 'Portfolio', 'Space', 'Galaxy'],
+    tags: ['React', 'Portfolio', 'Space', 'Galaxy', 'Interactive'],
     demoVideoUrl: 'https://www.youtube.com/embed/68CVi85fpAY?rel=0&modestbranding=1',
     poster: 'src/images/GalaxyPortfolio1.png',
     screenshots: [
@@ -202,18 +202,18 @@ export const templates: Template[] = [
       'src/images/GalaxyPortfolio4.png'
     ],
     gumroadUrl: null,
-    features: ['Starry Background', 'Parallax Scrolling', 'Project Constellations', 'Cosmic Colors', 'About Mission', 'Contact Station'],
-    isFeatured: true
+    features: ['Animated Starfield', 'Interactive Launch CTA', 'Spacecraft Graphics', 'Cosmic Theme', 'Portfolio Sections', 'Scroll Prompts'],
+    isFeatured: false
   },
   {
     id: '10',
     title: "Chef's Portfolio",
     slug: 'chefs-portfolio',
     price: 19,
-    description: 'Tasteful portfolio template designed for chefs, culinary experts, and food bloggers.',
-    longDescription: 'Serve up a visual feast with Chef\'s Portfolio. This template focuses on high-quality food photography and elegant typography to showcase your culinary creations. Ideal for chefs, recipe developers, and restaurant owners.',
+    description: 'Michelin-starred chef portfolio with elegant food photography and culinary artistry presentation.',
+    longDescription: 'Laurent Dubois presents fine dining excellence through sophisticated web design. Features stunning food photography with bokeh effects, elegant serif typography, "Three Michelin Stars" prestige badge, and sections for creations, press & awards, and products. Perfect for celebrity chefs, Michelin-starred restaurants, culinary artists, and gourmet food businesses.',
     category: 'Personal',
-    tags: ['React', 'Portfolio', 'Food', 'Chef'],
+    tags: ['React', 'Portfolio', 'Food', 'Chef', 'Luxury'],
     demoVideoUrl: 'https://www.youtube.com/embed/mTv88T36tU0?rel=0&modestbranding=1',
     poster: 'src/images/Chef1.png',
     screenshots: [
@@ -223,7 +223,7 @@ export const templates: Template[] = [
       'src/images/Chef4.png'
     ],
     gumroadUrl: null,
-    features: ['Recipe Gallery', 'Menu Display', 'Reservation Form', 'Bio Section', 'Testimonials', 'Social Links'],
+    features: ['Luxury Food Photography', 'Elegant Typography', 'Achievement Badges', 'Creation Gallery', 'Press Section', 'Product Showcase'],
     isFeatured: false
   },
   {
@@ -398,11 +398,11 @@ export const templates: Template[] = [
     id: '19',
     title: 'Restaurant Website',
     slug: 'restaurant-website',
-    price: 29,
-    description: 'A mouth-watering template designed for bistros, cafes, and fine dining establishments.',
-    longDescription: 'Serve up a great first impression with this dedicated Restaurant template. It features a categorized digital menu, an OpenTable reservation integration hook, and a location finder. The aesthetic focuses on high-quality food photography and elegant typography.',
+    price: 49,
+    description: 'Upscale fine dining restaurant website with elegant ambiance and culinary art presentation.',
+    longDescription: 'Maison Lumière embodies fine dining excellence. Features warm candlelit atmosphere, elegant menu presentations, reservation booking, and a sophisticated design that highlights seasonal flavors and timeless techniques. Includes gallery, about section, and contact information. Perfect for upscale restaurants, bistros, fine dining establishments, and culinary experiences.',
     category: 'Business',
-    tags: ['React', 'Restaurant', 'Food', 'Hospitality'],
+    tags: ['React', 'Restaurant', 'Business', 'Food', 'Fine Dining'],
     demoVideoUrl: 'https://www.youtube.com/embed/DbESf56gIBI?rel=0&modestbranding=1',
     poster: 'src/images/Restaurant1.png',
     screenshots: [
@@ -412,7 +412,7 @@ export const templates: Template[] = [
       'src/images/Restaurant4.png'
     ],
     gumroadUrl: null,
-    features: ['Digital Menu', 'Reservation System', 'Photo Gallery', 'Location Map', 'Chef Bio', 'Event Calendar'],
+    features: ['Elegant Design', 'Menu Showcase', 'Reservation System', 'Gallery Section', 'About Restaurant', 'Contact Info'],
     isFeatured: false
   },
   {
@@ -503,11 +503,11 @@ export const templates: Template[] = [
     id: '24',
     title: 'Travel Agency Website',
     slug: 'travel-agency-website',
-    price: 29,
-    description: 'An immersive booking template for travel agencies, tour operators, and tourism boards.',
-    longDescription: 'Take your customers on a journey before they even book. This template features large hero video backgrounds, a powerful destination search engine, and detailed itinerary layouts. It handles tour packages, pricing tiers, and customer reviews seamlessly.',
+    price: 99,
+    description: 'Award-winning luxury travel agency website with elegant search functionality and destination showcases.',
+    longDescription: 'Wanderlust delivers a premium travel booking experience. Features impressive 4.9/5 rating from 2,500+ reviews, multi-city office presence, advanced search with destination/date/guest filters, and compelling statistics (50+ destinations, 15k+ travelers, 98% satisfaction, 14 years experience). Perfect for luxury travel agencies, tour operators, and bespoke travel services.',
     category: 'Business',
-    tags: ['React', 'Travel', 'Booking', 'Tourism'],
+    tags: ['React', 'Business', 'Travel', 'Booking', 'Luxury'],
     demoVideoUrl: 'https://www.youtube.com/embed/035W8A-3Gxg?rel=0&modestbranding=1',
     poster: 'src/images/Travel1.png',
     screenshots: [
@@ -517,18 +517,18 @@ export const templates: Template[] = [
       'src/images/Travel4.png'
     ],
     gumroadUrl: null,
-    features: ['Destination Search', 'Itinerary Timeline', 'Booking Engine', 'Interactive Maps', 'Weather Widget', 'Reviews'],
+    features: ['Advanced Search', 'Destination Gallery', 'Review System', 'Multi-Location', 'Statistics Display', 'Booking CTA'],
     isFeatured: false
   },
   {
     id: '25',
     title: 'Velvet Commerce',
     slug: 'velvet-commerce',
-    price: 29,
-    description: 'A trendy, fashion-forward e-commerce template for clothing brands and boutiques.',
-    longDescription: 'Velvet Commerce is designed to sell style. With a layout that resembles a fashion editorial, it supports lookbooks, size guides, and advanced product filtering. The mobile experience is optimized for swiping and quick add-to-cart actions.',
+    price: 149,
+    description: 'Premium 3D product configurator for luxury furniture with real-time material customization.',
+    longDescription: 'Velvet Commerce revolutionizes online furniture shopping with an interactive 3D product configurator. Features real-time material selection (Burgundy Velvet, fabrics, patterns), adjustable roughness/sheen/tint controls, multiple camera angles, and dynamic lighting presets (Studio Softbox, Warm Sunset, Cool Exhibition). Perfect for luxury furniture stores, interior design shops, custom manufacturing, and premium e-commerce.',
     category: 'E-commerce',
-    tags: ['React', 'Fashion', 'Clothing', 'Retail'],
+    tags: ['React', 'E-commerce', '3D', 'Configurator', 'Luxury'],
     demoVideoUrl: 'https://www.youtube.com/embed/A94wIkKF4OM?rel=0&modestbranding=1',
     poster: 'src/images/Velvet1.png',
     screenshots: [
@@ -538,18 +538,18 @@ export const templates: Template[] = [
       'src/images/Velvet4.png'
     ],
     gumroadUrl: null,
-    features: ['Lookbook Layout', 'Size Guide Modal', 'Product Filtering', 'Quick View', 'Instagram Feed', 'Cart Drawer'],
+    features: ['3D Product Viewer', 'Material Selector', 'Lighting Controls', 'Camera Angles', 'Customization Panel', 'Price Display'],
     isFeatured: false
   },
   {
     id: '26',
     title: 'Wedding Agency Website',
     slug: 'wedding-agency-website',
-    price: 29,
-    description: 'A romantic and organized template for wedding planners and event coordinators.',
-    longDescription: 'Help couples plan their big day with style. This Wedding Agency template includes portfolio galleries for past events, service packages for different budgets, and specific inquiry forms. It uses a soft color palette and elegant fonts to set the romantic mood.',
-    category: 'Business',
-    tags: ['React', 'Wedding', 'Events', 'Planning'],
+    price: 79,
+    description: 'Elegant wedding photography portfolio with romantic storytelling and cinematic presentation.',
+    longDescription: 'Eternal Moments captures love stories with elegance and grace. Features beautiful sunset imagery, romantic tagline "Capturing Love, One Frame at a Time", portfolio gallery, pricing packages, and booking information. Showcases elegant wedding photography and cinematic videography. Perfect for wedding photographers, videographers, event documentation, and romantic services.',
+    category: 'Personal',
+    tags: ['React', 'Portfolio', 'Photography', 'Wedding', 'Events'],
     demoVideoUrl: 'https://www.youtube.com/embed/aSzpXZH0NVM?rel=0&modestbranding=1',
     poster: 'src/images/Wedding1.png',
     screenshots: [
@@ -559,7 +559,7 @@ export const templates: Template[] = [
       'src/images/Wedding4.png'
     ],
     gumroadUrl: null,
-    features: ['Portfolio Gallery', 'Service Tiers', 'Consultation Form', 'Testimonials', 'Vendor List', 'Event Timeline'],
+    features: ['Romantic Design', 'Portfolio Gallery', 'Service Packages', 'Testimonials', 'Booking Form', 'Blog Section'],
     isFeatured: false
   }
 ];

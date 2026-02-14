@@ -12,6 +12,7 @@ interface TemplateDetailProps {
   onQuickView: (template: Template) => void;
   onSelectTemplate: (template: Template) => void;
   onBuy: (template: Template) => void;
+  onNavigate: (page: string) => void;
 }
 
 const TemplateDetail: React.FC<TemplateDetailProps> = ({ 
@@ -19,37 +20,16 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
   onBack,
   onQuickView,
   onSelectTemplate,
-  onBuy
+  onBuy,
+  onNavigate
 }) => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showEmailOption, setShowEmailOption] = useState(false);
 
   const relatedTemplates = templates
     .filter(t => t.id !== template.id && t.category === template.category)
     .slice(0, 3);
 
-  const faqs = [
-    {
-      question: 'What do I get after purchase?',
-      answer: 'You will receive instant access to download the complete source code, including all components, pages, and assets. The package includes documentation and setup instructions.'
-    },
-    {
-      question: 'Can I use this for commercial projects?',
-      answer: 'Yes! Our standard license allows you to use the template for one commercial project. For multiple projects, please check our extended license options.'
-    },
-    {
-      question: 'Do you offer refunds?',
-      answer: 'We offer a 14-day money-back guarantee. If you are not satisfied with your purchase, contact us for a full refund.'
-    },
-    {
-      question: 'How do I get updates?',
-      answer: 'All updates are free for life. You will receive email notifications when updates are available, and you can download them from your Gumroad library.'
-    },
-    {
-      question: 'Do you provide support?',
-      answer: 'Yes, we provide email support for all customers. We typically respond within 24-48 hours on business days.'
-    }
-  ];
+
 
 
 
@@ -70,7 +50,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
           <div className="lg:col-span-3 space-y-8">
             {/* Video */}
             <div>
-              <h2 className="text-lg font-semibold text-foreground mb-4">Demo Video</h2>
+              <h2 className="text-lg font-semibold text-foreground mb-4">Demo Video    <span className="text-primary">(ID # {template.id})</span></h2>
               <VideoEmbedLite
                 videoUrl={template.demoVideoUrl}
                 poster={template.poster}
@@ -116,34 +96,26 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
               </div>
             </div>
 
-            {/* FAQ */}
+            {/* FAQ Link */}
             <div>
               <h2 className="text-lg font-semibold text-foreground mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-3">
-                {faqs.map((faq, index) => (
-                  <div 
-                    key={index}
-                    className="bg-card rounded-xl border border-border overflow-hidden"
-                  >
-                    <button
-                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                      className="w-full flex items-center justify-between p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
-                      aria-expanded={openFaq === index}
-                    >
-                      <span className="font-medium text-foreground">{faq.question}</span>
-                      {openFaq === index ? (
-                        <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                      )}
-                    </button>
-                    {openFaq === index && (
-                      <div className="px-4 pb-4">
-                        <p className="text-muted-foreground">{faq.answer}</p>
-                      </div>
-                    )}
+              <div 
+                className="bg-card rounded-xl border border-primary/20 p-6 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary/40 transition-all cursor-pointer group"
+                onClick={() => onNavigate('faq')}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Mail className="w-5 h-5 text-primary" />
                   </div>
-                ))}
+                  <div>
+                    <h3 className="font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
+                      Have questions about this template?
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Check our comprehensive <span className="text-primary underline decoration-dotted underline-offset-4">FAQ section</span> for details on licensing, support, and updates.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -153,10 +125,14 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
             <div className="sticky top-28 space-y-6">
               {/* Main Card */}
               <div className="bg-card rounded-2xl border border-border p-6 shadow-xl">
-                {/* Category */}
-                <p className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
-                  {template.category}
-                </p>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-xs font-medium text-primary uppercase tracking-wider">
+                    {template.category}
+                  </p>
+                  <span className="text-[10px] font-black text-white tracking-widest bg-gradient-to-r from-primary to-accent px-2.5 py-1 rounded shadow-md shadow-primary/30 border border-white/10">
+                    TEMPLATE ID: #{template.id.padStart(2, '0')}
+                  </span>
+                </div>
 
                 {/* Title */}
                 <h1 className="text-2xl font-bold text-foreground mb-2">
@@ -193,7 +169,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                 </button>
 
                 {/* Alternative Payment */}
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <button
                     onClick={() => setShowEmailOption(!showEmailOption)}
                     className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
@@ -203,7 +179,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                   {showEmailOption && (
                     <div className="mt-3 p-4 bg-muted rounded-xl text-sm">
                       <p className="text-muted-foreground mb-2">
-                        Send an email to <strong className="text-foreground">hello@templatestore.com</strong> with:
+                        Send an email to <strong className="text-foreground">masteraf646@gmail.com</strong> with:
                       </p>
                       <ul className="list-disc list-inside text-muted-foreground space-y-1">
                         <li>Template name: {template.title}</li>
@@ -211,22 +187,22 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                       </ul>
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 {/* Trust Badges */}
                 <div className="mt-6 pt-6 border-t border-border">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Download className="w-4 h-4 text-green-500" />
-                      Instant Download
+                      Get Zip file within a day
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <RefreshCw className="w-4 h-4 text-green-500" />
-                      Lifetime Updates
+                      Free setup guide 
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Shield className="w-4 h-4 text-green-500" />
-                      Secure Payment
+                      Initial bug fixes for 3 days
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Mail className="w-4 h-4 text-green-500" />
@@ -236,21 +212,67 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                 </div>
               </div>
 
-              {/* Testimonial */}
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
-                <p className="text-foreground italic mb-4">
-                  "This template saved me weeks of work. The code quality is exceptional and the design is stunning."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-primary font-semibold">JD</span>
+              {/* Licensing Options */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground">Licensing Options</h3>
+                
+                {/* Standard License */}
+                <div className="bg-card rounded-xl border border-primary/20 p-4 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-2 bg-primary/10 rounded-bl-xl">
+                    <Check className="w-4 h-4 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground text-sm">John Doe</p>
-                    <p className="text-xs text-muted-foreground">Startup Founder</p>
-                  </div>
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    Standard License
+                    <Badge variant="secondary" className="text-xs">
+                      ${template.price}
+                    </Badge>
+                  </h4>
+                  <ul className="mt-3 space-y-2">
+                    {[
+                      "Use for one (1) project",
+                      "Non-exclusive",
+                      "Full customization",
+                      "No resale"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary/50" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Exclusive License */}
+                <div className="bg-card rounded-xl border border-border p-4 relative overflow-hidden group hover:border-accent/50 transition-colors">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    Exclusive License
+                    <Badge variant="outline" className="text-xs border-accent text-accent">
+                     ${template.price * 10}
+                    </Badge>
+                  </h4>
+                  <ul className="mt-3 space-y-2 mb-4">
+                    {[
+                      "Template removed from store",
+                      "Full ownership transfer",
+                      "Custom agreement",
+                      "Contact required"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => onBuy({ ...template, title: `${template.title} (Exclusive License)` })}
+                    className="w-full py-2 px-4 bg-muted text-foreground rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    Contact for Exclusive
+                  </button>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>

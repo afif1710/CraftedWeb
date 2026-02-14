@@ -7,16 +7,36 @@ interface TemplatesPageProps {
   onQuickView: (template: Template) => void;
   onSelectTemplate: (template: Template) => void;
   onBuy: (template: Template) => void;
+  initialCategory?: string;
+  onCategoryChange?: (category: string) => void;
+  initialPage?: number;
+  onPageChange?: (page: number) => void;
 }
 
 const ITEMS_PER_PAGE = 9;
 
-const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemplate, onBuy }) => {
+const TemplatesPage: React.FC<TemplatesPageProps> = ({ 
+  onQuickView, 
+  onSelectTemplate, 
+  onBuy, 
+  initialCategory = 'All',
+  onCategoryChange,
+  initialPage = 1,
+  onPageChange
+}) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
-  const [currentPage, setCurrentPage] = useState(1);
+  
+  React.useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
+
+  React.useEffect(() => {
+    setCurrentPage(initialPage);
+  }, [initialPage]);
 
   const filteredTemplates = useMemo(() => {
     return templates.filter((template) => {
@@ -54,6 +74,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemp
         : [...prev, tag]
     );
     setCurrentPage(1);
+    onPageChange?.(1);
   };
 
   const handleClearFilters = () => {
@@ -62,21 +83,27 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemp
     setSelectedTags([]);
     setPriceRange([0, 200]);
     setCurrentPage(1);
+    onCategoryChange?.('All');
+    onPageChange?.(1);
   };
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     setCurrentPage(1);
+    onCategoryChange?.(category);
+    onPageChange?.(1);
   };
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
     setCurrentPage(1);
+    onPageChange?.(1);
   };
 
   const handlePriceRangeChange = (range: [number, number]) => {
     setPriceRange(range);
     setCurrentPage(1);
+    onPageChange?.(1);
   };
 
   return (
@@ -109,6 +136,60 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemp
           />
         </div>
 
+        {/* Top Pagination */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <button
+              onClick={() => {
+                const newPage = prev => Math.max(1, prev - 1);
+                setCurrentPage(newPage);
+                // Note: since functional update is used, we need the actual value for the callback
+                // But simplified:
+                const val = Math.max(1, currentPage - 1);
+                onPageChange?.(val);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={currentPage === 1}
+              className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
+            >
+              Previous
+            </button>
+            
+            <div className="flex gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => {
+                    setCurrentPage(page);
+                    onPageChange?.(page);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`w-9 h-9 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm ${
+                    currentPage === page
+                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                      : 'bg-card border border-border text-foreground hover:border-primary/50'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => {
+                const val = Math.min(totalPages, currentPage + 1);
+                setCurrentPage(prev => Math.min(totalPages, prev + 1));
+                onPageChange?.(val);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
+            >
+              Next
+            </button>
+          </div>
+        )}
+
         {/* Templates Grid */}
         {paginatedTemplates.length > 0 ? (
           <>
@@ -129,13 +210,18 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemp
               ))}
             </div>
 
-            {/* Pagination */}
+            {/* Bottom Pagination */}
             {totalPages > 1 && (
               <div className="flex items-center justify-center gap-2">
                 <button
-                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  onClick={() => {
+                    const val = Math.max(1, currentPage - 1);
+                    setCurrentPage(prev => Math.max(1, prev - 1));
+                    onPageChange?.(val);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
                 >
                   Previous
                 </button>
@@ -144,10 +230,14 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemp
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
                       key={page}
-                      onClick={() => setCurrentPage(page)}
-                      className={`w-10 h-10 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                      onClick={() => {
+                        setCurrentPage(page);
+                        onPageChange?.(page);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className={`w-9 h-9 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm ${
                         currentPage === page
-                          ? 'bg-primary text-primary-foreground'
+                          ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
                           : 'bg-card border border-border text-foreground hover:border-primary/50'
                       }`}
                     >
@@ -157,9 +247,14 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({ onQuickView, onSelectTemp
                 </div>
 
                 <button
-                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                  onClick={() => {
+                    const val = Math.min(totalPages, currentPage + 1);
+                    setCurrentPage(prev => Math.min(totalPages, prev + 1));
+                    onPageChange?.(val);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
                 >
                   Next
                 </button>
