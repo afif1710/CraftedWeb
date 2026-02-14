@@ -11,6 +11,13 @@ interface TemplatesPageProps {
   onCategoryChange?: (category: string) => void;
   initialPage?: number;
   onPageChange?: (page: number) => void;
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+  selectedTags: string[];
+  onTagToggle: (tag: string) => void;
+  priceRange: [number, number];
+  onPriceRangeChange: (range: [number, number]) => void;
+  onClearFilters: () => void;
 }
 
 const ITEMS_PER_PAGE = 9;
@@ -20,15 +27,19 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
   onSelectTemplate, 
   onBuy, 
   initialCategory = 'All',
-  onCategoryChange,
-  initialPage = 1,
-  onPageChange
+  onCategoryChange, 
+  initialPage = 1, 
+  onPageChange,
+  searchQuery,
+  onSearchChange,
+  selectedTags,
+  onTagToggle,
+  priceRange,
+  onPriceRangeChange,
+  onClearFilters
 }) => {
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [currentPage, setCurrentPage] = useState(initialPage);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
   
   React.useEffect(() => {
     setSelectedCategory(initialCategory);
@@ -68,22 +79,14 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
   );
 
   const handleTagToggle = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
-    );
+    onTagToggle(tag);
     setCurrentPage(1);
     onPageChange?.(1);
   };
 
   const handleClearFilters = () => {
-    setSearchQuery('');
-    setSelectedCategory('All');
-    setSelectedTags([]);
-    setPriceRange([0, 200]);
+    onClearFilters();
     setCurrentPage(1);
-    onCategoryChange?.('All');
     onPageChange?.(1);
   };
 
@@ -95,13 +98,13 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
   };
 
   const handleSearchChange = (query: string) => {
-    setSearchQuery(query);
+    onSearchChange(query);
     setCurrentPage(1);
     onPageChange?.(1);
   };
 
   const handlePriceRangeChange = (range: [number, number]) => {
-    setPriceRange(range);
+    onPriceRangeChange(range);
     setCurrentPage(1);
     onPageChange?.(1);
   };

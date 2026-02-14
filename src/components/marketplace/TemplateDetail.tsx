@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ShoppingCart, Check, ChevronDown, ChevronUp, Mail, Shield, RefreshCw, Download } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Check, ChevronDown, ChevronUp, Mail, Shield, RefreshCw, Download, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Template, templates } from '@/data/templates';
 import { Badge } from '@/components/ui/badge';
 import VideoEmbedLite from './VideoEmbedLite';
@@ -13,15 +13,19 @@ interface TemplateDetailProps {
   onSelectTemplate: (template: Template) => void;
   onBuy: (template: Template) => void;
   onNavigate: (page: string) => void;
+  prevTemplate: Template | null;
+  nextTemplate: Template | null;
 }
 
 const TemplateDetail: React.FC<TemplateDetailProps> = ({ 
   template, 
   onBack,
   onQuickView,
-  onSelectTemplate,
-  onBuy,
-  onNavigate
+  onSelectTemplate, 
+  onBuy, 
+  onNavigate,
+  prevTemplate,
+  nextTemplate
 }) => {
   const [showEmailOption, setShowEmailOption] = useState(false);
 
@@ -36,14 +40,38 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Button */}
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 focus:outline-none focus-visible:underline"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Templates
-        </button>
+        {/* Navigation Header */}
+        <div className="flex items-center justify-between mb-10 relative">
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:underline shrink-0 group/back"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover/back:-translate-x-1 transition-transform" />
+            <span className="hidden sm:inline font-medium">Back to Templates</span>
+            <span className="sm:hidden font-medium">Back</span>
+          </button>
+
+          <div className="flex items-center gap-2 sm:absolute sm:left-1/2 sm:-translate-x-1/2">
+            <button
+              onClick={() => prevTemplate && onSelectTemplate(prevTemplate)}
+              disabled={!prevTemplate}
+              className="flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-xl text-sm font-semibold text-foreground transition-all disabled:opacity-0 disabled:pointer-events-none group/nav hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/5"
+            >
+              <ChevronLeft className="w-4 h-4 group-hover/nav:-translate-x-0.5 transition-transform" />
+              Previous
+            </button>
+            <button
+              onClick={() => nextTemplate && onSelectTemplate(nextTemplate)}
+              disabled={!nextTemplate}
+              className="flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-xl text-sm font-semibold text-foreground transition-all disabled:opacity-0 disabled:pointer-events-none group/nav hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/5"
+            >
+              Next
+              <ChevronRight className="w-4 h-4 group-hover/nav:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
+
+          <div className="w-20 sm:w-32" /> {/* Spacer to maintain layout balance */}
+        </div>
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left Column - Media */}

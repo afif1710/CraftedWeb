@@ -28,7 +28,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
   onClearFilters,
   resultCount
 }) => {
-  const hasActiveFilters = searchQuery || selectedCategory !== 'All' || selectedTags.length > 0 || priceRange[0] > 0 || priceRange[1] < 200;
+  const hasActiveFilters = searchQuery || selectedCategory !== 'All' || selectedTags.length > 0 || priceRange[0] > 0 || priceRange[1] < 1000;
 
   return (
     <div className="space-y-6">
@@ -106,7 +106,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
             <input
               type="number"
               min="0"
-              max="200"
+              max="1000"
               value={priceRange[0]}
               onChange={(e) => onPriceRangeChange([Number(e.target.value), priceRange[1]])}
               className="w-16 px-2 py-1.5 bg-card border border-border rounded-lg text-sm text-center focus:outline-none focus:ring-2 focus:ring-primary/50"
@@ -116,7 +116,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
             <input
               type="number"
               min="0"
-              max="200"
+              max="1000"
               value={priceRange[1]}
               onChange={(e) => onPriceRangeChange([priceRange[0], Number(e.target.value)])}
               className="w-16 px-2 py-1.5 bg-card border border-border rounded-lg text-sm text-center focus:outline-none focus:ring-2 focus:ring-primary/50"

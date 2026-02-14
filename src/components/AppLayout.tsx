@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Template } from "@/data/templates";
+import { Template, templates } from "@/data/templates";
 import Header from "./marketplace/Header";
 import Footer from "./marketplace/Footer";
 import HeroSection from "./marketplace/HeroSection";
@@ -43,6 +43,9 @@ const AppLayout: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<number>(
     () => Number(localStorage.getItem('craftedweb_selected_page')) || 1
   );
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
 
   useEffect(() => {
     if (location.state && (location.state as any).target) {
@@ -135,10 +138,40 @@ const AppLayout: React.FC = () => {
   };
 
   const handleBuy = (template: Template) => {
-    // You might want to use the template info later, e.g. to pre-fill a form
-    console.log("Buying template:", template.title); 
-    setCurrentPage("contact");
+    setSelectedTemplate(template);
+    setIsQuickViewOpen(false);
+    handleNavigate("contact");
   };
+
+  const filteredTemplates = React.useMemo(() => {
+    return templates.filter((template) => {
+      // Category filter
+      const matchesCategory = selectedCategory === 'All' || template.category === selectedCategory;
+
+      // Search filter
+      const searchLower = searchQuery.toLowerCase();
+      const matchesSearch = !searchQuery || 
+        template.title.toLowerCase().includes(searchLower) ||
+        template.description.toLowerCase().includes(searchLower) ||
+        template.tags.some(tag => tag.toLowerCase().includes(searchLower));
+
+      // Tags filter
+      const matchesTags = selectedTags.length === 0 || 
+        selectedTags.some(tag => template.tags.includes(tag));
+
+      // Price filter
+      const matchesPrice = template.price >= priceRange[0] && template.price <= priceRange[1];
+
+      return matchesCategory && matchesSearch && matchesTags && matchesPrice;
+    });
+  }, [selectedCategory, searchQuery, selectedTags, priceRange]);
+
+  const currentIdx = selectedTemplate 
+    ? filteredTemplates.findIndex(t => t.id === selectedTemplate.id) 
+    : -1;
+  const prevTemplate = currentIdx > 0 ? filteredTemplates[currentIdx - 1] : null;
+  const nextTemplate = currentIdx !== -1 && currentIdx < filteredTemplates.length - 1 
+    ? filteredTemplates[currentIdx + 1] : null;
 
   const renderPage = () => {
     switch (currentPage) {
@@ -174,6 +207,16 @@ const AppLayout: React.FC = () => {
               onBuy={handleBuy}
               initialCategory={selectedCategory}
               initialPage={selectedPage}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              selectedTags={selectedTags}
+              onTagToggle={(tag) => {
+                setSelectedTags(prev => 
+                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+                );
+              }}
+              priceRange={priceRange}
+              onPriceRangeChange={setPriceRange}
               onCategoryChange={(cat) => {
                 setSelectedCategory(cat);
                 localStorage.setItem('craftedweb_selected_category', cat);
@@ -181,6 +224,15 @@ const AppLayout: React.FC = () => {
               onPageChange={(p) => {
                 setSelectedPage(p);
                 localStorage.setItem('craftedweb_selected_page', p.toString());
+              }}
+              onClearFilters={() => {
+                setSearchQuery('');
+                setSelectedCategory('All');
+                setSelectedTags([]);
+                setPriceRange([0, 1000]);
+                setSelectedPage(1);
+                localStorage.setItem('craftedweb_selected_category', 'All');
+                localStorage.setItem('craftedweb_selected_page', '1');
               }}
             />
           </div>
@@ -199,6 +251,8 @@ const AppLayout: React.FC = () => {
             onSelectTemplate={handleSelectTemplate}
             onBuy={handleBuy}
             onNavigate={handleNavigate}
+            prevTemplate={prevTemplate}
+            nextTemplate={nextTemplate}
           />
         );
 
@@ -243,6 +297,7 @@ const AppLayout: React.FC = () => {
         isOpen={isQuickViewOpen}
         onClose={handleCloseQuickView}
         onViewDetails={handleViewDetailsFromQuickView}
+        onBuy={handleBuy}
       />
     </div>
   );

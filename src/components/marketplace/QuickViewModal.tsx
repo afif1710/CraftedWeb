@@ -9,13 +9,15 @@ interface QuickViewModalProps {
   isOpen: boolean;
   onClose: () => void;
   onViewDetails: (template: Template) => void;
+  onBuy: (template: Template) => void;
 }
 
 const QuickViewModal: React.FC<QuickViewModalProps> = ({ 
   template, 
   isOpen, 
   onClose,
-  onViewDetails 
+  onViewDetails,
+  onBuy
 }) => {
   if (!isOpen || !template) return null;
 
@@ -26,9 +28,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
   };
 
   const handleBuy = () => {
-    if (template.gumroadUrl) {
-      window.open(template.gumroadUrl, '_blank', 'noopener,noreferrer');
-    }
+    onBuy(template);
   };
 
   return (
@@ -78,11 +78,11 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
 
           {/* Details Section */}
           <div className="p-6 flex flex-col">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-2 pr-10">
               <p className="text-xs font-medium text-primary uppercase tracking-wider">
                 {template.category}
               </p>
-              <span className="text-[10px] font-black text-white tracking-widest bg-gradient-to-r from-primary to-accent px-2.5 py-1 rounded shadow-md shadow-primary/30 border border-white/10">
+              <span className="text-[10px] font-black text-white tracking-widest bg-gradient-to-r from-primary to-accent px-2.5 py-1 rounded shadow-md shadow-primary/30 border border-white/10 shrink-0">
                 #ID: {template.id.padStart(2, '0')}
               </span>
             </div>
@@ -144,12 +144,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
               </button>
             </div>
 
-            {/* Trust Badge */}
-            <div className="mt-4 pt-4 border-t border-border">
-              <p className="text-xs text-muted-foreground text-center">
-                Secure checkout via Gumroad • Instant download • Lifetime updates
-              </p>
-            </div>
+
           </div>
         </div>
       </div>

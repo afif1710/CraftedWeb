@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, MessageSquare, Clock, Send, Check, MapPin, Phone, Copy } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
@@ -57,14 +58,51 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      // Credentials:
+      // template id = template_9ynhhy8
+      // service id = service_4j3kw55
+      // public key = aC2pB2xmli0gnp1tM
+
+      const payload = {
+        service_id: 'service_4j3kw55',
+        template_id: 'template_9ynhhy8',
+        user_id: 'aC2pB2xmli0gnp1tM',
+        template_params: {
+          name: formData.name,
+          from_name: formData.name,
+          email: formData.email,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+      };
+
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        toast.success('Your message has been sent successfully!');
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        const errorData = await response.text();
+        throw new Error(errorData || 'Failed to send');
+      }
+    } catch (error: any) {
+      console.error('Email Error Details:', error);
+      const errorMessage = error?.message || 'Please try again later.';
+      toast.error(`Error: ${errorMessage}`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -104,7 +142,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             <span className="mr-2">✨</span>
             <span className="font-bold text-primary">Kindly Note:</span> Due to the digital nature of our products, we cannot offer refunds once files are downloaded. 
             <br className="sm:hidden" />  
-            Please review our <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Check the FAQ section in 'How it Works' page">FAQ</span>, <button onClick={() => navigate('/license')} className="text-foreground underline decoration-dotted underline-offset-4 cursor-pointer hover:text-primary transition-colors" title="View Terms & License">Terms & License</button> and <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Watch demo videos on template pages">Demo Videos</span> thoroughly before purchasing or Email us if you have any queries. Thank you for understanding! 🙏
+            Please review our <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Check the FAQ section in 'How it Works' page">FAQ</span>, <button onClick={() => navigate('/license')} className="text-foreground underline decoration-dotted underline-offset-4 cursor-pointer hover:text-primary transition-colors" title="View Terms & License">Terms & License</button> and <span className="text-foreground underline decoration-dotted underline-offset-4 cursor-help" title="Watch demo videos on template pages">Demo Videos</span> thoroughly before purchasing. Thank you! 🙏
           </p>
         </div>
       </div>
@@ -115,8 +153,15 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           <h1 className="text-4xl font-bold text-foreground mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a question about our templates? Need help with a purchase? 
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Have a question or looking to purchase? To buy a template, kindly email us at{' '}
+            <a 
+              href="mailto:masteraf646@gmail.com"
+              className="text-primary font-bold underline decoration-primary/30 underline-offset-4 hover:decoration-primary transition-colors"
+            >
+              masteraf646@gmail.com
+            </a>
+            {' '}with the <span className="text-primary font-bold">Template ID</span>, or submit the form below. 
             We're here to help and typically respond within 24-48 hours.
           </p>
         </div>
