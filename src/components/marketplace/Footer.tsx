@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Mail, Twitter, Github, Linkedin, ArrowRight, Check } from 'lucide-react';
+import { Sparkles, Mail, Instagram, Github, Linkedin, ArrowRight, Check } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -48,8 +48,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
   };
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com/afif1710' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-a-710318373/' },
+    // { icon: Github, label: 'GitHub', href: 'https://github.com/afif1710' },
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/whitewo_lf404/' },
+    // { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-a-710318373/' },
   ];
 
   return (
