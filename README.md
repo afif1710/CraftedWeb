@@ -1,234 +1,131 @@
-# CraftedWeb Studio - Premium Website Templates Marketplace
+# CraftedWeb Studio
 
-A fast, highly-responsive Jamstack website that showcases and sells premium website templates. Built with React, Vite, and Tailwind CSS.
+![CraftedWeb Studio Banner](https://d64gsuwffb70l.cloudfront.net/697f345016ddabc5c5663713_1769944230275_19bf04de.jpg)
 
-![CraftedWeb Studio Preview](https://d64gsuwffb70l.cloudfront.net/697f345016ddabc5c5663713_1769944230275_19bf04de.jpg)
+<div align="center">
 
-## Features
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://craftedwebstudio.vercel.app)
 
-- **Premium UI/UX**: Glassmorphism effects, smooth animations, and modern design
-- **Light/Dark Theme**: Toggle between themes with system preference support
-- **Video Demos**: Lazy-loaded YouTube embeds (VideoEmbedLite pattern)
-- **Responsive Design**: Mobile-first approach with breakpoints at 640/768/1024/1280px
-- **SEO Optimized**: Meta tags, semantic HTML, and accessibility features
-- **Fast Performance**: Optimized images, minimal JS, and efficient rendering
-- **Filterable Grid**: Search, category, tag, and price filters
-- **Pagination**: Handles 50-100+ templates without performance issues
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 
-## Tech Stack
+**A premium marketplace for high-quality, responsive website templates built with modern web technologies.**
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS with custom design system
-- **Build Tool**: Vite
-- **Icons**: Lucide React
-- **Hosting**: Vercel (recommended)
-- **Payments**: Gumroad integration
-- **Video**: YouTube (unlisted)
+</div>
 
-## Getting Started
+---
+
+## 📖 Table of Contents
+
+- [About](#-about)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+
+- [Contact](#-contact)
+
+## 🚀 About
+
+**CraftedWeb Studio** is a modern, highly responsive Jamstack application designed to showcase and sell premium website templates. Built with performance and user experience in mind, it features a sleek interface, dynamic filtering, and seamless navigation.
+
+Visit the live site: [craftedwebstudio.vercel.app](https://craftedwebstudio.vercel.app)
+
+## ✨ Features
+
+- **🎨 Premium UI/UX:** Glassmorphism effects, smooth transitions, and a polished design system.
+- **🌓 Dark/Light Mode:** Fully supported theming with system preference detection.
+- **📱 Fully Responsive:** Mobile-first architecture ensuring perfect display on all devices.
+- **🔍 Advanced Filtering:** Filter templates by category, tags, price, and search queries.
+- **⚡ High Performance:** Optimized assets, lazy-loading for images and videos, and minimal bundle size.
+- **🛍️ Marketplace Functionality:**
+  - Detailed template previews
+  - Interactive screenshots and video demos
+  - Direct purchase integration
+  - Contact form with EmailJS integration
+
+## 🛠 Tech Stack
+
+- **Frontend Framework:** [React 18](https://reactjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [Radix UI](https://www.radix-ui.com/) & [Lucide React](https://lucide.dev/)
+- **State Management:** React Hooks & Context
+- **Routing:** React Router v6
+- **Forms:** React Hook Form + Zod validation
+- **Deployment:** Vercel
+
+## 🏁 Getting Started
+
+Follow these instructions to set up the project locally on your machine.
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/craftedweb_studio.git
-cd CraftedWeb Studio
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/craftedweb-studio.git
+   cd craftedweb-studio
+   ```
 
-# Install dependencies
-npm install
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# Start development server
-npm run dev
-```
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-### Build for Production
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-```bash
-npm run build
-npm run preview
-```
-
-## Project Structure
+## 📂 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── marketplace/
-│   │   ├── Header.tsx          # Navigation with theme toggle
-│   │   ├── Footer.tsx          # Multi-column footer with newsletter
-│   │   ├── HeroSection.tsx     # Animated hero with CTAs
-│   │   ├── TemplateCard.tsx    # Product card component
-│   │   ├── TemplatesPage.tsx   # Filterable template grid
-│   │   ├── TemplateDetail.tsx  # Full template page
-│   │   ├── VideoEmbedLite.tsx  # Lazy YouTube embed
-│   │   ├── ScreenshotGallery.tsx # Lightbox gallery
-│   │   ├── QuickViewModal.tsx  # Quick preview modal
-│   │   ├── FilterBar.tsx       # Search and filters
-│   │   ├── DemoReel.tsx        # Featured carousel
-│   │   ├── FeaturedGrid.tsx    # Popular templates grid
-│   │   ├── TestimonialsSection.tsx
-│   │   ├── HowItWorksPage.tsx
-│   │   ├── AboutPage.tsx
-│   │   └── ContactPage.tsx
-│   ├── ui/                     # Reusable UI components
-│   └── AppLayout.tsx           # Main layout with routing
+│   ├── marketplace/    # Core marketplace components (Cards, Filters, Pages)
+│   ├── ui/             # Reusable UI components (Buttons, Inputs, Modals)
+│   └── AppLayout.tsx   # Main application layout
 ├── data/
-│   └── templates.ts            # Template data and types
-└── index.css                   # Global styles and design tokens
+│   └── templates.ts    # Template data source
+├── pages/              # Route pages (Index, License, NotFound)
+├── lib/                # Utilities and helper functions
+└── index.css           # Global styles and Tailwind configuration
 ```
 
-## Adding a New Template
+## 🤝 Contributing
 
-### Step 1: Upload Demo Video to YouTube
+Contributions are welcome! If you'd like to improve this project:
 
-1. Go to [YouTube Studio](https://studio.youtube.com)
-2. Click "Create" → "Upload videos"
-3. Upload your 1-2 minute demo video
-4. Set visibility to **Unlisted** (not Public, not Private)
-5. Copy the video URL (e.g., `https://www.youtube.com/watch?v=VIDEO_ID`)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
-### Step 2: Prepare Images
 
-1. Create a poster image (16:9 aspect ratio, optimized WebP)
-2. Create 3-4 screenshots (16:9 aspect ratio, optimized WebP)
-3. Upload images to your CDN or public folder
 
-### Step 3: Add Template to Data File
+## 📫 Contact
 
-Edit `src/data/templates.ts` and add a new template object:
+**CraftedWeb Studio** - [craftedwebstudio@gmail.com](mailto:craftedwebstudio@gmail.com)
 
-```typescript
-{
-  id: '13',                                    // Unique ID
-  title: 'Your Template Name',                 // Display title
-  slug: 'your-template-name',                  // URL-friendly slug
-  price: 49,                                   // Price in USD
-  description: 'Short description...',         // 1-2 sentences
-  longDescription: 'Detailed description...',  // Full description
-  category: 'SaaS',                            // SaaS | Portfolio | E-commerce | Landing Page | Business | Personal
-  tags: ['React', 'Tailwind', 'Dashboard'],    // Tech stack and features
-  demoVideoUrl: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID',
-  poster: 'https://your-cdn.com/poster.webp',
-  screenshots: [
-    'https://your-cdn.com/screenshot1.webp',
-    'https://your-cdn.com/screenshot2.webp',
-    'https://your-cdn.com/screenshot3.webp',
-    'https://your-cdn.com/screenshot4.webp'
-  ],
-  gumroadUrl: 'https://gumroad.com/l/your-product',  // or null
-  features: [
-    'Feature 1',
-    'Feature 2',
-    'Feature 3',
-    'Feature 4',
-    'Feature 5',
-    'Feature 6'
-  ],
-  isFeatured: false                            // Show in featured section?
-}
-```
-
-### Step 4: Deploy
-
-Push your changes to trigger automatic deployment:
-
-```bash
-git add .
-git commit -m "Add new template: Your Template Name"
-git push
-```
-
-## Template Data Format
-
-| Field             | Type           | Required | Description                                                           |
-| ----------------- | -------------- | -------- | --------------------------------------------------------------------- |
-| `id`              | string         | Yes      | Unique identifier                                                     |
-| `title`           | string         | Yes      | Display name                                                          |
-| `slug`            | string         | Yes      | URL-friendly identifier                                               |
-| `price`           | number         | Yes      | Price in USD                                                          |
-| `description`     | string         | Yes      | Short description (1-2 sentences)                                     |
-| `longDescription` | string         | Yes      | Full description for detail page                                      |
-| `category`        | string         | Yes      | One of: SaaS, Portfolio, E-commerce, Landing Page, Business, Personal |
-| `tags`            | string[]       | Yes      | Array of tags (tech stack, features)                                  |
-| `demoVideoUrl`    | string         | Yes      | YouTube watch URL (unlisted)                                          |
-| `poster`          | string         | Yes      | Poster image URL (WebP, 16:9)                                         |
-| `screenshots`     | string[]       | Yes      | Array of screenshot URLs (3-4 images)                                 |
-| `gumroadUrl`      | string \| null | Yes      | Gumroad product URL or null                                           |
-| `features`        | string[]       | Yes      | Array of feature strings (6 recommended)                              |
-| `isFeatured`      | boolean        | Yes      | Show in featured sections                                             |
-
-## Design System
-
-### Colors
-
-**Light Theme:**
-
-- Primary: Indigo (#6366F1)
-- Accent: Cyan (#06B6D4)
-- Background: Slate-50
-- Foreground: Slate-900
-
-**Dark Theme:**
-
-- Primary: Indigo (#818CF8)
-- Accent: Cyan (#22D3EE)
-- Background: Slate-950
-- Foreground: Slate-100
-
-### Typography
-
-- **Headings**: Sora (Google Fonts)
-- **Body**: Inter (Google Fonts)
-
-### Effects
-
-- Glassmorphism panels with backdrop-blur
-- Layered shadows for depth
-- Smooth entrance animations
-- Hover lift effects on cards
-- Respects `prefers-reduced-motion`
-
-## Performance Optimizations
-
-1. **VideoEmbedLite**: YouTube iframe only loads on click
-2. **Lazy Loading**: Images use `loading="lazy"`
-3. **Preconnect**: YouTube domains preconnected
-4. **Minimal JS**: Most interactions are CSS-based
-5. **Pagination**: Grid shows 9 items per page
-6. **Optimized Images**: WebP format with srcset
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push code to GitHub
-2. Import project in Vercel
-3. Configure build settings (auto-detected)
-4. Deploy
-
-### Environment Variables
-
-No environment variables required for basic setup.
-
-For analytics, add:
-
-- `VITE_GA_ID`: Google Analytics 4 ID
-- `VITE_PLAUSIBLE_DOMAIN`: Plausible domain
-
-## License
-
-MIT License - feel free to use this template for your own projects.
-
-## Support
-
-- Email: hello@templatestore.com
-- Response time: 24-48 hours
-
----
-
-Built with care by TemplateStore
+Project Link: [https://github.com/yourusername/craftedweb-studio](https://github.com/yourusername/craftedweb-studio)
