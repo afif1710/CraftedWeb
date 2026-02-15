@@ -117,7 +117,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     {
       icon: Mail,
       title: 'Email Us',
-      value: 'masteraf646@gmail.com',
+      value: 'craftedwebstudio@gmail.com',
       description: 'For general inquiries and support'
     },
     {
@@ -156,10 +156,10 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have a question or looking to purchase? To buy a template, kindly email us at{' '}
             <a 
-              href="mailto:masteraf646@gmail.com"
+              href="mailto:craftedwebstudio@gmail.com"
               className="text-primary font-bold underline decoration-primary/30 underline-offset-4 hover:decoration-primary transition-colors"
             >
-              masteraf646@gmail.com
+              craftedwebstudio@gmail.com
             </a>
             {' '}with the <span className="text-primary font-bold">Template ID</span>, or submit the form below. 
             We're here to help and typically respond within 24-48 hours.

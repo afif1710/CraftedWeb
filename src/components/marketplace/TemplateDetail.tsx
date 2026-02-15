@@ -207,7 +207,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                   {showEmailOption && (
                     <div className="mt-3 p-4 bg-muted rounded-xl text-sm">
                       <p className="text-muted-foreground mb-2">
-                        Send an email to <strong className="text-foreground">masteraf646@gmail.com</strong> with:
+                        Send an email to <strong className="text-foreground">craftedwebstudio@gmail.com</strong> with:
                       </p>
                       <ul className="list-disc list-inside text-muted-foreground space-y-1">
                         <li>Template name: {template.title}</li>
