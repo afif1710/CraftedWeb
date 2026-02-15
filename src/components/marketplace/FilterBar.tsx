@@ -14,6 +14,8 @@ interface FilterBarProps {
   onPriceRangeChange: (range: [number, number]) => void;
   onClearFilters: () => void;
   resultCount: number;
+  sortBy: string;
+  onSortChange: (sort: string) => void;
 }
 
 const FilterBar: React.FC<FilterBarProps> = ({
@@ -26,9 +28,11 @@ const FilterBar: React.FC<FilterBarProps> = ({
   priceRange,
   onPriceRangeChange,
   onClearFilters,
-  resultCount
+  resultCount,
+  sortBy,
+  onSortChange
 }) => {
-  const hasActiveFilters = searchQuery || selectedCategory !== 'All' || selectedTags.length > 0 || priceRange[0] > 0 || priceRange[1] < 1000;
+  const hasActiveFilters = searchQuery || selectedCategory !== 'All' || selectedTags.length > 0 || priceRange[0] > 0 || priceRange[1] < 1000 || sortBy !== 'default';
 
   return (
     <div className="space-y-6">
@@ -123,6 +127,21 @@ const FilterBar: React.FC<FilterBarProps> = ({
               aria-label="Maximum price"
             />
           </div>
+        </div>
+
+        {/* Sort Dropdown */}
+        <div className="flex items-center gap-3">
+          <span className="text-sm text-muted-foreground whitespace-nowrap">Sort by:</span>
+          <select
+            value={sortBy}
+            onChange={(e) => onSortChange(e.target.value)}
+            className="px-3 py-1.5 bg-card border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          >
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="category">Category</option>
+          </select>
         </div>
       </div>
 

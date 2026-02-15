@@ -40,6 +40,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [currentPage, setCurrentPage] = useState(initialPage);
+  const [sortBy, setSortBy] = useState('default');
   
   React.useEffect(() => {
     setSelectedCategory(initialCategory);
@@ -69,8 +70,20 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
       const matchesPrice = template.price >= priceRange[0] && template.price <= priceRange[1];
 
       return matchesSearch && matchesCategory && matchesTags && matchesPrice;
+    }).sort((a, b) => {
+      if (sortBy === 'price-asc') {
+        return a.price - b.price;
+      }
+      if (sortBy === 'price-desc') {
+        return b.price - a.price;
+      }
+      if (sortBy === 'category') {
+        const categories = ['SaaS', 'Portfolio', 'E-commerce', 'Landing Page', 'Business', 'Personal'];
+        return categories.indexOf(a.category) - categories.indexOf(b.category);
+      }
+      return 0;
     });
-  }, [searchQuery, selectedCategory, selectedTags, priceRange]);
+  }, [searchQuery, selectedCategory, selectedTags, priceRange, sortBy]);
 
   const totalPages = Math.ceil(filteredTemplates.length / ITEMS_PER_PAGE);
   const paginatedTemplates = filteredTemplates.slice(
@@ -86,6 +99,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
 
   const handleClearFilters = () => {
     onClearFilters();
+    setSortBy('default');
     setCurrentPage(1);
     onPageChange?.(1);
   };
@@ -136,6 +150,8 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
             onPriceRangeChange={handlePriceRangeChange}
             onClearFilters={handleClearFilters}
             resultCount={filteredTemplates.length}
+            sortBy={sortBy}
+            onSortChange={setSortBy}
           />
         </div>
 

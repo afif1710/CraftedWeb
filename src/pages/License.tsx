@@ -90,7 +90,7 @@ const License: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-foreground">Exclusive License</h2>
-                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">Custom Agreement</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">Agreement</span>
               </div>
               
               <div className="bg-gradient-to-br from-card to-accent/5 rounded-2xl border border-accent/20 p-8">
@@ -98,8 +98,7 @@ const License: React.FC = () => {
                   {[
                     "Template removed from marketplace",
                     "Full commercial ownership transferred",
-                    "Custom agreement signed",
-                    "Pricing starts at $800",
+                    "Pricing starts at $149",
                     "Contact required before purchase"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
