@@ -26,12 +26,12 @@ export const templates: Template[] = [
     category: 'SaaS',
     tags: ['React', 'Tailwind', 'Portfolio', 'Typography', 'Motion Design'],
     demoVideoUrl: 'https://www.youtube.com/embed/4Rpn-H9VO_4?rel=0&modestbranding=1',
-    poster: 'src/images/Typoflux1.png',
+    poster: '/images/Typoflux1.png',
     screenshots: [
-      'src/images/Typoflux1.png',
-      'src/images/Typoflux2.png',
-      'src/images/Typoflux3.png',
-      'src/images/Typoflux4.png'
+      '/images/Typoflux1.png',
+      '/images/Typoflux2.png',
+      '/images/Typoflux3.png',
+      '/images/Typoflux4.png'
     ],
     gumroadUrl: null,
     features: ['Kinetic Typography', 'Project Showcase Grid', 'Smooth Animations', 'Dark Theme', 'Portfolio Sections', 'Sound Toggle'],
@@ -44,15 +44,15 @@ export const templates: Template[] = [
     price: 149,
     description: 'Interactive underwater exploration portfolio with immersive 3D navigation and ocean-themed aesthetics.',
     longDescription: 'Dive into a unique portfolio experience with Ocean Themed Portfolio. Featuring interactive underwater navigation, depth meters, coordinate tracking, and immersive jellyfish animations. Perfect for game developers, 3D artists, interactive designers, and creative professionals seeking a memorable showcase.',
-    category: 'Portfolio', 
+    category: 'Portfolio',
     tags: ['React', 'Portfolio', '3D', 'Interactive', 'Gaming'],
     demoVideoUrl: 'https://www.youtube.com/embed/9fh2vovJH5U?rel=0&modestbranding=1',
-    poster: 'src/images/OceanPortfolio3.png',
+    poster: '/images/OceanPortfolio3.png',
     screenshots: [
-      'src/images/OceanPortfolio1.png',
-      'src/images/OceanPortfolio2.png',
-      'src/images/OceanPortfolio3.png',
-      'src/images/OceanPortfolio4.png'
+      '/images/OceanPortfolio1.png',
+      '/images/OceanPortfolio2.png',
+      '/images/OceanPortfolio3.png',
+      '/images/OceanPortfolio4.png'
     ],
     gumroadUrl: null,
     features: ['Interactive 3D Navigation', 'Depth Tracking', 'Coordinate System', 'Underwater Aesthetics', 'Ambient Animations', 'Project Exploration'],
@@ -68,12 +68,12 @@ export const templates: Template[] = [
     category: 'Landing Page',
     tags: ['React', 'SaaS', 'Landing Page', 'Tech', 'Modern'],
     demoVideoUrl: 'https://www.youtube.com/embed/-_WNYEnyyJw?rel=0&modestbranding=1',
-    poster: 'src/images/Nexus1.png',
+    poster: '/images/Nexus1.png',
     screenshots: [
-      'src/images/Nexus1.png',
-      'src/images/Nexus2.png',
-      'src/images/Nexus3.png',
-      'src/images/Nexus4.png'
+      '/images/Nexus1.png',
+      '/images/Nexus2.png',
+      '/images/Nexus3.png',
+      '/images/Nexus4.png'
     ],
     gumroadUrl: null,
     features: ['Hero Section', 'Feature Showcase', 'Pricing Section', 'Clean Navigation', 'CTA Buttons', 'Responsive Design'],
@@ -89,12 +89,12 @@ export const templates: Template[] = [
     category: 'Landing Page',
     tags: ['React', 'Landing Page', 'Neon', 'Gradient', 'Dark Mode'],
     demoVideoUrl: 'https://www.youtube.com/embed/jbKMlXEMOVo?rel=0&modestbranding=1',
-    poster: 'src/images/Neon1.png',
+    poster: '/images/Neon1.png',
     screenshots: [
-      'src/images/Neon1.png',
-      'src/images/Neon2.png',
-      'src/images/Neon3.png',
-      'src/images/Neon4.png'
+      '/images/Neon1.png',
+      '/images/Neon2.png',
+      '/images/Neon3.png',
+      '/images/Neon4.png'
     ],
     gumroadUrl: null,
     features: ['Rainbow Gradient Text', 'Particle Effects', 'Custom Cursor', 'Dark Theme', 'Smooth Scrolling', 'Modern Navigation'],
@@ -110,12 +110,12 @@ export const templates: Template[] = [
     category: 'Landing Page',
     tags: ['React', 'SaaS', 'Interactive', 'Motion', 'UI Kit'],
     demoVideoUrl: 'https://www.youtube.com/embed/yzBFytExlmA?rel=0&modestbranding=1',
-    poster: 'src/images/KineticCards1.png',
+    poster: '/images/KineticCards1.png',
     screenshots: [
-      'src/images/KineticCards1.png',
-      'src/images/KineticCards2.png',
-      'src/images/KineticCards3.png',
-      'src/images/KineticCards4.png'
+      '/images/KineticCards1.png',
+      '/images/KineticCards2.png',
+      '/images/KineticCards3.png',
+      '/images/KineticCards4.png'
     ],
     gumroadUrl: null,
     features: ['Morphing Card Animations', 'Fluid Interactions', 'Modern Navigation', 'Feature Showcase', 'Product Grid', 'Case Studies'],
@@ -131,12 +131,12 @@ export const templates: Template[] = [
     category: 'Portfolio',
     tags: ['React', '3D', 'Gaming', 'Interactive', 'WebGL'],
     demoVideoUrl: 'https://www.youtube.com/embed/1MOoFgKQjww?rel=0&modestbranding=1',
-    poster: 'src/images/JunglePortfolio1.png',
+    poster: '/images/JunglePortfolio1.png',
     screenshots: [
-      'src/images/JunglePortfolio1.png',
-      'src/images/JunglePortfolio2.png',
-      'src/images/JunglePortfolio3.png',
-      'src/images/JunglePortfolio4.png'
+      '/images/JunglePortfolio1.png',
+      '/images/JunglePortfolio2.png',
+      '/images/JunglePortfolio3.png',
+      '/images/JunglePortfolio4.png'
     ],
     gumroadUrl: null,
     features: ['3D Environment', 'WASD Navigation', 'Interactive Exploration', 'Game-Style Interface', 'Location Tracking', 'Sound Controls'],
@@ -152,12 +152,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Agency', 'Portfolio', 'Business', 'Digital'],
     demoVideoUrl: 'https://www.youtube.com/embed/4n3g2sP-VdQ?rel=0&modestbranding=1',
-    poster: 'src/images/Holotimeline1.png',
+    poster: '/images/Holotimeline1.png',
     screenshots: [
-      'src/images/Holotimeline1.png',
-      'src/images/Holotimeline2.png',
-      'src/images/Holotimeline3.png',
-      'src/images/Holotimeline4.png'
+      '/images/Holotimeline1.png',
+      '/images/Holotimeline2.png',
+      '/images/Holotimeline3.png',
+      '/images/Holotimeline4.png'
     ],
     gumroadUrl: null,
     features: ['Agency Showcase', 'Case Studies', 'Service Timeline', 'Team Profiles', 'Video Showreel', 'Contact Integration'],
@@ -173,12 +173,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Business', 'Fitness', 'Gym', 'Premium'],
     demoVideoUrl: 'https://www.youtube.com/embed/rRYCpvl7j3k?rel=0&modestbranding=1',
-    poster: 'src/images/Gym1.png',
+    poster: '/images/Gym1.png',
     screenshots: [
-      'src/images/Gym1.png',
-      'src/images/Gym2.png',
-      'src/images/Gym3.png',
-      'src/images/Gym4.png'
+      '/images/Gym1.png',
+      '/images/Gym2.png',
+      '/images/Gym3.png',
+      '/images/Gym4.png'
     ],
     gumroadUrl: null,
     features: ['Bold Hero Section', 'Trainer Showcase', 'Program Details', 'Transformation Gallery', 'Video Story', 'Membership CTA'],
@@ -194,12 +194,12 @@ export const templates: Template[] = [
     category: 'Portfolio',
     tags: ['React', 'Portfolio', 'Space', 'Galaxy', 'Interactive'],
     demoVideoUrl: 'https://www.youtube.com/embed/68CVi85fpAY?rel=0&modestbranding=1',
-    poster: 'src/images/GalaxyPortfolio1.png',
+    poster: '/images/GalaxyPortfolio1.png',
     screenshots: [
-      'src/images/GalaxyPortfolio1.png',
-      'src/images/GalaxyPortfolio2.png',
-      'src/images/GalaxyPortfolio3.png',
-      'src/images/GalaxyPortfolio4.png'
+      '/images/GalaxyPortfolio1.png',
+      '/images/GalaxyPortfolio2.png',
+      '/images/GalaxyPortfolio3.png',
+      '/images/GalaxyPortfolio4.png'
     ],
     gumroadUrl: null,
     features: ['Animated Starfield', 'Interactive Launch CTA', 'Spacecraft Graphics', 'Cosmic Theme', 'Portfolio Sections', 'Scroll Prompts'],
@@ -215,12 +215,12 @@ export const templates: Template[] = [
     category: 'Personal',
     tags: ['React', 'Portfolio', 'Food', 'Chef', 'Luxury'],
     demoVideoUrl: 'https://www.youtube.com/embed/mTv88T36tU0?rel=0&modestbranding=1',
-    poster: 'src/images/Chef1.png',
+    poster: '/images/Chef1.png',
     screenshots: [
-      'src/images/Chef1.png',
-      'src/images/Chef2.png',
-      'src/images/Chef3.png',
-      'src/images/Chef4.png'
+      '/images/Chef1.png',
+      '/images/Chef2.png',
+      '/images/Chef3.png',
+      '/images/Chef4.png'
     ],
     gumroadUrl: null,
     features: ['Luxury Food Photography', 'Elegant Typography', 'Achievement Badges', 'Creation Gallery', 'Press Section', 'Product Showcase'],
@@ -236,12 +236,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Business', 'Corporate', 'Professional'],
     demoVideoUrl: 'https://www.youtube.com/embed/tO0M3U4wEbc?rel=0&modestbranding=1',
-    poster: 'src/images/Cascade1.png',
+    poster: '/images/Cascade1.png',
     screenshots: [
-      'src/images/Cascade1.png',
-      'src/images/Cascade2.png',
-      'src/images/Cascade3.png',
-      'src/images/Cascade4.png'
+      '/images/Cascade1.png',
+      '/images/Cascade2.png',
+      '/images/Cascade3.png',
+      '/images/Cascade4.png'
     ],
     gumroadUrl: null,
     features: ['Cascading Layout', 'Service Showcase', 'Team Profiles', 'Client Logos', 'Case Studies', 'Contact Info'],
@@ -257,12 +257,12 @@ export const templates: Template[] = [
     category: 'Landing Page',
     tags: ['React', 'Landing Page', 'Architecture', 'Construction'],
     demoVideoUrl: 'https://www.youtube.com/embed/cGe36VqawNQ?rel=0&modestbranding=1',
-    poster: 'src/images/Blueprint1.png',
+    poster: '/images/Blueprint1.png',
     screenshots: [
-      'src/images/Blueprint1.png',
-      'src/images/Blueprint2.png',
-      'src/images/Blueprint3.png',
-      'src/images/Blueprint4.png'
+      '/images/Blueprint1.png',
+      '/images/Blueprint2.png',
+      '/images/Blueprint3.png',
+      '/images/Blueprint4.png'
     ],
     gumroadUrl: null,
     features: ['Grid Layout', 'Blueprints Aesthetic', 'Project Timeline', 'Team Grid', 'Quote Request', 'Mobile Friendly'],
@@ -278,12 +278,12 @@ export const templates: Template[] = [
     category: 'Landing Page',
     tags: ['React', 'Landing Page', 'Colorful', 'Aurora'],
     demoVideoUrl: 'https://www.youtube.com/embed/7bP5PsICXBY?rel=0&modestbranding=1',
-    poster: 'src/images/Aurora1.png',
+    poster: '/images/Aurora1.png',
     screenshots: [
-      'src/images/Aurora1.png',
-      'src/images/Aurora2.png',
-      'src/images/Aurora3.png',
-      'src/images/Aurora4.png'
+      '/images/Aurora1.png',
+      '/images/Aurora2.png',
+      '/images/Aurora3.png',
+      '/images/Aurora4.png'
     ],
     gumroadUrl: null,
     features: ['Gradient Backgrounds', 'Smooth Transitions', 'Feature Highlights', 'Newsletter Signup', 'Responsive', 'Modern UI'],
@@ -299,12 +299,12 @@ export const templates: Template[] = [
     category: 'Landing Page',
     tags: ['React', 'Landing Page', 'Wellness', 'Organic'],
     demoVideoUrl: 'https://www.youtube.com/embed/4yvElG9buvg?rel=0&modestbranding=1',
-    poster: 'src/images/AuraBloom1.png',
+    poster: '/images/AuraBloom1.png',
     screenshots: [
-      'src/images/AuraBloom1.png',
-      'src/images/AuraBloom2.png',
-      'src/images/AuraBloom3.png',
-      'src/images/AuraBloom4.png'
+      '/images/AuraBloom1.png',
+      '/images/AuraBloom2.png',
+      '/images/AuraBloom3.png',
+      '/images/AuraBloom4.png'
     ],
     gumroadUrl: null,
     features: ['Soft Colors', 'Bloom Animations', 'Testimonials', 'Product Showcase', 'FAQ Section', 'Contact'],
@@ -320,12 +320,12 @@ export const templates: Template[] = [
     category: 'E-commerce',
     tags: ['React', 'Portfolio', 'Artisan', 'Craft'],
     demoVideoUrl: 'https://www.youtube.com/embed/Yarh7R1JTeQ?rel=0&modestbranding=1',
-    poster: 'src/images/Atelier1.png',
+    poster: '/images/Atelier1.png',
     screenshots: [
-      'src/images/Atelier1.png',
-      'src/images/Atelier2.png',
-      'src/images/Atelier3.png',
-      'src/images/Atelier4.png'
+      '/images/Atelier1.png',
+      '/images/Atelier2.png',
+      '/images/Atelier3.png',
+      '/images/Atelier4.png'
     ],
     gumroadUrl: null,
     features: ['Gallery Grid', 'Detail Zoom', 'Artist Bio', 'Process Section', 'Shop Links', 'Contact'],
@@ -341,12 +341,12 @@ export const templates: Template[] = [
     category: 'E-commerce',
     tags: ['React', 'E-commerce', 'Boutique', 'Handmade'],
     demoVideoUrl: 'https://www.youtube.com/embed/qu_f3sqE3-I?rel=0&modestbranding=1',
-    poster: 'src/images/ArtisanTote1.png',
+    poster: '/images/ArtisanTote1.png',
     screenshots: [
-      'src/images/ArtisanTote1.png',
-      'src/images/ArtisanTote2.png',
-      'src/images/ArtisanTote3.png',
-      'src/images/ArtisanTote4.png'
+      '/images/ArtisanTote1.png',
+      '/images/ArtisanTote2.png',
+      '/images/ArtisanTote3.png',
+      '/images/ArtisanTote4.png'
     ],
     gumroadUrl: null,
     features: ['Single Product Focus', 'Storytelling Layout', 'Cart', 'Image Zoom', 'Specs Section', 'Simple Checkout'],
@@ -362,12 +362,12 @@ export const templates: Template[] = [
     category: 'SaaS',
     tags: ['React', 'Photography', 'Studio', 'Creative'],
     demoVideoUrl: 'https://www.youtube.com/embed/jrxGGBneAw4?rel=0&modestbranding=1',
-    poster: 'src/images/PrismLight1.png',
+    poster: '/images/PrismLight1.png',
     screenshots: [
-      'src/images/PrismLight1.png',
-      'src/images/PrismLight2.png',
-      'src/images/PrismLight3.png',
-      'src/images/PrismLight4.png'
+      '/images/PrismLight1.png',
+      '/images/PrismLight2.png',
+      '/images/PrismLight3.png',
+      '/images/PrismLight4.png'
     ],
     gumroadUrl: null,
     features: ['Masonry Gallery', 'Lightbox Support', 'Service Packages', 'Booking Form', 'Dark Mode', 'Responsive Grid'],
@@ -383,12 +383,12 @@ export const templates: Template[] = [
     category: 'SaaS',
     tags: ['React', 'SaaS', 'Corporate', 'Startup'],
     demoVideoUrl: 'https://www.youtube.com/embed/MDuIKTb3SQo?rel=0&modestbranding=1',
-    poster: 'src/images/Prism1.png',
+    poster: '/images/Prism1.png',
     screenshots: [
-      'src/images/Prism1.png',
-      'src/images/Prism2.png',
-      'src/images/Prism3.png',
-      'src/images/Prism4.png'
+      '/images/Prism1.png',
+      '/images/Prism2.png',
+      '/images/Prism3.png',
+      '/images/Prism4.png'
     ],
     gumroadUrl: null,
     features: ['Pricing Tables', 'Feature Grid', 'Testimonials Carousel', 'Contact Form', 'Blog Layout', 'SEO Optimized'],
@@ -404,12 +404,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Restaurant', 'Business', 'Food', 'Fine Dining'],
     demoVideoUrl: 'https://www.youtube.com/embed/DbESf56gIBI?rel=0&modestbranding=1',
-    poster: 'src/images/Restaurant1.png',
+    poster: '/images/Restaurant1.png',
     screenshots: [
-      'src/images/Restaurant1.png',
-      'src/images/Restaurant2.png',
-      'src/images/Restaurant3.png',
-      'src/images/Restaurant4.png'
+      '/images/Restaurant1.png',
+      '/images/Restaurant2.png',
+      '/images/Restaurant3.png',
+      '/images/Restaurant4.png'
     ],
     gumroadUrl: null,
     features: ['Elegant Design', 'Menu Showcase', 'Reservation System', 'Gallery Section', 'About Restaurant', 'Contact Info'],
@@ -425,12 +425,12 @@ export const templates: Template[] = [
     category: 'SaaS',
     tags: ['React', 'Dashboard', 'Admin', 'UI Kit'],
     demoVideoUrl: 'https://www.youtube.com/embed/mIEMKgZpWl0?rel=0&modestbranding=1',
-    poster: 'src/images/SoftUI1.png',
+    poster: '/images/SoftUI1.png',
     screenshots: [
-      'src/images/SoftUI1.png',
-      'src/images/SoftUI2.png',
-      'src/images/SoftUI3.png',
-      'src/images/SoftUI4.png'
+      '/images/SoftUI1.png',
+      '/images/SoftUI2.png',
+      '/images/SoftUI3.png',
+      '/images/SoftUI4.png'
     ],
     gumroadUrl: null,
     features: ['Neumorphic Design', 'Analytics Charts', 'User Tables', 'Notification System', 'Profile Settings', 'Auth Pages'],
@@ -446,12 +446,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Agency', 'Creative', 'Business'],
     demoVideoUrl: 'https://www.youtube.com/embed/88K7qy6z560?rel=0&modestbranding=1',
-    poster: 'src/images/Spectra1.png',
+    poster: '/images/Spectra1.png',
     screenshots: [
-      'src/images/Spectra1.png',
-      'src/images/Spectra2.png',
-      'src/images/Spectra3.png',
-      'src/images/Spectra4.png'
+      '/images/Spectra1.png',
+      '/images/Spectra2.png',
+      '/images/Spectra3.png',
+      '/images/Spectra4.png'
     ],
     gumroadUrl: null,
     features: ['Case Studies', 'Animated Hero', 'Team Section', 'Client Logo Grid', 'Contact Form', 'Smooth Scroll'],
@@ -467,12 +467,12 @@ export const templates: Template[] = [
     category: 'Personal',
     tags: ['React', 'Blog', 'Editorial', 'Minimal'],
     demoVideoUrl: 'https://www.youtube.com/embed/nlzX0zs2Gf8?rel=0&modestbranding=1',
-    poster: 'src/images/StoryCanvas1.png',
+    poster: '/images/StoryCanvas1.png',
     screenshots: [
-      'src/images/StoryCanvas1.png',
-      'src/images/StoryCanvas2.png',
-      'src/images/StoryCanvas3.png',
-      'src/images/StoryCanvas4.png'
+      '/images/StoryCanvas1.png',
+      '/images/StoryCanvas2.png',
+      '/images/StoryCanvas3.png',
+      '/images/StoryCanvas4.png'
     ],
     gumroadUrl: null,
     features: ['Clean Typography', 'Author Bio', 'Reading Time', 'Newsletter Signup', 'Category Tags', 'Related Posts'],
@@ -488,12 +488,12 @@ export const templates: Template[] = [
     category: 'E-commerce',
     tags: ['React', 'Luxury', 'Fashion', 'Jewelry'],
     demoVideoUrl: 'https://www.youtube.com/embed/GdzSt0nuE_c?rel=0&modestbranding=1',
-    poster: 'src/images/TimelessElegance1.png',
+    poster: '/images/TimelessElegance1.png',
     screenshots: [
-      'src/images/TimelessElegance1.png',
-      'src/images/TimelessElegance2.png',
-      'src/images/TimelessElegance3.png',
-      'src/images/TimelessElegance4.png'
+      '/images/TimelessElegance1.png',
+      '/images/TimelessElegance2.png',
+      '/images/TimelessElegance3.png',
+      '/images/TimelessElegance4.png'
     ],
     gumroadUrl: null,
     features: ['High-Res Zoom', 'Wishlist', 'Request Price', 'Elegant Layout', 'Brand Story', 'Cart Sidebar'],
@@ -509,12 +509,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Business', 'Travel', 'Booking', 'Luxury'],
     demoVideoUrl: 'https://www.youtube.com/embed/035W8A-3Gxg?rel=0&modestbranding=1',
-    poster: 'src/images/Travel1.png',
+    poster: '/images/Travel1.png',
     screenshots: [
-      'src/images/Travel1.png',
-      'src/images/Travel2.png',
-      'src/images/Travel3.png',
-      'src/images/Travel4.png'
+      '/images/Travel1.png',
+      '/images/Travel2.png',
+      '/images/Travel3.png',
+      '/images/Travel4.png'
     ],
     gumroadUrl: null,
     features: ['Advanced Search', 'Destination Gallery', 'Review System', 'Multi-Location', 'Statistics Display', 'Booking CTA'],
@@ -530,12 +530,12 @@ export const templates: Template[] = [
     category: 'E-commerce',
     tags: ['React', 'E-commerce', '3D', 'Configurator', 'Luxury'],
     demoVideoUrl: 'https://www.youtube.com/embed/A94wIkKF4OM?rel=0&modestbranding=1',
-    poster: 'src/images/Velvet1.png',
+    poster: '/images/Velvet1.png',
     screenshots: [
-      'src/images/Velvet1.png',
-      'src/images/Velvet2.png',
-      'src/images/Velvet3.png',
-      'src/images/Velvet4.png'
+      '/images/Velvet1.png',
+      '/images/Velvet2.png',
+      '/images/Velvet3.png',
+      '/images/Velvet4.png'
     ],
     gumroadUrl: null,
     features: ['3D Product Viewer', 'Material Selector', 'Lighting Controls', 'Camera Angles', 'Customization Panel', 'Price Display'],
@@ -551,12 +551,12 @@ export const templates: Template[] = [
     category: 'Business',
     tags: ['React', 'Portfolio', 'Photography', 'Wedding', 'Events'],
     demoVideoUrl: 'https://www.youtube.com/embed/aSzpXZH0NVM?rel=0&modestbranding=1',
-    poster: 'src/images/Wedding1.png',
+    poster: '/images/Wedding1.png',
     screenshots: [
-      'src/images/Wedding1.png',
-      'src/images/Wedding2.png',
-      'src/images/Wedding3.png',
-      'src/images/Wedding4.png'
+      '/images/Wedding1.png',
+      '/images/Wedding2.png',
+      '/images/Wedding3.png',
+      '/images/Wedding4.png'
     ],
     gumroadUrl: null,
     features: ['Romantic Design', 'Portfolio Gallery', 'Service Packages', 'Testimonials', 'Booking Form', 'Blog Section'],
