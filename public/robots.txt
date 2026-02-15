@@ -1,9 +1,9 @@
-# robots.txt for TemplateStore
+# robots.txt for CraftedWeb Studio
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://templatestore.com/sitemap.xml
+Sitemap: https://craftedwebstudio.vercel.app/sitemap.xml
 
 # Disallow admin and private paths
 Disallow: /api/

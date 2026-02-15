@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+import SEO from "@/components/SEO";
+
 const NotFound = () => {
   const location = useLocation();
 
@@ -13,6 +15,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
+      <SEO 
+        title="404 - Page Not Found — CraftedWeb Studio" 
+        description="The page you are looking for does not exist. Return to CraftedWeb Studio to browse premium React and Tailwind CSS website templates."
+        robots="noindex, nofollow"
+      />
       <div className="text-center p-8 rounded-lg border border-border bg-card shadow-md animate-slide-in">
         <h1 className="text-5xl font-bold mb-6 text-primary">404</h1>
         <p className="text-xl text-card-foreground mb-6">Page not found</p>

@@ -25,10 +25,16 @@ type Page =
   | "about"
   | "contact";
 
-const AppLayout: React.FC = () => {
+import SEO from "./SEO";
+
+interface AppLayoutProps {
+  initialPage?: Page;
+}
+
+const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<Page>(initialPage || "home");
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
     null,
   );
@@ -48,11 +54,14 @@ const AppLayout: React.FC = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
 
   useEffect(() => {
+    if (initialPage) {
+      setCurrentPage(initialPage);
+    }
+  }, [initialPage]);
+
+  useEffect(() => {
     if (location.state && (location.state as any).target) {
       setCurrentPage((location.state as any).target);
-      // clear state to prevent re-navigation on refresh? 
-      // Actually navigate replace might be better, but this simple check works for now.
-      // Better to clear it so it doesn't stick
       navigate(location.pathname, { replace: true, state: {} });
     }
   }, [location, navigate]);
@@ -85,9 +94,13 @@ const AppLayout: React.FC = () => {
 
   const handleNavigate = (page: string) => {
     if (page === 'faq') {
-      setCurrentPage('how-it-works');
-      setScrollToId('faq');
-      return;
+       navigate('/how-it-works');
+       // We need to handle scroll separately or use hash
+       // For now, let's just navigate to how-it-works where FAQ is
+       // Or if we want to mimic previous behavior:
+       setCurrentPage('how-it-works');
+       setScrollToId('faq');
+       return;
     }
 
     if (page === 'license') {
@@ -95,9 +108,35 @@ const AppLayout: React.FC = () => {
       return;
     }
 
+    if (page === 'home') {
+      navigate('/');
+      return;
+    }
+    
+    if (page === 'templates') {
+      navigate('/templates');
+      return;
+    }
+
+    if (page === 'contact') {
+      navigate('/contact');
+      return;
+    }
+
+    if (page === 'about') {
+      navigate('/about');
+      return;
+    }
+
+    if (page === 'how-it-works') {
+      navigate('/how-it-works');
+      return;
+    }
+
     if (page === "template-detail" && selectedTemplate) {
       setCurrentPage("template-detail");
     } else {
+      // Fallback for internal state pages not mapped to routes
       setCurrentPage(page as Page);
       setSelectedTemplate(null);
     }
@@ -125,7 +164,7 @@ const AppLayout: React.FC = () => {
 
   const handleBackFromDetail = () => {
     setSelectedTemplate(null);
-    setCurrentPage("templates");
+    navigate('/templates');
   };
 
   const handleSelectCategory = (category: string) => {
@@ -133,14 +172,14 @@ const AppLayout: React.FC = () => {
     localStorage.setItem('craftedweb_selected_category', category);
     setSelectedPage(1);
     localStorage.setItem('craftedweb_selected_page', '1');
-    setCurrentPage("templates");
+    navigate('/templates');
     setSelectedTemplate(null);
   };
 
   const handleBuy = (template: Template) => {
     setSelectedTemplate(template);
     setIsQuickViewOpen(false);
-    handleNavigate("contact");
+    navigate('/contact');
   };
 
   const filteredTemplates = React.useMemo(() => {
@@ -178,6 +217,11 @@ const AppLayout: React.FC = () => {
       case "home":
         return (
           <>
+            <SEO 
+              title="CraftedWeb Studio — Premium React & Tailwind Website Templates" 
+              description="Discover premium, high-performance website templates built with React, Tailwind CSS, and Framer Motion. Perfect for startups, portfolios, and businesses."
+              canonical="/"
+            />
             <HeroSection
               onBrowseTemplates={() => handleNavigate("templates")}
             />
@@ -201,6 +245,11 @@ const AppLayout: React.FC = () => {
       case "templates":
         return (
           <div className="pt-20">
+            <SEO 
+              title="Browse Premium Templates — CraftedWeb Studio" 
+              description="Explore our collection of high-quality React and Tailwind CSS website templates. Optimized for performance, SEO, and user experience."
+              canonical="/templates"
+            />
             <TemplatesPage
               onQuickView={handleQuickView}
               onSelectTemplate={handleSelectTemplate}
@@ -244,21 +293,33 @@ const AppLayout: React.FC = () => {
           return null;
         }
         return (
-          <TemplateDetail
-            template={selectedTemplate}
-            onBack={handleBackFromDetail}
-            onQuickView={handleQuickView}
-            onSelectTemplate={handleSelectTemplate}
-            onBuy={handleBuy}
-            onNavigate={handleNavigate}
-            prevTemplate={prevTemplate}
-            nextTemplate={nextTemplate}
-          />
+          <>
+             <SEO 
+              title={`${selectedTemplate.title} — Premium ${selectedTemplate.category} Template`}
+              description={selectedTemplate.description}
+              image={selectedTemplate.poster}
+            />
+            <TemplateDetail
+              template={selectedTemplate}
+              onBack={handleBackFromDetail}
+              onQuickView={handleQuickView}
+              onSelectTemplate={handleSelectTemplate}
+              onBuy={handleBuy}
+              onNavigate={handleNavigate}
+              prevTemplate={prevTemplate}
+              nextTemplate={nextTemplate}
+            />
+          </>
         );
 
       case "how-it-works":
         return (
           <div className="pt-20">
+            <SEO 
+              title="How It Works — CraftedWeb Studio" 
+              description="Learn how to buy, download, and customize our premium React templates. Simple, transparent pricing and lifetime updates."
+              canonical="/how-it-works"
+            />
             <HowItWorksPage
               onBrowseTemplates={() => handleNavigate("templates")}
             />
@@ -268,6 +329,11 @@ const AppLayout: React.FC = () => {
       case "about":
         return (
           <div className="pt-20">
+            <SEO 
+              title="About Us — CraftedWeb Studio" 
+              description="CraftedWeb Studio is dedicated to building the best React & Tailwind CSS templates for modern web development. Learn more about our mission."
+              canonical="/about"
+            />
             <AboutPage />
           </div>
         );
@@ -275,6 +341,11 @@ const AppLayout: React.FC = () => {
       case "contact":
         return (
           <div className="pt-20">
+            <SEO 
+              title="Contact Us — CraftedWeb Studio" 
+              description="Have questions? Get in touch with us for support, custom development inquiries, or partnership opportunities."
+              canonical="/contact"
+            />
             <ContactPage onNavigate={handleNavigate} />
           </div>
         );

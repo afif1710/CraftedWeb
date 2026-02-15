@@ -74,8 +74,8 @@ Ensure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/craftedweb-studio.git
-   cd craftedweb-studio
+   git clone https://github.com/afif1710/CraftedWeb.git
+   cd CraftedWeb
    ```
 
 2. **Install dependencies**
@@ -128,4 +128,4 @@ Contributions are welcome! If you'd like to improve this project:
 
 **CraftedWeb Studio** - [craftedwebstudio@gmail.com](mailto:craftedwebstudio@gmail.com)
 
-Project Link: [https://github.com/yourusername/craftedweb-studio](https://github.com/yourusername/craftedweb-studio)
+Project Link: [https://github.com/afif1710/CraftedWeb](https://github.com/afif1710/CraftedWeb)

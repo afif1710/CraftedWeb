@@ -4,6 +4,8 @@ import Header from '@/components/marketplace/Header';
 import Footer from '@/components/marketplace/Footer';
 import { Shield, Check, Lock, Mail } from 'lucide-react';
 
+import SEO from '@/components/SEO';
+
 const License: React.FC = () => {
   const navigate = useNavigate();
 
@@ -16,18 +18,14 @@ const License: React.FC = () => {
     }
   };
 
-  // Since we are outside AppLayout, we might need a way to pass the target page to AppLayout
-  // However, simpler is just to navigate to root. The user can navigate from there.
-  // Actually, let's just navigate to root for simplicity as per plan. 
-  // If we wanted to be fancy we could use query params or state, but "Do not alter routing logic" suggests minimal intrusion.
-  // Wait, if I navigate to '/', AppLayout will render 'home' by default. 
-  // If I want to go to 'contact', I can't easily trigger the state change in AppLayout from here without a context or URL param info.
-  // But the prompt says "Do NOT alter routing logic". 
-  // So I will just navigate to '/', effectively resetting the app state. This is acceptable for a "static" page like License.
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Header currentPage="license" onNavigate={(page) => navigate('/')} />
+      <SEO 
+        title="Terms & License — CraftedWeb Studio" 
+        description="Read our simple, transparent licensing terms. Standard and exclusive licenses available for all premium website templates."
+        canonical="/license"
+      />
+      <Header currentPage="license" onNavigate={(page) => navigate('/', { state: { target: page } })} />
       
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +125,7 @@ const License: React.FC = () => {
         </div>
       </main>
 
-      <Footer onNavigate={(page) => navigate('/')} onSelectCategory={() => navigate('/')} />
+      <Footer onNavigate={(page) => navigate('/', { state: { target: page } })} onSelectCategory={() => navigate('/', { state: { target: 'templates' } })} />
     </div>
   );
 };
