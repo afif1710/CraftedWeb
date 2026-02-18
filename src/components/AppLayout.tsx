@@ -54,9 +54,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
 
   useEffect(() => {
-    if (initialPage) {
-      setCurrentPage(initialPage);
-    }
+    setCurrentPage(initialPage || "home");
   }, [initialPage]);
 
   useEffect(() => {
@@ -109,26 +107,36 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
     }
 
     if (page === 'home') {
+      setCurrentPage('home');
+      setSelectedTemplate(null);
       navigate('/');
       return;
     }
     
     if (page === 'templates') {
+      setCurrentPage('templates');
+      setSelectedTemplate(null);
       navigate('/templates');
       return;
     }
 
     if (page === 'contact') {
+      setCurrentPage('contact');
+      setSelectedTemplate(null);
       navigate('/contact');
       return;
     }
 
     if (page === 'about') {
+      setCurrentPage('about');
+      setSelectedTemplate(null);
       navigate('/about');
       return;
     }
 
     if (page === 'how-it-works') {
+      setCurrentPage('how-it-works');
+      setSelectedTemplate(null);
       navigate('/how-it-works');
       return;
     }

@@ -130,7 +130,7 @@ export const templates: Template[] = [
     longDescription: 'Experience a unique portfolio presentation with Jungle-themed interactive exploration. Navigate through a 3D forest environment with WASD controls, discover project areas, and explore content in an engaging game-like interface. Perfect for game developers, 3D artists, interactive designers, and creative professionals wanting to stand out.',
     category: 'Portfolio',
     tags: ['React', '3D', 'Gaming', 'Interactive', 'WebGL'],
-    demoVideoUrl: 'https://www.youtube.com/embed/1MOoFgKQjww?rel=0&modestbranding=1',
+    demoVideoUrl: 'https://www.youtube.com/embed/uIZuL6hrw9Y?rel=0&modestbranding=1',
     poster: '/images/JunglePortfolio1.png',
     screenshots: [
       '/images/JunglePortfolio1.png',
@@ -361,7 +361,7 @@ export const templates: Template[] = [
     longDescription: 'Prism Light Studio is all about visual impact. Designed for photographers and digital artists, this template features a masonry grid gallery, lightbox integration, and a dark-mode aesthetic that makes colors pop. It includes dedicated sections for service packages and booking inquiries.',
     category: 'SaaS',
     tags: ['React', 'Photography', 'Studio', 'Creative'],
-    demoVideoUrl: 'https://www.youtube.com/embed/jrxGGBneAw4?rel=0&modestbranding=1',
+    demoVideoUrl: 'https://www.youtube.com/embed/HzJbrgK0pMo?rel=0&modestbranding=1',
     poster: '/images/PrismLight1.png',
     screenshots: [
       '/images/PrismLight1.png',

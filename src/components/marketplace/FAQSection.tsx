@@ -19,10 +19,6 @@ const faqs = [
     answer: "You receive a non-exclusive license to use the template for one project (your business or a client project). You may fully customize it to match your brand. However, redistribution or resale of the template itself is not permitted."
   },
   {
-    question: "Are the price of the templates negotiable?",
-    answer: "Yes, the price of the templates is negotiable."
-  },
-  {
     question: "Do you offer support if I get stuck?",
     answer: "Absolutely. We offer free support for initial setup issues and minor bug fixes which were told to be in the template initially (i.e website is not responsive) for the first 3 days after purchase. If you need more extensive customization or feature additions(i.e new pages, new features, theme change, SEO Optimization etc), we also offer paid customization services and the cost varies based on your requirements."
   },
