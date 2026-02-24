@@ -1,10 +1,3 @@
-# robots.txt for CraftedWeb Studio
 User-agent: *
 Allow: /
-
-# Sitemap
 Sitemap: https://craftedwebstudio.vercel.app/sitemap.xml
-
-# Disallow admin and private paths
-Disallow: /api/
-Disallow: /admin/
