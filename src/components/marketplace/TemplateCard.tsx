@@ -20,7 +20,7 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
       <div className="relative aspect-[16/10] overflow-hidden bg-muted">
         <img
           src={template.poster}
-          alt={`${template.title} template preview`}
+          alt={`${template.title} - ${template.category} Website Template Preview`}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
