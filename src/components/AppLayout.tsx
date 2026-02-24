@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { Template, templates } from "@/data/templates";
 import Header from "./marketplace/Header";
 import Footer from "./marketplace/Footer";
@@ -34,6 +34,7 @@ interface AppLayoutProps {
 const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { slug } = useParams<{ slug: string }>();
   const [currentPage, setCurrentPage] = useState<Page>(initialPage || "home");
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
     null,
@@ -56,6 +57,17 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   useEffect(() => {
     setCurrentPage(initialPage || "home");
   }, [initialPage]);
+
+  useEffect(() => {
+    if (currentPage === "template-detail" && slug) {
+      const template = templates.find(t => t.slug === slug);
+      if (template) {
+        setSelectedTemplate(template);
+      } else {
+        navigate('/templates', { replace: true });
+      }
+    }
+  }, [currentPage, slug, navigate]);
 
   useEffect(() => {
     if (location.state && (location.state as any).target) {
@@ -153,6 +165,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   const handleSelectTemplate = (template: Template) => {
     setSelectedTemplate(template);
     setCurrentPage("template-detail");
+    navigate(`/template/${template.slug}`);
   };
 
   const handleQuickView = (template: Template) => {

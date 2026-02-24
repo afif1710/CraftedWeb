@@ -26,3 +26,5 @@ Videos/
 node_modules/ 
 LICENSE.txt
 
+# Vite
+vite.config.*.timestamp-*.mjs

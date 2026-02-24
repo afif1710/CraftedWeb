@@ -4,7 +4,7 @@ import AppLayout from '@/components/AppLayout';
 import { AppProvider } from '@/contexts/AppContext';
 
 interface IndexProps {
-  initialPage?: 'home' | 'templates' | 'about' | 'contact' | 'how-it-works';
+  initialPage?: 'home' | 'templates' | 'template-detail' | 'about' | 'contact' | 'how-it-works';
 }
 
 const Index: React.FC<IndexProps> = ({ initialPage }) => {

@@ -230,7 +230,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Shield className="w-4 h-4 text-green-500" />
-                      Initial bug fixes for 3 days
+                      Initial bug fixes for 1 day
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Mail className="w-4 h-4 text-green-500" />
