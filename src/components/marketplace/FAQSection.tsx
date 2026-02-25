@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Can I use the templates for client projects?",
-    answer: "You receive a non-exclusive license to use the template for one project (your business or a client project). You may fully customize it to match your brand. However, redistribution or resale of the template itself is not permitted."
+    answer: "You receive a non-exclusive license to use the template for one project (your business or a client project). You may fully customize/edit it to match your brand. However, redistribution or resale of the exact template itself is not permitted."
   },
   {
     question: "Do you offer support if I get stuck?",

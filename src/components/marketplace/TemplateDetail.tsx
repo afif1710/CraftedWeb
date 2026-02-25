@@ -282,6 +282,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                     {[
                       "Template removed from store",
                       "Full ownership transfer",
+                      "Re-distribute or edit as much as you like",
                       "Contact required"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
