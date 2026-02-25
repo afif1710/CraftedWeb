@@ -60,6 +60,16 @@
     }
   </script>
 
+  <!-- Google tag (gtag.js) — GA4 -->
+  <!-- send_page_view: false → manual SPA tracking via Analytics component -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8ECHZL5NM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-G8ECHZL5NM', { send_page_view: false });
+  </script>
+
   <!-- Preconnect to YouTube for faster video loading -->
   <link rel="preconnect" href="https://www.youtube.com" />
   <link rel="preconnect" href="https://www.google.com" />
