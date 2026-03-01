@@ -187,8 +187,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   };
 
   const handleBackFromDetail = () => {
-    setSelectedTemplate(null);
-    navigate('/templates');
+    handleNavigate('templates');
   };
 
   const handleSelectCategory = (category: string) => {
@@ -201,6 +200,17 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   };
 
   const handleBuy = (template: Template) => {
+    if (template.gumroadUrl) {
+      window.open(template.gumroadUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    // Fallback if no gumroad URL
+    setSelectedTemplate(template);
+    setIsQuickViewOpen(false);
+    navigate('/contact');
+  };
+
+  const handleContact = (template: Template) => {
     setSelectedTemplate(template);
     setIsQuickViewOpen(false);
     navigate('/contact');
@@ -268,7 +278,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
 
       case "templates":
         return (
-          <div className="pt-20">
+          <div className="pt-40 relative z-20">
             <SEO 
               title="Browse Premium Templates — CraftedWeb Studio" 
               description="Explore our collection of high-quality React and Tailwind CSS website templates. Optimized for performance, SEO, and user experience."
@@ -278,6 +288,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
               onQuickView={handleQuickView}
               onSelectTemplate={handleSelectTemplate}
               onBuy={handleBuy}
+              onContact={handleContact}
               initialCategory={selectedCategory}
               initialPage={selectedPage}
               searchQuery={searchQuery}
@@ -323,22 +334,25 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
               description={selectedTemplate.description}
               image={selectedTemplate.poster}
             />
+          <div className="relative z-20">
             <TemplateDetail
               template={selectedTemplate}
               onBack={handleBackFromDetail}
               onQuickView={handleQuickView}
               onSelectTemplate={handleSelectTemplate}
               onBuy={handleBuy}
+              onContact={handleContact}
               onNavigate={handleNavigate}
               prevTemplate={prevTemplate}
               nextTemplate={nextTemplate}
             />
-          </>
-        );
+          </div>
+        </>
+      );
 
       case "how-it-works":
         return (
-          <div className="pt-20">
+          <div className="pt-40 relative z-20">
             <SEO 
               title="How It Works — CraftedWeb Studio" 
               description="Learn how to buy, download, and customize our premium React templates. Simple, transparent pricing and lifetime updates."
@@ -352,7 +366,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
 
       case "about":
         return (
-          <div className="pt-20">
+          <div className="pt-40 relative z-20">
             <SEO 
               title="About Us — CraftedWeb Studio" 
               description="CraftedWeb Studio is dedicated to building the best React & Tailwind CSS templates for modern web development. Learn more about our mission."
@@ -364,7 +378,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
 
       case "contact":
         return (
-          <div className="pt-20">
+          <div className="pt-40 relative z-20">
             <SEO 
               title="Contact Us — CraftedWeb Studio" 
               description="Have questions? Get in touch with us for support, custom development inquiries, or partnership opportunities."

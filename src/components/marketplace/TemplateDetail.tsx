@@ -12,9 +12,10 @@ interface TemplateDetailProps {
   onQuickView: (template: Template) => void;
   onSelectTemplate: (template: Template) => void;
   onBuy: (template: Template) => void;
+  onContact: (template: Template) => void;
   onNavigate: (page: string) => void;
-  prevTemplate: Template | null;
-  nextTemplate: Template | null;
+  prevTemplate?: Template;
+  nextTemplate?: Template;
 }
 
 const TemplateDetail: React.FC<TemplateDetailProps> = ({ 
@@ -23,6 +24,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
   onQuickView,
   onSelectTemplate, 
   onBuy, 
+  onContact,
   onNavigate,
   prevTemplate,
   nextTemplate
@@ -38,17 +40,17 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-40 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Navigation Header */}
-        <div className="flex items-center justify-between mb-10 relative">
+        <div className="flex items-center justify-between mb-10 relative z-10">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:underline shrink-0 group/back"
+            className="flex items-center gap-2 text-primary hover:text-primary/80 transition-all focus:outline-none focus-visible:underline shrink-0 group/back cursor-pointer py-2"
           >
-            <ArrowLeft className="w-4 h-4 group-hover/back:-translate-x-1 transition-transform" />
-            <span className="hidden sm:inline font-medium">Back to Templates</span>
-            <span className="sm:hidden font-medium">Back</span>
+            <ArrowLeft className="w-5 h-5 group-hover/back:-translate-x-1 transition-transform" />
+            <span className="hidden sm:inline font-bold text-lg">Back to Templates</span>
+            <span className="sm:hidden font-bold text-lg">Back</span>
           </button>
 
           <div className="flex items-center gap-2 sm:absolute sm:left-1/2 sm:-translate-x-1/2">
@@ -193,7 +195,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                   className="w-full py-4 px-6 bg-primary text-primary-foreground rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 >
                   <ShoppingCart className="w-5 h-5" />
-                  Want to buy?
+                  Buy with Gumroad - ${template.price}
                 </button>
 
                 {/* Alternative Payment */}
@@ -292,7 +294,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                     ))}
                   </ul>
                   <button
-                    onClick={() => onBuy({ ...template, title: `${template.title} (Exclusive License)` })}
+                    onClick={() => onContact({ ...template, title: `${template.title} (Exclusive License)` })}
                     className="w-full py-2 px-4 bg-muted text-foreground rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
                   >
                     Contact for Exclusive
@@ -309,16 +311,20 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
         {relatedTemplates.length > 0 && (
           <div className="mt-20">
             <h2 className="text-2xl font-bold text-foreground mb-8">Related Templates</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedTemplates.map((t) => (
-                <TemplateCard
-                  key={t.id}
-                  template={t}
-                  onQuickView={onQuickView}
-                  onSelect={onSelectTemplate}
-                  onBuy={onBuy}
-                />
-              ))}
+            <div className="grid sm:grid-cols-3 gap-6">
+              {templates
+                .filter(t => t.category === template.category && t.id !== template.id)
+                .slice(0, 3)
+                .map((t) => (
+                  <TemplateCard
+                    key={t.id}
+                    template={t}
+                    onQuickView={onQuickView}
+                    onSelect={onSelectTemplate}
+                    onBuy={onBuy}
+                    onContact={onContact}
+                  />
+                ))}
             </div>
           </div>
         )}

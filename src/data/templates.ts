@@ -31,9 +31,10 @@ export const templates: Template[] = [
       '/images/Typoflux1.png',
       '/images/Typoflux2.png',
       '/images/Typoflux3.png',
-      '/images/Typoflux4.png'
+      '/images/Typoflux4.png',
+      '/images/Typoflux5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/typoflux',
     features: ['Kinetic Typography', 'Project Showcase Grid', 'Smooth Animations', 'Dark Theme', 'Portfolio Sections', 'Sound Toggle'],
     isFeatured: false
   },
@@ -52,9 +53,10 @@ export const templates: Template[] = [
       '/images/OceanPortfolio1.png',
       '/images/OceanPortfolio2.png',
       '/images/OceanPortfolio3.png',
-      '/images/OceanPortfolio4.png'
+      '/images/OceanPortfolio4.png',
+      '/images/OceanPortfolio5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/ocean-themed-portfolio',
     features: ['Interactive 3D Navigation', 'Depth Tracking', 'Coordinate System', 'Underwater Aesthetics', 'Ambient Animations', 'Project Exploration'],
     isFeatured: false
   },
@@ -75,7 +77,7 @@ export const templates: Template[] = [
       '/images/Nexus3.png',
       '/images/Nexus4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/nexus-website',
     features: ['Hero Section', 'Feature Showcase', 'Pricing Section', 'Clean Navigation', 'CTA Buttons', 'Responsive Design'],
     isFeatured: false
   },
@@ -94,9 +96,10 @@ export const templates: Template[] = [
       '/images/Neon1.png',
       '/images/Neon2.png',
       '/images/Neon3.png',
-      '/images/Neon4.png'
+      '/images/Neon4.png',
+      '/images/Neon5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/neon-themed-website',
     features: ['Rainbow Gradient Text', 'Particle Effects', 'Custom Cursor', 'Dark Theme', 'Smooth Scrolling', 'Modern Navigation'],
     isFeatured: false
   },
@@ -115,9 +118,10 @@ export const templates: Template[] = [
       '/images/KineticCards1.png',
       '/images/KineticCards2.png',
       '/images/KineticCards3.png',
-      '/images/KineticCards4.png'
+      '/images/KineticCards4.png',
+      '/images/KineticCards5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/kinetic-cards',
     features: ['Morphing Card Animations', 'Fluid Interactions', 'Modern Navigation', 'Feature Showcase', 'Product Grid', 'Case Studies'],
     isFeatured: false
   },
@@ -136,9 +140,10 @@ export const templates: Template[] = [
       '/images/JunglePortfolio1.png',
       '/images/JunglePortfolio2.png',
       '/images/JunglePortfolio3.png',
-      '/images/JunglePortfolio4.png'
+      '/images/JunglePortfolio4.png',
+      '/images/JunglePortfolio5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/jungle-themed-portfolio',
     features: ['3D Environment', 'WASD Navigation', 'Interactive Exploration', 'Game-Style Interface', 'Location Tracking', 'Sound Controls'],
     isFeatured: false
   },
@@ -159,7 +164,7 @@ export const templates: Template[] = [
       '/images/Holotimeline3.png',
       '/images/Holotimeline4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/holo-timeline',
     features: ['Agency Showcase', 'Case Studies', 'Service Timeline', 'Team Profiles', 'Video Showreel', 'Contact Integration'],
     isFeatured: false
   },
@@ -180,7 +185,7 @@ export const templates: Template[] = [
       '/images/Gym3.png',
       '/images/Gym4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/gym-agency-website',
     features: ['Bold Hero Section', 'Trainer Showcase', 'Program Details', 'Transformation Gallery', 'Video Story', 'Membership CTA'],
     isFeatured: false
   },
@@ -201,7 +206,7 @@ export const templates: Template[] = [
       '/images/GalaxyPortfolio3.png',
       '/images/GalaxyPortfolio4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/galaxy-themed-portfolio',
     features: ['Animated Starfield', 'Interactive Launch CTA', 'Spacecraft Graphics', 'Cosmic Theme', 'Portfolio Sections', 'Scroll Prompts'],
     isFeatured: false
   },
@@ -220,9 +225,11 @@ export const templates: Template[] = [
       '/images/Chef1.png',
       '/images/Chef2.png',
       '/images/Chef3.png',
-      '/images/Chef4.png'
+      '/images/Chef4.png',
+      '/images/Chef5.png',
+      '/images/Chef6.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/chefs-portfolio',
     features: ['Luxury Food Photography', 'Elegant Typography', 'Achievement Badges', 'Creation Gallery', 'Press Section', 'Product Showcase'],
     isFeatured: false
   },
@@ -241,9 +248,10 @@ export const templates: Template[] = [
       '/images/Cascade1.png',
       '/images/Cascade2.png',
       '/images/Cascade3.png',
-      '/images/Cascade4.png'
+      '/images/Cascade4.png',
+      '/images/Cascade5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/cascade-website',
     features: ['Cascading Layout', 'Service Showcase', 'Team Profiles', 'Client Logos', 'Case Studies', 'Contact Info'],
     isFeatured: false
   },
@@ -264,7 +272,7 @@ export const templates: Template[] = [
       '/images/Blueprint3.png',
       '/images/Blueprint4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/blueprint-website',
     features: ['Grid Layout', 'Blueprints Aesthetic', 'Project Timeline', 'Team Grid', 'Quote Request', 'Mobile Friendly'],
     isFeatured: false
   },
@@ -285,7 +293,7 @@ export const templates: Template[] = [
       '/images/Aurora3.png',
       '/images/Aurora4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/aurora-website',
     features: ['Gradient Backgrounds', 'Smooth Transitions', 'Feature Highlights', 'Newsletter Signup', 'Responsive', 'Modern UI'],
     isFeatured: false
   },
@@ -306,7 +314,7 @@ export const templates: Template[] = [
       '/images/AuraBloom3.png',
       '/images/AuraBloom4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/aura-bloom',
     features: ['Soft Colors', 'Bloom Animations', 'Testimonials', 'Product Showcase', 'FAQ Section', 'Contact'],
     isFeatured: false
   },
@@ -327,7 +335,7 @@ export const templates: Template[] = [
       '/images/Atelier3.png',
       '/images/Atelier4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/atelier',
     features: ['Gallery Grid', 'Detail Zoom', 'Artist Bio', 'Process Section', 'Shop Links', 'Contact'],
     isFeatured: false
   },
@@ -348,7 +356,7 @@ export const templates: Template[] = [
       '/images/ArtisanTote3.png',
       '/images/ArtisanTote4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/artisan-tote',
     features: ['Single Product Focus', 'Storytelling Layout', 'Cart', 'Image Zoom', 'Specs Section', 'Simple Checkout'],
     isFeatured: false
   },
@@ -367,9 +375,10 @@ export const templates: Template[] = [
       '/images/PrismLight1.png',
       '/images/PrismLight2.png',
       '/images/PrismLight3.png',
-      '/images/PrismLight4.png'
+      '/images/PrismLight4.png',
+      '/images/PrismLight5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/prism-light-studio',
     features: ['Masonry Gallery', 'Lightbox Support', 'Service Packages', 'Booking Form', 'Dark Mode', 'Responsive Grid'],
     isFeatured: false
   },
@@ -390,7 +399,7 @@ export const templates: Template[] = [
       '/images/Prism3.png',
       '/images/Prism4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/prism-website',
     features: ['Pricing Tables', 'Feature Grid', 'Testimonials Carousel', 'Contact Form', 'Blog Layout', 'SEO Optimized'],
     isFeatured: false
   },
@@ -409,9 +418,11 @@ export const templates: Template[] = [
       '/images/Restaurant1.png',
       '/images/Restaurant2.png',
       '/images/Restaurant3.png',
-      '/images/Restaurant4.png'
+      '/images/Restaurant4.png',
+      '/images/Restaurant5.png',
+      '/images/Restaurant6.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/restaurant-website',
     features: ['Elegant Design', 'Menu Showcase', 'Reservation System', 'Gallery Section', 'About Restaurant', 'Contact Info'],
     isFeatured: false
   },
@@ -432,7 +443,7 @@ export const templates: Template[] = [
       '/images/SoftUI3.png',
       '/images/SoftUI4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/soft-ui-pro',
     features: ['Neumorphic Design', 'Analytics Charts', 'User Tables', 'Notification System', 'Profile Settings', 'Auth Pages'],
     isFeatured: false
   },
@@ -453,7 +464,7 @@ export const templates: Template[] = [
       '/images/Spectra3.png',
       '/images/Spectra4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/spectra',
     features: ['Case Studies', 'Animated Hero', 'Team Section', 'Client Logo Grid', 'Contact Form', 'Smooth Scroll'],
     isFeatured: false
   },
@@ -474,7 +485,7 @@ export const templates: Template[] = [
       '/images/StoryCanvas3.png',
       '/images/StoryCanvas4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/story-canvas',
     features: ['Clean Typography', 'Author Bio', 'Reading Time', 'Newsletter Signup', 'Category Tags', 'Related Posts'],
     isFeatured: false
   },
@@ -493,9 +504,10 @@ export const templates: Template[] = [
       '/images/TimelessElegance1.png',
       '/images/TimelessElegance2.png',
       '/images/TimelessElegance3.png',
-      '/images/TimelessElegance4.png'
+      '/images/TimelessElegance4.png',
+      '/images/TimelessElegance5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/timeless-elegance',
     features: ['High-Res Zoom', 'Wishlist', 'Request Price', 'Elegant Layout', 'Brand Story', 'Cart Sidebar'],
     isFeatured: false
   },
@@ -516,7 +528,7 @@ export const templates: Template[] = [
       '/images/Travel3.png',
       '/images/Travel4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/travel-agency-website',
     features: ['Advanced Search', 'Destination Gallery', 'Review System', 'Multi-Location', 'Statistics Display', 'Booking CTA'],
     isFeatured: false
   },
@@ -537,7 +549,7 @@ export const templates: Template[] = [
       '/images/Velvet3.png',
       '/images/Velvet4.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/velvet-commerce',
     features: ['3D Product Viewer', 'Material Selector', 'Lighting Controls', 'Camera Angles', 'Customization Panel', 'Price Display'],
     isFeatured: false
   },
@@ -556,9 +568,10 @@ export const templates: Template[] = [
       '/images/Wedding1.png',
       '/images/Wedding2.png',
       '/images/Wedding3.png',
-      '/images/Wedding4.png'
+      '/images/Wedding4.png',
+      '/images/Wedding5.png'
     ],
-    gumroadUrl: null,
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/wedding-agency-website',
     features: ['Romantic Design', 'Portfolio Gallery', 'Service Packages', 'Testimonials', 'Booking Form', 'Blog Section'],
     isFeatured: false
   }

@@ -132,7 +132,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
                 className="w-full py-3 px-4 bg-primary text-primary-foreground rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 <ShoppingCart className="w-5 h-5" />
-                Buy Now - ${template.price}
+                Buy with Gumroad - ${template.price}
               </button>
               
               <button

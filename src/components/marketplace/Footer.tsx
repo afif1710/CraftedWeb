@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
               <img 
                 src="/Logo.png" 
                 alt="CraftedWeb Studio" 
-                className="h-16 w-auto object-contain filter brightness-110 contrast-110"
+                className="h-20 md:h-24 w-auto object-contain filter brightness-125 contrast-125 saturate-110"
               />
             </button>
             <p className="text-muted-foreground mb-6 max-w-xs">

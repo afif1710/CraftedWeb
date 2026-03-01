@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             <img 
               src="/Logo.png" 
               alt="CraftedWeb Studio" 
-              className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105 filter brightness-110 contrast-110"
+              className="h-14 md:h-20 w-auto object-contain transition-transform group-hover:scale-105 filter brightness-125 contrast-125 saturate-110"
             />
           </button>
 

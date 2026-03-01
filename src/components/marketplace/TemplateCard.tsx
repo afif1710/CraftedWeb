@@ -8,9 +8,10 @@ interface TemplateCardProps {
   onQuickView: (template: Template) => void;
   onSelect: (template: Template) => void;
   onBuy: (template: Template) => void;
+  onContact: (template: Template) => void;
 }
 
-const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSelect, onBuy }) => {
+const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSelect, onBuy, onContact }) => {
   return (
     <article 
       className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover-lift cursor-pointer"
@@ -50,10 +51,10 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
           </div>
         )}
         
-        {/* Price Badge */}
+        {/* License Badge */}
         <div className="absolute top-3 right-3">
           <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
-            <span className="font-semibold text-foreground text-xs sm:text-sm">${template.price} — Standard License</span>
+            <span className="font-semibold text-foreground text-xs sm:text-sm">Standard License</span>
           </div>
         </div>
         
@@ -109,10 +110,10 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
             onBuy(template);
           }}
           className="w-full py-2.5 px-4 bg-primary text-primary-foreground rounded-lg font-medium text-sm flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          aria-label={`Contact to buy ${template.title}`}
+          aria-label={`Buy ${template.title} on Gumroad for $${template.price}`}
         >
           <ShoppingCart className="w-4 h-4" />
-          Want to buy?
+          Buy with Gumroad - ${template.price}
         </button>
         
         {/* Exclusive Rights Helper */}
@@ -120,7 +121,7 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
           <button 
             onClick={(e) => {
               e.stopPropagation();
-              onBuy(template);
+              onContact(template);
             }}
             className="text-muted-foreground hover:text-foreground transition-colors text-xs"
           >

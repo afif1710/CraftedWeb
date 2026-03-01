@@ -7,6 +7,7 @@ interface TemplatesPageProps {
   onQuickView: (template: Template) => void;
   onSelectTemplate: (template: Template) => void;
   onBuy: (template: Template) => void;
+  onContact: (template: Template) => void;
   initialCategory?: string;
   onCategoryChange?: (category: string) => void;
   initialPage?: number;
@@ -26,6 +27,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
   onQuickView, 
   onSelectTemplate, 
   onBuy, 
+  onContact,
   initialCategory = 'All',
   onCategoryChange, 
   initialPage = 1, 
@@ -224,6 +226,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
                     onQuickView={onQuickView}
                     onSelect={onSelectTemplate}
                     onBuy={onBuy}
+                    onContact={onContact}
                   />
                 </div>
               ))}
