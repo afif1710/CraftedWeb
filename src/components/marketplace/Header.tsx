@@ -43,12 +43,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
             aria-label="Go to homepage"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-foreground hidden sm:block">
-              CraftedWeb<span className="text-primary"> Studio</span>
-            </span>
+            <img 
+              src="/Logo.png" 
+              alt="CraftedWeb Studio" 
+              className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105 filter brightness-110 contrast-110"
+            />
           </button>
 
           {/* Desktop Navigation */}

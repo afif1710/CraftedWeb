@@ -36,9 +36,12 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
   const location = useLocation();
   const { slug } = useParams<{ slug: string }>();
   const [currentPage, setCurrentPage] = useState<Page>(initialPage || "home");
-  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
-    null,
-  );
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(() => {
+    if (initialPage === "template-detail" && slug) {
+      return templates.find(t => t.slug === slug) || null;
+    }
+    return null;
+  });
   const [quickViewTemplate, setQuickViewTemplate] = useState<Template | null>(
     null,
   );

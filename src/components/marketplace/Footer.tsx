@@ -65,12 +65,11 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
               onClick={() => onNavigate('home')}
               className="flex items-center gap-2 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/25">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-foreground">
-                CraftedWeb<span className="text-primary"> Studio</span>
-              </span>
+              <img 
+                src="/Logo.png" 
+                alt="CraftedWeb Studio" 
+                className="h-16 w-auto object-contain filter brightness-110 contrast-110"
+              />
             </button>
             <p className="text-muted-foreground mb-6 max-w-xs">
               Premium website templates for Brands and Businesses. Just customize with your brand info, build faster, launch sooner. 
