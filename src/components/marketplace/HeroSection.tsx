@@ -35,8 +35,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onBrowseTemplates }) => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-up stagger-1">
-            Buy Stunning Websites{' '}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-10 animate-fade-up stagger-1">
+            Buy Stunning Website templates{' '}
             <span className="gradient-text">& grow your Brand</span>
           </h1>
 

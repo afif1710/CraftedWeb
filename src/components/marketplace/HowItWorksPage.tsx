@@ -22,33 +22,19 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates }) =>
         'Watch detailed video demos and browse real screenshots. See exactly how the template looks, feels, and performs before moving forward.',
       color: 'from-yellow-500 to-pink-500'
     },
-    // {
-    //   icon: ShoppingCart,
-    //   title: 'Purchase Securely',
-    //   description:
-    //     'Complete your purchase securely via Gumroad. Payments are protected and access is granted instantly.',
-    //   color: 'from-orange-500 to-red-500'
-    // },
-    // {
-    //   icon: Download,
-    //   title: 'Download Instantly',
-    //   description:
-    //     'Get immediate access to the complete project files, including source code, assets, and documentation.',
-    //   color: 'from-green-500 to-emerald-500'
-    // },
     {
-      icon: MessageSquare,
-      title: 'Request Access',
+      icon: ShoppingCart,
+      title: 'Secure Purchase',
       description:
-        'Found a template you love? Reach out to purchase or discuss your needs. Every template includes free setup guidance and minor fixes. Larger customizations are quoted separately.',
-      color: 'from-blue-500 to-indigo-500'
+        'Buy via Gumroad for the fastest experience. We also accept manual payments if Gumroad isn\'t available for you—just email us with the template ID.',
+      color: 'from-orange-500 to-red-500'
     },
     {
-      icon: FileArchive,
-      title: 'Secure Delivery',
+      icon: Download,
+      title: 'Instant Delivery',
       description:
-        'Once payment is confirmed, you receive a secure download link containing the full project files and a clear setup guide on your local machine.',
-      color: 'from-purple-500 to-pink-500'
+        'Gumroad customers get immediate file access. For manual buyers, we send a secure download link containing the full project files once payment is received.',
+      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Code,
@@ -62,7 +48,7 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates }) =>
       title: 'Launch Your Project',
       description:
         'Deploy your website and go live with confidence. Our templates are built for performance and scalability from day one.',
-      color: 'from-pink-500 to-rose-500'
+      color: 'from-blue-500 to-indigo-500'
     }
   ];
 
@@ -94,7 +80,7 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates }) =>
     // }
     {
       title: 'Customization Available',
-      description: 'Need Customization based on your Brand, content updates, feature changes or SEO optimization? We offer fast, professional customization as an optional service. Full custom work is clearly quoted.'
+      description: 'Need Customization based on your Brand, content updates, feature changes or SEO optimization? We offer fast, professional customization as an optional service. Any custom work is clearly quoted.'
     }
   ];
 

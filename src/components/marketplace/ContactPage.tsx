@@ -154,7 +154,9 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a question or looking to purchase? To buy a template, kindly email us at{' '}
+            Have a question or prefer to purchase manually? While the fastest way to get your template is via{' '}
+            <span className="text-primary font-bold">Gumroad</span>, we also accept manual payments. 
+            Kindly email us at{' '}
             <a 
               href="mailto:craftedwebstudio@gmail.com"
               className="text-primary font-bold underline decoration-primary/30 underline-offset-4 hover:decoration-primary transition-colors"

@@ -224,11 +224,11 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Download className="w-4 h-4 text-green-500" />
-                      Get Zip file within a day
+                      Get Zip file instantly
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <RefreshCw className="w-4 h-4 text-green-500" />
-                      Free setup guide 
+                      Free setup guide in the file
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Shield className="w-4 h-4 text-green-500" />
