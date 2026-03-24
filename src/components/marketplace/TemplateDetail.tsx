@@ -46,7 +46,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
         <div className="flex items-center justify-between mb-10 relative z-10">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-primary hover:text-primary/80 transition-all focus:outline-none focus-visible:underline shrink-0 group/back cursor-pointer py-2"
+            className="flex items-center gap-2 text-solar-gold hover:text-solar-gold/80 transition-all focus:outline-none focus-visible:underline shrink-0 group/back cursor-pointer py-2"
           >
             <ArrowLeft className="w-5 h-5 group-hover/back:-translate-x-1 transition-transform" />
             <span className="hidden sm:inline font-bold text-lg">Back to Templates</span>
@@ -57,7 +57,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
             <button
               onClick={() => prevTemplate && onSelectTemplate(prevTemplate)}
               disabled={!prevTemplate}
-              className="flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-xl text-sm font-semibold text-foreground transition-all disabled:opacity-0 disabled:pointer-events-none group/nav hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/5"
+              className="flex items-center gap-1.5 px-4 py-2 bg-card-bg border border-white/10 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-0 disabled:pointer-events-none group/nav hover:border-solar-gold/50 hover:shadow-lg hover:bg-white/5"
             >
               <ChevronLeft className="w-4 h-4 group-hover/nav:-translate-x-0.5 transition-transform" />
               Previous
@@ -65,7 +65,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
             <button
               onClick={() => nextTemplate && onSelectTemplate(nextTemplate)}
               disabled={!nextTemplate}
-              className="flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-xl text-sm font-semibold text-foreground transition-all disabled:opacity-0 disabled:pointer-events-none group/nav hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/5"
+              className="flex items-center gap-1.5 px-4 py-2 bg-card-bg border border-white/10 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-0 disabled:pointer-events-none group/nav hover:border-solar-gold/50 hover:shadow-lg hover:bg-white/5"
             >
               Next
               <ChevronRight className="w-4 h-4 group-hover/nav:translate-x-0.5 transition-transform" />
@@ -80,7 +80,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
           <div className="lg:col-span-3 space-y-8">
             {/* Video */}
             <div>
-              <h2 className="text-lg font-semibold text-foreground mb-4">Demo Video    <span className="text-primary">(ID # {template.id})</span></h2>
+              <h2 className="text-2xl font-serif text-white mb-4">Demo Video    <span className="text-solar-gold">(ID # {template.id})</span></h2>
               <VideoEmbedLite
                 videoUrl={template.demoVideoUrl}
                 poster={template.poster}
@@ -93,7 +93,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
             {/* Screenshots */}
             <div>
-              <h2 className="text-lg font-semibold text-foreground mb-4">Screenshots</h2>
+              <h2 className="text-2xl font-serif text-white mb-4">Screenshots</h2>
               <ScreenshotGallery
                 screenshots={template.screenshots}
                 title={template.title}
@@ -102,7 +102,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
             {/* Long Description */}
             <div>
-              <h2 className="text-lg font-semibold text-foreground mb-4">About This Template</h2>
+              <h2 className="text-2xl font-serif text-white mb-4">About This Template</h2>
               <p className="text-muted-foreground leading-relaxed">
                 {template.longDescription}
               </p>
@@ -110,12 +110,12 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
             {/* Features */}
             <div>
-              <h2 className="text-lg font-semibold text-foreground mb-4">Features</h2>
+              <h2 className="text-2xl font-serif text-white mb-4">Features</h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {template.features.map((feature, index) => (
                   <div 
                     key={index}
-                    className="flex items-center gap-3 p-3 bg-card rounded-xl border border-border"
+                    className="flex items-center gap-3 p-3 bg-card-bg rounded-xl border border-white/5"
                   >
                     <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-green-500" />
@@ -128,21 +128,21 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
             {/* FAQ Link */}
             <div>
-              <h2 className="text-lg font-semibold text-foreground mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-serif text-white mb-4">Frequently Asked Questions</h2>
               <div 
-                className="bg-card rounded-xl border border-primary/20 p-6 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary/40 transition-all cursor-pointer group"
+                className="bg-card-bg rounded-xl border border-white/5 p-6 hover:border-solar-gold/40 transition-all cursor-pointer group"
                 onClick={() => onNavigate('faq')}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-solar-gold/10 flex items-center justify-center flex-shrink-0 group-hover:bg-solar-gold/20 transition-colors">
+                    <Mail className="w-5 h-5 text-solar-gold" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
+                    <h3 className="font-medium text-white mb-1 group-hover:text-solar-gold transition-colors">
                       Have questions about this template?
                     </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Check our comprehensive <span className="text-primary underline decoration-dotted underline-offset-4">FAQ section</span> for details on licensing, support, and updates.
+                    <p className="text-sm text-nav-gray">
+                      Check our comprehensive <span className="text-solar-gold underline decoration-dotted underline-offset-4">FAQ section</span> for details on licensing, support, and updates.
                     </p>
                   </div>
                 </div>
@@ -154,23 +154,23 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
           <div className="lg:col-span-2">
             <div className="sticky top-28 space-y-6">
               {/* Main Card */}
-              <div className="bg-card rounded-2xl border border-border p-6 shadow-xl">
+              <div className="bg-card-bg rounded-3xl border border-white/5 p-6 card-shadow shadow-xl">
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-xs font-medium text-primary uppercase tracking-wider">
+                  <p className="text-xs font-medium text-solar-gold uppercase tracking-wider">
                     {template.category}
                   </p>
-                  <span className="text-[10px] font-black text-white tracking-widest bg-gradient-to-r from-primary to-accent px-2.5 py-1 rounded shadow-md shadow-primary/30 border border-white/10">
+                  <span className="text-[10px] font-black text-white tracking-widest bg-white/10 px-2.5 py-1 rounded shadow-md border border-white/5">
                     TEMPLATE ID: #{template.id.padStart(2, '0')}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h1 className="text-2xl font-bold text-foreground mb-2">
+                <h1 className="text-3xl font-serif text-white mb-2 leading-tight">
                   {template.title}
                 </h1>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-4">
+                <p className="text-nav-gray mb-4">
                   {template.description}
                 </p>
 
@@ -185,17 +185,23 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
                 {/* Price */}
                 <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-4xl font-bold text-foreground">${template.price}</span>
-                  <span className="text-muted-foreground">USD</span>
+                  <span className="text-4xl font-bold text-white">${template.price}</span>
+                  <span className="text-nav-gray">USD</span>
                 </div>
 
                 {/* Buy Button */}
                 <button
                   onClick={() => onBuy(template)}
-                  className="w-full py-4 px-6 bg-primary text-primary-foreground rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  className="btn-wipe w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all focus:outline-none"
                 >
-                  <ShoppingCart className="w-5 h-5" />
-                  Buy with Gumroad - ${template.price}
+                  <div className="btn-label-gold">
+                    <ShoppingCart className="w-5 h-5" />
+                    Buy with Gumroad — ${template.price}
+                  </div>
+                  <div className="btn-label-white">
+                    <ShoppingCart className="w-5 h-5" />
+                    Buy with Gumroad — ${template.price}
+                  </div>
                 </button>
 
                 {/* Alternative Payment */}
@@ -220,7 +226,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                 </div> */}
 
                 {/* Trust Badges */}
-                <div className="mt-6 pt-6 border-t border-border">
+                <div className="mt-6 pt-6 border-t border-white/5">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Download className="w-4 h-4 text-green-500" />
@@ -244,16 +250,16 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
 
               {/* Licensing Options */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Licensing Options</h3>
+                <h3 className="text-2xl font-serif text-white">Licensing Options</h3>
                 
                 {/* Standard License */}
-                <div className="bg-card rounded-xl border border-primary/20 p-4 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 p-2 bg-primary/10 rounded-bl-xl">
-                    <Check className="w-4 h-4 text-primary" />
+                <div className="bg-card-bg rounded-xl border border-solar-gold/20 p-4 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-2 bg-solar-gold/10 rounded-bl-xl">
+                    <Check className="w-4 h-4 text-solar-gold" />
                   </div>
-                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                  <h4 className="font-semibold text-white flex items-center gap-2">
                     Standard License
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge variant="secondary" className="text-xs bg-white/5 text-white">
                       ${template.price}
                     </Badge>
                   </h4>
@@ -264,8 +270,8 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                       "Full customization",
                       "No resale"
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary/50" />
+                      <li key={i} className="flex items-center gap-2 text-sm text-nav-gray">
+                        <div className="w-1.5 h-1.5 rounded-full bg-solar-gold/50" />
                         {item}
                       </li>
                     ))}
@@ -273,10 +279,10 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                 </div>
 
                 {/* Exclusive License */}
-                <div className="bg-card rounded-xl border border-border p-4 relative overflow-hidden group hover:border-accent/50 transition-colors">
-                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                <div className="bg-card-bg rounded-xl border border-white/5 p-4 relative overflow-hidden group hover:border-[#F472B6]/50 transition-colors">
+                  <h4 className="font-semibold text-white flex items-center gap-2">
                     Exclusive License
-                    <Badge variant="outline" className="text-xs border-accent text-accent">
+                    <Badge variant="outline" className="text-xs border-[#F472B6] text-[#F472B6]">
                      ${template.price * 10}
                     </Badge>
                   </h4>
@@ -287,15 +293,15 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
                       "Re-distribute or edit as much as you like",
                       "Contact required"
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                      <li key={i} className="flex items-center gap-2 text-sm text-nav-gray">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#F472B6]/50" />
                         {item}
                       </li>
                     ))}
                   </ul>
                   <button
                     onClick={() => onContact({ ...template, title: `${template.title} (Exclusive License)` })}
-                    className="w-full py-2 px-4 bg-muted text-foreground rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                    className="w-full py-2 px-4 bg-white/5 text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-colors"
                   >
                     Contact for Exclusive
                   </button>
@@ -310,7 +316,7 @@ const TemplateDetail: React.FC<TemplateDetailProps> = ({
         {/* Related Templates */}
         {relatedTemplates.length > 0 && (
           <div className="mt-20">
-            <h2 className="text-2xl font-bold text-foreground mb-8">Related Templates</h2>
+            <h2 className="text-4xl font-serif text-white mb-8 text-center">Related Templates</h2>
             <div className="grid sm:grid-cols-3 gap-6">
               {templates
                 .filter(t => t.category === template.category && t.id !== template.id)

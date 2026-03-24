@@ -6,134 +6,83 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 16% 6%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 7% 11%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 16% 6%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 239 84% 67%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 36 88% 67%;
+    --primary-foreground: 240 16% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 7% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 7% 11%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 187 94% 43%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 332 100% 68%;
+    --accent-foreground: 240 16% 6%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 239 84% 67%;
+    --border: 240 7% 15%;
+    --input: 240 7% 15%;
+    --ring: 36 88% 67%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 220 23% 95%;
-    --sidebar-foreground: 215 25% 27%;
-    --sidebar-primary: 239 84% 67%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 90%;
-    --sidebar-accent-foreground: 215 25% 27%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 239 84% 67%;
+    --sidebar-background: 240 16% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 36 88% 67%;
+    --sidebar-primary-foreground: 240 16% 6%;
+    --sidebar-accent: 240 7% 11%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 7% 15%;
+    --sidebar-ring: 36 88% 67%;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    --background: 240 16% 6%;
+    --foreground: 0 0% 100%;
 
-    --card: 224 71% 6%;
-    --card-foreground: 213 31% 91%;
+    --card: 240 7% 11%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 224 71% 6%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 240 16% 6%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 239 84% 67%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 36 88% 67%;
+    --primary-foreground: 240 16% 6%;
 
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 213 31% 91%;
+    --secondary: 240 7% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 28% 17%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 7% 11%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 187 94% 43%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 239 84% 67%;
-
-    --sidebar-background: 215 28% 10%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 239 84% 67%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 20%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 215 25% 20%;
-    --sidebar-ring: 239 84% 67%;
-  }
-
-  /* ═══════════════════════════════════════════════
-     XTRACT PURPLE THEME
-     Deep purple vignette with neon purple/magenta
-     ═══════════════════════════════════════════════ */
-  .theme-xtract {
-    /* Near-black purple background */
-    --background: 264 50% 4%;
-    /* Light lavender text */
-    --foreground: 246 53% 95%;
-
-    /* Very dark purple-black cards */
-    --card: 260 33% 3%;
-    --card-foreground: 246 53% 95%;
-
-    --popover: 260 33% 5%;
-    --popover-foreground: 246 53% 95%;
-
-    /* Vivid purple primary */
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Dark purple secondary */
-    --secondary: 264 30% 12%;
-    --secondary-foreground: 246 53% 95%;
-
-    /* Muted purple tones */
-    --muted: 264 25% 11%;
-    --muted-foreground: 226 14% 66%;
-
-    /* Hot pink/magenta accent */
     --accent: 332 100% 68%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 240 16% 6%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Very subtle purple borders */
-    --border: 264 20% 14%;
-    --input: 264 20% 16%;
-    --ring: 262 83% 58%;
+    --border: 240 7% 15%;
+    --input: 240 7% 15%;
+    --ring: 36 88% 67%;
 
-    --sidebar-background: 264 30% 6%;
-    --sidebar-foreground: 246 53% 95%;
-    --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 264 25% 15%;
-    --sidebar-accent-foreground: 246 53% 95%;
-    --sidebar-border: 264 20% 14%;
-    --sidebar-ring: 262 83% 58%;
+    --sidebar-background: 240 16% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 36 88% 67%;
+    --sidebar-primary-foreground: 240 16% 6%;
+    --sidebar-accent: 240 7% 11%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 7% 15%;
+    --sidebar-ring: 36 88% 67%;
   }
 }
 
@@ -147,7 +96,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-obsidian text-white font-sans antialiased selection:bg-solar-gold selection:text-obsidian;
   }
 
   h1,
@@ -156,7 +105,38 @@
   h4,
   h5,
   h6 {
-    font-family: 'Sora', sans-serif;
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #F4B961 0%, #E29E31 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .border-gradient-gold {
+    border: 1px solid transparent;
+    background-image: linear-gradient(#0D0D12, #0D0D12), linear-gradient(135deg, #F4B961, #8B5E34);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  .active-category {
+    @apply rounded-full px-4 py-1 border border-solar-gold text-solar-gold;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+  }
+  .card-shadow {
+    transition: all 0.3s ease;
+  }
+  .card-shadow:hover {
+    box-shadow: 0 10px 30px -10px rgba(244, 185, 97, 0.15);
+    transform: translateY(-4px);
   }
 }
 
@@ -309,4 +289,144 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ── Gold → Purple Diamond Wipe Button ──────────────────────────── */
+.btn-wipe {
+  position: relative;
+  overflow: hidden;
+  /* Gold/Amber default surface */
+  background: linear-gradient(135deg, #F4B961 0%, #D4983B 50%, #B87A18 100%);
+  color: #0A0A0F;
+  box-shadow: 0 4px 20px rgba(244, 185, 97, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.4s ease;
+  isolation: isolate;
+}
+
+/* The revealed layer (Golden-Purple surface + White text logic) */
+.btn-wipe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Slightly golden-purple combo */
+  background: linear-gradient(135deg, #8155A8 0%, #624080 60%, #C97E1A 100%);
+  clip-path: inset(0 100% 0 0); /* Hidden left */
+  transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+/* Base layer content (Gold state) */
+.btn-wipe .btn-label-gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+/* Reveal layer content (Purple state - White text) */
+.btn-wipe .btn-label-white {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+/* The Diamond Wiper Beam */
+.btn-wipe::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.95), /* Intense core */
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  filter: blur(2px) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  transform: translateX(-40px);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Hover triggers exactly synced transitions */
+.btn-wipe:hover::before,
+.btn-wipe:hover .btn-label-white {
+  clip-path: inset(0 0 0 0);
+}
+
+.btn-wipe:hover::after {
+  transform: translateX(450px); /* Move all the way across */
+}
+
+.btn-wipe:hover {
+  /* Subtle purple and gold blended shadow */
+  box-shadow: 0 8px 32px rgba(129, 85, 168, 0.35), 0 4px 15px rgba(244, 185, 97, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+/* Hover scaling and active effect per user preference */
+.btn-wipe:active {
+  transform: scale(0.97);
+}
+
+/* ── Hero Primary Browse Button ──────────────────────────── */
+.btn-hero {
+  position: relative;
+  background: linear-gradient(135deg, #e7b8ff 0%, #fbcfe8 100%);
+  color: #0A0A0F;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 30px -10px rgba(231, 184, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.btn-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  /* Radiant Dark Pink Reveal */
+  background: linear-gradient(135deg, #D946EF 0%, #C026D3 50%, #9D174D 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.btn-hero:hover {
+  transform: translateY(-6px) scale(1.04);
+  /* Intense Pink 'Pulse' Glow */
+  box-shadow: 
+    0 25px 45px -10px rgba(217, 70, 239, 0.35), 
+    0 0 30px rgba(217, 70, 239, 0.4), 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.btn-hero:hover::before {
+  opacity: 1;
+}
+
+.btn-hero:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 10px 20px -10px rgba(217, 70, 239, 0.3);
 }

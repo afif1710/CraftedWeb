@@ -130,10 +130,10 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif text-white mb-4">
             All Templates
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-nav-gray max-w-2xl mx-auto">
             Browse our complete collection of premium website templates. 
             Filter by category, tags, or price to find the perfect fit for your project.
           </p>
@@ -162,16 +162,13 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
           <div className="flex items-center justify-center gap-2 mb-8">
             <button
               onClick={() => {
-                const newPage = prev => Math.max(1, prev - 1);
-                setCurrentPage(newPage);
-                // Note: since functional update is used, we need the actual value for the callback
-                // But simplified:
                 const val = Math.max(1, currentPage - 1);
+                setCurrentPage(prev => Math.max(1, prev - 1));
                 onPageChange?.(val);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               disabled={currentPage === 1}
-              className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
+              className="px-4 py-2 rounded-lg bg-card-bg border border-white/10 text-nav-gray disabled:opacity-50 disabled:cursor-not-allowed hover:text-white hover:border-white/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold text-sm"
             >
               Previous
             </button>
@@ -185,10 +182,10 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
                     onPageChange?.(page);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`w-9 h-9 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm ${
+                  className={`w-9 h-9 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold text-sm ${
                     currentPage === page
-                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
-                      : 'bg-card border border-border text-foreground hover:border-primary/50'
+                      ? 'bg-[#8155A8] text-white shadow-lg shadow-purple-500/20'
+                      : 'bg-card-bg border border-white/10 text-nav-gray hover:text-white hover:border-white/20'
                   }`}
                 >
                   {page}
@@ -204,7 +201,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
+              className="px-4 py-2 rounded-lg bg-card-bg border border-white/10 text-nav-gray disabled:opacity-50 disabled:cursor-not-allowed hover:text-white hover:border-white/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold text-sm"
             >
               Next
             </button>
@@ -243,7 +240,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
+                  className="px-4 py-2 rounded-lg bg-card-bg border border-white/10 text-nav-gray disabled:opacity-50 disabled:cursor-not-allowed hover:text-white hover:border-white/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold text-sm"
                 >
                   Previous
                 </button>
@@ -257,10 +254,10 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
                         onPageChange?.(page);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className={`w-9 h-9 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm ${
+                      className={`w-9 h-9 rounded-lg font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold text-sm ${
                         currentPage === page
-                          ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
-                          : 'bg-card border border-border text-foreground hover:border-primary/50'
+                          ? 'bg-[#8155A8] text-white shadow-lg shadow-purple-500/20'
+                          : 'bg-card-bg border border-white/10 text-nav-gray hover:text-white hover:border-white/20'
                       }`}
                     >
                       {page}
@@ -276,7 +273,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 rounded-lg bg-card border border-border text-foreground disabled:opacity-50 disabled:cursor-not-allowed hover:border-primary/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm"
+                  className="px-4 py-2 rounded-lg bg-card-bg border border-white/10 text-nav-gray disabled:opacity-50 disabled:cursor-not-allowed hover:text-white hover:border-white/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold text-sm"
                 >
                   Next
                 </button>
@@ -296,7 +293,7 @@ const TemplatesPage: React.FC<TemplatesPageProps> = ({
             </p>
             <button
               onClick={handleClearFilters}
-              className="px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="px-6 py-3 bg-[#8155A8] text-white rounded-xl font-medium hover:bg-[#9165B8] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold"
             >
               Clear all filters
             </button>

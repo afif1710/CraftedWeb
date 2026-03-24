@@ -46,13 +46,24 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <div id="faq" className="max-w-3xl mx-auto mb-20">
-      <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-      <Accordion type="single" collapsible className="w-full">
+    <div id="faq" className="max-w-4xl mx-auto mb-32 pt-20">
+      <h2 className="text-4xl md:text-5xl font-serif text-white text-center mb-16 opacity-90">Frequently Asked Questions</h2>
+      <Accordion type="single" collapsible className="space-y-4">
         {faqs.map((faq, index) => (
-          <AccordionItem key={index} value={`item-${index}`}>
-            <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-            <AccordionContent>
+          <AccordionItem 
+            key={index} 
+            value={`item-${index}`} 
+            className="group border-none rounded-2xl overflow-hidden transition-all duration-300"
+            style={{
+              background: 'linear-gradient(160deg, rgba(28,26,36,1) 0%, rgba(18,17,24,1) 100%)',
+              border: '1px solid rgba(139,92,246,0.10)',
+              boxShadow: '0 4px 30px -10px rgba(139,92,246,0.08)',
+            }}
+          >
+            <AccordionTrigger className="px-8 py-6 text-left text-white/80 hover:text-white font-serif text-lg md:text-xl border-b border-transparent group-data-[state=open]:border-purple-500/10 transition-all">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="px-8 py-6 text-white/50 leading-relaxed text-sm md:text-base" style={{ background: 'rgba(0,0,0,0.15)' }}>
               {faq.answer}
             </AccordionContent>
           </AccordionItem>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Sparkles, Mail, Instagram, Github, Linkedin, ArrowRight, Check } from 'lucide-react';
 
 interface FooterProps {
@@ -54,14 +55,15 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="border-t border-white/5 py-12 px-8">
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2 flex flex-col items-center text-center">
-            <button
+            <Link
+              to="/"
               onClick={() => onNavigate('home')}
               className="flex items-center gap-2 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
             >
@@ -70,12 +72,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
                 alt="CraftedWeb Studio" 
                 className="h-20 md:h-24 w-auto object-contain filter brightness-125 contrast-125 saturate-110"
               />
-            </button>
-            <p className="text-muted-foreground mb-6 max-w-xs">
+            </Link>
+            <p className="text-nav-gray text-x mb-6 max-w-xs">
               Premium website templates for Brands and Businesses. Just customize with your brand info, build faster, launch sooner. 
             </p>
             <br></br>
-            <p className="text-muted-foreground mb-6 max-w-xs">Follow us on...</p>
+            <p className="text-nav-gray text-sm mb-6 max-w-xs">Follow us on...</p>
             <div className="flex justify-center gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -83,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-muted hover:bg-primary hover:text-primary-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="p-2.5 rounded-xl bg-white/5 text-nav-gray hover:bg-white/10 hover:text-solar-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -97,22 +99,29 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
 
           {/* Templates */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Templates</h4>
+            <h4 className="font-serif text-xl text-white mb-4">Templates</h4>
             <ul className="space-y-3">
               {footerLinks.templates.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => {
+                  <Link
+                    to={link.id === 'home' ? '/' : `/${link.id}`}
+                    onClick={(e) => {
                       if ((link as any).category) {
+                        e.preventDefault();
                         onSelectCategory((link as any).category);
+                        onNavigate(link.id); // Ensure we switch to templates view
                       } else {
-                        onNavigate(link.id);
+                        // Let standard Link behavior or onNavigate handle it
+                        if (link.id === 'faq') {
+                          e.preventDefault();
+                          onNavigate('faq');
+                        }
                       }
                     }}
-                    className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
+                    className="text-nav-gray text-sm hover:text-solar-gold transition-colors focus:outline-none focus-visible:underline inline-block"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -120,16 +129,22 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Company</h4>
+            <h4 className="font-serif text-xl text-white mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => onNavigate(link.id)}
-                    className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
+                  <Link
+                    to={`/${link.id}`}
+                    onClick={(e) => {
+                      if (link.id === 'license') {
+                        e.preventDefault();
+                        onNavigate('license');
+                      }
+                    }}
+                    className="text-nav-gray text-sm hover:text-solar-gold transition-colors focus:outline-none focus-visible:underline inline-block"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -137,16 +152,22 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Support</h4>
+            <h4 className="font-serif text-xl text-white mb-4">Support</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => onNavigate(link.id)}
-                    className="text-muted-foreground hover:text-pink-500 hover:text-foreground transition-colors focus:outline-none focus-visible:underline"
+                  <Link
+                    to={link.id === 'faq' ? '/how-it-works' : `/${link.id}`}
+                    onClick={(e) => {
+                      if (link.id === 'faq') {
+                        e.preventDefault();
+                        onNavigate('faq');
+                      }
+                    }}
+                    className="text-nav-gray text-sm hover:text-solar-gold transition-colors focus:outline-none focus-visible:underline inline-block"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -172,14 +193,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectCategory }) => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border">
+      <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-nav-gray">
               © {new Date().getFullYear()} CraftedWeb Studio. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs text-nav-gray">
                 Made with passion for all Businesses and Brands
               </span>
             </div>

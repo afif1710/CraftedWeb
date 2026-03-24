@@ -13,6 +13,7 @@ export interface Template {
   gumroadUrl: string | null;
   features: string[];
   isFeatured: boolean;
+  themeColor: string; // Tailwind color name like 'solar-gold', 'emerald-500', etc.
 }
 
 export const templates: Template[] = [
@@ -36,7 +37,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/typoflux',
     features: ['Kinetic Typography', 'Project Showcase Grid', 'Smooth Animations', 'Dark Theme', 'Portfolio Sections', 'Sound Toggle'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'solar-gold'
   },
   {
     id: '2',
@@ -58,7 +60,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/oceanthemedportfolio',
     features: ['Interactive 3D Navigation', 'Depth Tracking', 'Coordinate System', 'Underwater Aesthetics', 'Ambient Animations', 'Project Exploration'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'blue-500'
   },
   {
     id: '3',
@@ -79,7 +82,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/nexuswebsite',
     features: ['Hero Section', 'Feature Showcase', 'Pricing Section', 'Clean Navigation', 'CTA Buttons', 'Responsive Design'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'stone-400'
   },
   {
     id: '4',
@@ -101,7 +105,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/neonthemedwebsite',
     features: ['Rainbow Gradient Text', 'Particle Effects', 'Custom Cursor', 'Dark Theme', 'Smooth Scrolling', 'Modern Navigation'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'purple-500'
   },
   {
     id: '5',
@@ -123,7 +128,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/kineticcards',
     features: ['Morphing Card Animations', 'Fluid Interactions', 'Modern Navigation', 'Feature Showcase', 'Product Grid', 'Case Studies'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'orange-400'
   },
   {
     id: '6',
@@ -145,7 +151,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/junglethemedportfolio',
     features: ['3D Environment', 'WASD Navigation', 'Interactive Exploration', 'Game-Style Interface', 'Location Tracking', 'Sound Controls'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'emerald-500'
   },
   {
     id: '7',
@@ -166,7 +173,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/holotimeline',
     features: ['Agency Showcase', 'Case Studies', 'Service Timeline', 'Team Profiles', 'Video Showreel', 'Contact Integration'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'cyan-400'
   },
   {
     id: '8',
@@ -187,7 +195,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/gymagencywebsite',
     features: ['Bold Hero Section', 'Trainer Showcase', 'Program Details', 'Transformation Gallery', 'Video Story', 'Membership CTA'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'rose-500'
   },
   {
     id: '9',
@@ -208,7 +217,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/galaxythemedportfolio',
     features: ['Animated Starfield', 'Interactive Launch CTA', 'Spacecraft Graphics', 'Cosmic Theme', 'Portfolio Sections', 'Scroll Prompts'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'indigo-500'
   },
   {
     id: '10',
@@ -231,7 +241,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/chefsportfolio',
     features: ['Luxury Food Photography', 'Elegant Typography', 'Achievement Badges', 'Creation Gallery', 'Press Section', 'Product Showcase'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'amber-600'
   },
   {
     id: '11',
@@ -253,7 +264,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/cascadewebsite',
     features: ['Cascading Layout', 'Service Showcase', 'Team Profiles', 'Client Logos', 'Case Studies', 'Contact Info'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'blue-400'
   },
   {
     id: '12',
@@ -274,7 +286,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/blueprintwebsite',
     features: ['Grid Layout', 'Blueprints Aesthetic', 'Project Timeline', 'Team Grid', 'Quote Request', 'Mobile Friendly'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'indigo-600'
   },
   {
     id: '13',
@@ -295,7 +308,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/aurorawebsite',
     features: ['Gradient Backgrounds', 'Smooth Transitions', 'Feature Highlights', 'Newsletter Signup', 'Responsive', 'Modern UI'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'purple-400'
   },
   {
     id: '14',
@@ -316,7 +330,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/aurabloom',
     features: ['Soft Colors', 'Bloom Animations', 'Testimonials', 'Product Showcase', 'FAQ Section', 'Contact'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'rose-300'
   },
   {
     id: '15',
@@ -337,7 +352,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/atelier',
     features: ['Gallery Grid', 'Detail Zoom', 'Artist Bio', 'Process Section', 'Shop Links', 'Contact'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'amber-400'
   },
   {
     id: '16',
@@ -356,9 +372,10 @@ export const templates: Template[] = [
       '/images/ArtisanTote3.png',
       '/images/ArtisanTote4.png'
     ],
-    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/artisantote',
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/artisanote',
     features: ['Single Product Focus', 'Storytelling Layout', 'Cart', 'Image Zoom', 'Specs Section', 'Simple Checkout'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'orange-300'
   },
   {
     id: '17',
@@ -380,7 +397,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/prismlightstudio',
     features: ['Masonry Gallery', 'Lightbox Support', 'Service Packages', 'Booking Form', 'Dark Mode', 'Responsive Grid'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'violet-500'
   },
   {
     id: '18',
@@ -401,7 +419,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/prismwebsite',
     features: ['Pricing Tables', 'Feature Grid', 'Testimonials Carousel', 'Contact Form', 'Blog Layout', 'SEO Optimized'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'slate-400'
   },
   {
     id: '19',
@@ -424,7 +443,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/restaurantwebsite',
     features: ['Elegant Design', 'Menu Showcase', 'Reservation System', 'Gallery Section', 'About Restaurant', 'Contact Info'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'red-500'
   },
   {
     id: '20',
@@ -445,7 +465,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/softuipro',
     features: ['Neumorphic Design', 'Analytics Charts', 'User Tables', 'Notification System', 'Profile Settings', 'Auth Pages'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'blue-300'
   },
   {
     id: '21',
@@ -466,7 +487,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/spectra',
     features: ['Case Studies', 'Animated Hero', 'Team Section', 'Client Logo Grid', 'Contact Form', 'Smooth Scroll'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'fuchsia-500'
   },
   {
     id: '22',
@@ -487,7 +509,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/storycanvas',
     features: ['Clean Typography', 'Author Bio', 'Reading Time', 'Newsletter Signup', 'Category Tags', 'Related Posts'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'stone-300'
   },
   {
     id: '23',
@@ -509,7 +532,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/timelesselegance',
     features: ['High-Res Zoom', 'Wishlist', 'Request Price', 'Elegant Layout', 'Brand Story', 'Cart Sidebar'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'amber-200'
   },
   {
     id: '24',
@@ -530,7 +554,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/travelagencywebsite',
     features: ['Advanced Search', 'Destination Gallery', 'Review System', 'Multi-Location', 'Statistics Display', 'Booking CTA'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'sky-500'
   },
   {
     id: '25',
@@ -551,7 +576,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/velvetcommerce',
     features: ['3D Product Viewer', 'Material Selector', 'Lighting Controls', 'Camera Angles', 'Customization Panel', 'Price Display'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'red-900'
   },
   {
     id: '26',
@@ -573,7 +599,8 @@ export const templates: Template[] = [
     ],
     gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/weddingagencywebsite',
     features: ['Romantic Design', 'Portfolio Gallery', 'Service Packages', 'Testimonials', 'Booking Form', 'Blog Section'],
-    isFeatured: false
+    isFeatured: false,
+    themeColor: 'pink-200'
   }
 ];
 

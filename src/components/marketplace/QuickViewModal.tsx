@@ -129,10 +129,16 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
             <div className="mt-auto space-y-3">
               <button
                 onClick={handleBuy}
-                className="w-full py-3 px-4 bg-primary text-primary-foreground rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="btn-wipe w-full py-3 px-4 rounded-xl font-semibold transition-all focus:outline-none"
               >
-                <ShoppingCart className="w-5 h-5" />
-                Buy with Gumroad - ${template.price}
+                <div className="btn-label-gold">
+                  <ShoppingCart className="w-5 h-5" />
+                  Buy with Gumroad — ${template.price}
+                </div>
+                <div className="btn-label-white">
+                  <ShoppingCart className="w-5 h-5" />
+                  Buy with Gumroad — ${template.price}
+                </div>
               </button>
               
               <button

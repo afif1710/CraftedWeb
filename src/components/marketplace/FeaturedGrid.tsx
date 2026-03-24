@@ -8,13 +8,15 @@ interface FeaturedGridProps {
   onSelectTemplate: (template: Template) => void;
   onViewAll: () => void;
   onBuy: (template: Template) => void;
+  onContact?: (template: Template) => void;
 }
 
 const FeaturedGrid: React.FC<FeaturedGridProps> = ({ 
   onQuickView, 
   onSelectTemplate,
   onViewAll,
-  onBuy
+  onBuy,
+  onContact
 }) => {
   const featuredTemplates = templates.slice(0, 6);
 
@@ -24,16 +26,16 @@ const FeaturedGrid: React.FC<FeaturedGridProps> = ({
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-foreground mb-2">
+            <h2 className="text-4xl sm:text-5xl font-serif text-white mb-2">
               Popular Templates
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-nav-gray">
               Our most loved templates, ready to help you build something amazing.
             </p>
           </div>
           <button
             onClick={onViewAll}
-            className="group flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors focus:outline-none focus-visible:underline"
+            className="group flex items-center gap-2 text-solar-gold font-medium hover:text-solar-gold/80 transition-colors focus:outline-none focus-visible:underline"
           >
             View all templates
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -53,6 +55,7 @@ const FeaturedGrid: React.FC<FeaturedGridProps> = ({
                 onQuickView={onQuickView}
                 onSelect={onSelectTemplate}
                 onBuy={onBuy}
+                onContact={onContact || (() => {})}
               />
             </div>
           ))}
@@ -62,7 +65,7 @@ const FeaturedGrid: React.FC<FeaturedGridProps> = ({
         <div className="mt-12 text-center">
           <button
             onClick={onViewAll}
-            className="px-8 py-4 bg-card border border-border text-foreground rounded-xl font-semibold hover:border-primary/50 hover:bg-muted/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="px-8 py-3 bg-[#262626] border border-white/5 hover:bg-[#333333] text-white/90 text-sm font-semibold rounded-full transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-solar-gold"
           >
             Browse All {templates.length} Templates
           </button>

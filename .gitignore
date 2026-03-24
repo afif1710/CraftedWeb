@@ -1,16 +1,16 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Environment
+.env
+.env.local
+.env.*.local
 
-node_modules
-dist
-dist-ssr
-*.local
+# Project Specific
+.replit
+.gemini/
+extract_zip.js
+move-images.js
+update_gumroad_*.js
+stitch_*
+public/images/test.txt
 
 # Editor directories and files
 .vscode/*
@@ -28,3 +28,6 @@ LICENSE.txt
 
 # Vite
 vite.config.*.timestamp-*.mjs
+dist
+dist-ssr
+*.local

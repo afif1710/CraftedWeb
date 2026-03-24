@@ -10,6 +10,7 @@ interface SEOProps {
   image?: string;
   robots?: string;
   author?: string;
+  schema?: object;
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -20,7 +21,8 @@ const SEO: React.FC<SEOProps> = ({
   name = 'CraftedWeb Studio',
   image = 'https://d64gsuwffb70l.cloudfront.net/697f345016ddabc5c5663713_1769944230275_19bf04de.jpg',
   robots = 'index, follow',
-  author = 'CraftedWeb Studio'
+  author = 'CraftedWeb Studio',
+  schema
 }) => {
   const siteUrl = 'https://craftedwebstudio.vercel.app';
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
@@ -56,6 +58,13 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="apple-mobile-web-app-title" content="CraftedWeb" />
+
+      {/* Structured Data */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
     </Helmet>
   );
 };

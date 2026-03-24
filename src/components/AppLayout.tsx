@@ -327,12 +327,31 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
           handleNavigate("templates");
           return null;
         }
+        const templateSchema = {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": selectedTemplate.title,
+          "description": selectedTemplate.description,
+          "image": selectedTemplate.poster,
+          "applicationCategory": "WebApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": selectedTemplate.price,
+            "priceCurrency": "USD",
+            "url": `https://craftedwebstudio.vercel.app/template/${selectedTemplate.slug}`,
+            "availability": "https://schema.org/InStock"
+          }
+        };
+
         return (
           <>
              <SEO 
               title={`${selectedTemplate.title} — Premium ${selectedTemplate.category} Template`}
               description={selectedTemplate.description}
               image={selectedTemplate.poster}
+              canonical={`/template/${selectedTemplate.slug}`}
+              schema={templateSchema}
             />
           <div className="relative z-20">
             <TemplateDetail
@@ -360,6 +379,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
             />
             <HowItWorksPage
               onBrowseTemplates={() => handleNavigate("templates")}
+              onContactUs={() => handleNavigate("contact")}
             />
           </div>
         );
@@ -372,7 +392,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ initialPage }) => {
               description="CraftedWeb Studio is dedicated to building the best React & Tailwind CSS templates for modern web development. Learn more about our mission."
               canonical="/about"
             />
-            <AboutPage />
+            <AboutPage onNavigate={handleNavigate} />
           </div>
         );
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sparkles } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   currentPage: string;
@@ -29,16 +30,17 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 bg-obsidian/80 backdrop-blur-md ${
         isScrolled
-          ? 'py-3 glass shadow-lg'
-          : 'py-5 bg-transparent'
+          ? 'py-3 shadow-lg'
+          : 'py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button
+          <Link
+            to="/"
             onClick={() => onNavigate('home')}
             className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
             aria-label="Go to homepage"
@@ -48,35 +50,36 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               alt="CraftedWeb Studio" 
               className="h-14 md:h-20 w-auto object-contain transition-transform group-hover:scale-105 filter brightness-125 contrast-125 saturate-110"
             />
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                  currentPage === item.id
-                    ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                to={item.id === 'home' ? '/' : `/${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate(item.id);
+                }}
+                className={`px-4 py-2 text-sm font-medium transition-all focus:outline-none ${
+                  currentPage === item.id || (item.id === 'templates' && currentPage === 'template-detail')
+                    ? 'text-white border-b-2 border-solar-gold'
+                    : 'text-nav-gray hover:text-white'
                 }`}
                 aria-current={currentPage === item.id ? 'page' : undefined}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            {/* Unified Theme Toggle */}
-            <ThemeToggle />
-
             {/* CTA Button */}
             <button
               onClick={() => onNavigate('templates')}
-              className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-xl font-medium text-sm hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="hidden sm:flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#A855F7] to-[#F472B6] text-white rounded-full font-bold text-sm hover:opacity-90 transition-opacity focus:outline-none"
             >
               Browse Templates
             </button>
@@ -105,28 +108,30 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           >
             <div className="flex flex-col gap-1">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => {
+                  to={item.id === 'home' ? '/' : `/${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
                     onNavigate(item.id);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`px-4 py-3 rounded-xl text-left font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                    currentPage === item.id
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  className={`px-4 py-3 rounded-xl text-left font-medium transition-all focus:outline-none ${
+                    currentPage === item.id || (item.id === 'templates' && currentPage === 'template-detail')
+                      ? 'text-white bg-white/5 border border-solar-gold'
+                      : 'text-nav-gray hover:text-white hover:bg-white/5'
                   }`}
                   aria-current={currentPage === item.id ? 'page' : undefined}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <button
                 onClick={() => {
                   onNavigate('templates');
                   setIsMobileMenuOpen(false);
                 }}
-                className="mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-xl font-medium text-center hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="mt-2 px-4 py-3 bg-gradient-to-r from-[#A855F7] to-[#F472B6] text-white rounded-xl font-semibold text-center hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Browse Templates
               </button>
