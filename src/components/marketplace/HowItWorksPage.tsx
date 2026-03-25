@@ -92,14 +92,14 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onBrowseTemplates, onCo
   ];
 
   return (
-    <section className="relative py-24 min-h-screen bg-obsidian overflow-hidden">
+    <section className="relative pt-16 pb-24 min-h-screen bg-obsidian overflow-hidden">
       {/* ── Ambient background glow blobs ── */}
       <div className="absolute top-10 right-[5%] w-[500px] h-[500px] bg-purple-700/[0.08] rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute top-[30%] left-0 w-[400px] h-[400px] bg-solar-gold/[0.05] rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute top-[60%] right-[15%] w-[450px] h-[450px] bg-violet-600/[0.06] rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-20 left-[20%] w-[400px] h-[400px] bg-purple-500/[0.05] rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {/* Header */}
         <div className="text-center mb-24 animate-fade-up">
           <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">

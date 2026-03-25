@@ -7,6 +7,10 @@ import {
 
 const faqs = [
   {
+    question: "Do you provide custom-made website templates from scratch?",
+    answer: "Yes! If you prefer a unique design tailored specifically to your brand requirements and personal taste rather than a pre-made template, we offer custom website development services from scratch. We can build your vision exactly as you want, ensuring it perfectly aligns with your design preferences and business goals. Just email us with your requirements to get a custom quote."
+  },
+  {
     question: "What is included in the template download?",
     answer: "You will receive the full source code for the template, including all React components, TypeScript files, and CSS styles. We also include a comprehensive setup guide to help you get started quickly in the README file."
   },

@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onBrowseTemplates }) => {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-nav-gray mb-10 max-w-2xl mx-auto animate-fade-up stagger-2 leading-relaxed">
-            Premium Website templates with beautiful designs, clean code, and everything you need to launch your next <b className="text-white">Brand</b> in hours, not weeks.
+            Premium Website templates with beautiful designs, clean code, and everything you need to launch your next <b className="text-solar-gold">Brand</b> in hours, not weeks.
           </p>
 
           {/* CTA Buttons */}

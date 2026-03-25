@@ -10,11 +10,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showCta, setShowCta] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      setShowCta(window.scrollY > 500);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -76,10 +78,14 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            {/* CTA Button */}
+            {/* CTA Button - Dynamic Visibility */}
             <button
               onClick={() => onNavigate('templates')}
-              className="hidden sm:flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#A855F7] to-[#F472B6] text-white rounded-full font-bold text-sm hover:opacity-90 transition-opacity focus:outline-none"
+              className={`hidden sm:flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#FFD586] to-[#E5A853] text-obsidian rounded-full font-bold text-sm hover:brightness-110 hover:text-white transition-all duration-500 transform ${
+                showCta 
+                  ? 'opacity-100 translate-y-0 scale-100' 
+                  : 'opacity-0 translate-y-4 scale-90 pointer-events-none'
+              } focus:outline-none`}
             >
               Browse Templates
             </button>
@@ -131,7 +137,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   onNavigate('templates');
                   setIsMobileMenuOpen(false);
                 }}
-                className="mt-2 px-4 py-3 bg-gradient-to-r from-[#A855F7] to-[#F472B6] text-white rounded-xl font-semibold text-center hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className={`mt-2 px-4 py-3 bg-gradient-to-r from-[#FFD586] to-[#E5A853] text-obsidian rounded-xl font-bold text-center hover:brightness-110 hover:text-white transition-all duration-500 transform ${
+                  showCta 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-2 pointer-events-none text-transparent'
+                } focus:outline-none focus-visible:ring-2 focus-visible:ring-primary`}
               >
                 Browse Templates
               </button>

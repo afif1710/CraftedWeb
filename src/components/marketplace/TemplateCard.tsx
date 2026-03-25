@@ -119,14 +119,14 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, onQuickView, onSe
 
         {/* Title & Description */}
         <div className="space-y-2">
-          <h3 className="text-xl font-bold text-white transition-colors truncate group-hover:text-[var(--theme-color)]">
+          <h3 className="text-xl font-bold truncate">
             <Link 
               to={`/template/${template.slug}`}
               onClick={(e) => {
                 e.stopPropagation();
                 onSelect(template);
               }}
-              className="text-white hover:text-[var(--theme-color)] transition-colors"
+              className="text-white group-hover:text-[var(--theme-color)] transition-colors duration-300"
             >
               {template.title}
             </Link>
