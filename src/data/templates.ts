@@ -601,6 +601,28 @@ export const templates: Template[] = [
     features: ['Romantic Design', 'Portfolio Gallery', 'Service Packages', 'Testimonials', 'Booking Form', 'Blog Section'],
     isFeatured: false,
     themeColor: 'pink-200'
+  },
+  {
+    id: '27',
+    title: 'Terra Estate',
+    slug: 'terra-estate',
+    price: 39,
+    description: 'Luxury real estate agency website with curated property listings and private viewing requests.',
+    longDescription: 'Terra Estate presents a premium real estate brand built for high-end agencies. Featuring the tagline "Where Architecture Meets Eternity," it showcases curated luxury homes, off-market listings, and invitation-only properties in the world\'s most coveted addresses. Includes residential, commercial, waterfront, and new development filters, property cards with pricing and specs, a List Your Property CTA, and a polished inquiry form for private viewings. Perfect for luxury brokerages, boutique agencies, and exclusive property consultants.',
+    category: 'Business',
+    tags: ['React', 'Business', 'Real Estate', 'Luxury', 'Agency'],
+    demoVideoUrl: 'https://www.youtube.com/embed/DCPlwC0wBcY?rel=0&modestbranding=1',
+    poster: '/images/terra1.png',
+    screenshots: [
+      '/images/terra1.png',
+      '/images/terra2.png',
+      '/images/terra3.png',
+      '/images/terra4.png'
+    ],
+    gumroadUrl: 'https://craftedwebstudio.gumroad.com/l/terraestate',
+    features: ['Luxury Hero Section', 'Property Listings Grid', 'Off-Market Access', 'Listing Filters', 'Private Viewing CTA', 'Inquiry Form'],
+    isFeatured: false,
+    themeColor: 'amber-700'
   }
 ];
 
